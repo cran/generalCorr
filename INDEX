@@ -1,0 +1,68 @@
+EuroCrime               European Crime Data
+Panel2Lag               Function to compute a vector of 2 lagged values
+                        of a variable from panel data.
+PanelLag                Function for computing a vector of one-lagged
+                        values of xj, a variable from panel data.
+abs_res                 Absolute residuals of kernel regression of x on
+                        y.
+abs_stdapd              Absolute values of gradients (apd's) of kernel
+                        regressions of x on y when both x and y are
+                        standardized.
+abs_stdres              Absolute values of residuals of kernel
+                        regressions of x on y when both x and y are
+                        standardized.
+allPairs                Report causal identification for all pairs of
+                        variables in a matrix.
+bigfp                   Compute the numerical integration by the
+                        trapezoidal rule.
+cofactor                Compute cofactor of a matrix based on row r and
+                        column c.
+comp_portfo2            Compares two vectors (portfolios) by stochastic
+                        dominance of orders 1 to 4.
+get0outliers            Function to compute outliers and their count
+                        using Tukey method using 1.5 times
+                        interquartile range (IQR) to define boundarirs.
+gmcmtx0                 Compute the matrix R* of generalized
+                        correlation coefficients.
+gmcmtxZ                 compute the matrix R* of generalized
+                        correlation coefficients.
+gmcxy_np                Function to compute generalized correlation
+                        coefficients r*x|y and r*(y|x).
+heurist                 Function to run a heuristic t test of the
+                        difference between two generalized
+                        correlations.
+kern                    Function to run kernel regression with options
+                        for residuals and gradients.
+minor                   Function to do compute the minor of a matrix
+                        defined by row r and column c.
+napair                  Function to do pairwise deletion of missing
+                        rows. The aim is to retain the largest number
+                        of available data pairs with all non-missing
+                        data.
+parcor_ijk              Generalized partial correlation coefficient
+                        between Xi and Xj removing the effect of all
+                        other columns using the matrix R* of
+                        generalized correlation coefficients.
+parcor_ridg             Compute generalized (ridge-adjusted) partial
+                        correlation coefficients from matrix R*.
+pcause                  Compute the bootstrap probability of correct
+                        determination of the cause
+prelec2                 Intermediate weighting function giving
+                        Non-Expected Utility theory weights.
+rstar                   Function to compute generalized correlation
+                        coefficients r*(x,y).
+some0Pairs              Function reporting kernel causality results as
+                        a 7-column matrix where stochastic dominances
+                        orders are weighted by c(1.2,1.1, 1.05, 1) to
+                        compute an overall result for all orders of
+                        stochastic dominance.
+somePairs               Function reporting kernel causality results as
+                        a 7-column matrix.
+sort_matrix             Sort all columns of matrix x by j-th column
+                        while carrying along all columns.
+stdz_xy                 Standardize x and y vectors to force zero mean
+                        and unit variance.
+stochdom2               Compute vectors measuring stochastic dominance
+                        of four orders.
+wtdpapb                 Creates input for the function stochdom2 for
+                        stochastic dominance.
