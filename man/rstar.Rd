@@ -7,16 +7,16 @@
 rstar(x, y)
 }
 \arguments{
-\item{x}{vector of data on the dependent variable}
+\item{x}{Vector of data on the dependent variable}
 
-\item{y}{data on the regressors which can be a matrix}
+\item{y}{Vector of data on the regressor}
 }
 \value{
-Four items:
+Four objects created by this function are:
 \item{corxy}{r*x|y or regressing x on y}
 \item{coryx}{r*y|x or regressing y on x}
 \item{pearson.r }{Pearson's product moment correlation coefficient}
-\item{pv}{p-value for testing the Pearson r}
+\item{pv}{The p-value for testing the Pearson r}
 }
 \description{
 Uses Vinod (2015) definition of generalized (asymmetric) correlation
@@ -36,13 +36,13 @@ x=sample(1:30);y=sample(1:30); rstar(x,y)
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with
- Applications in Development Economics" in Communications in
+Vinod, H. D.'Generalized Correlation and Kernel Causality with
+ Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 
-Vinod, H. D. "Matrix Algebra Topics in Statistics and Economics
-Using R", Chapter 4 in Handbook of Statistics: Computational Statistics
+Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
+Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
 with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 }

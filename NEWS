@@ -1,0 +1,7 @@
+Package: generalCorr
+==============
+
+Version: 1.0.1 [2016-05-20]
+o cosmetic changes to many functions, changed output
+  titles in somePairs(), some0Pairs(), allPairs() with
+  added example in parcor_ridg()

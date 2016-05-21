@@ -7,13 +7,13 @@
 napair(x, y)
 }
 \arguments{
-\item{x}{vector of x data}
+\item{x}{Vector of x data}
 
-\item{y}{vector of y data}
+\item{y}{Vector of y data}
 }
 \value{
-\item{newx}{new vector x after removing pairwise missing data} 
-\item{newy}{new vector y after removing pairwise missing data}
+\item{newx}{A new vector x after removing pairwise missing data} 
+\item{newy}{A new vector y after removing pairwise missing data}
 }
 \description{
 The aim in pair-wise deletions is to retain the largest 

@@ -15,8 +15,8 @@ abs_res(x, y)
 absolute values of kernel regression residuals are returned.
 }
 \description{
-This calls the \code{kern} function to implement kernel regression
-with the option residuals=TRUE and returns afbsolute residuals.
+This internal function calls the \code{kern} function to implement kernel regression
+with the option \code{residuals=TRUE} and returns absolute residuals.
 }
 \details{
 The first argument is assumed to be the dependent variable.  If

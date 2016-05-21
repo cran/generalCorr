@@ -2,27 +2,30 @@
 % Please edit documentation in R/parcor_ijk.R
 \name{parcor_ijk}
 \alias{parcor_ijk}
-\title{Generalized partial correlation coefficient between Xi and Xj removing the
-effect of all other columns using the matrix R* of generalized correlation coefficients.}
+\title{Generalized partial correlation coefficient between Xi and Xj after removing the
+effect of all others.}
 \usage{
 parcor_ijk(x, i, j)
 }
 \arguments{
-\item{x}{{has a p by p matrix R* of generalized corr coefficients.}}
+\item{x}{{Input a p by p matrix R* of generalized correlation coefficients.}}
 
 \item{i}{{A column number identifying the first variable.}}
 
 \item{j}{{A column number identifying the second variable.}}
 }
 \value{
-\item{ouij}{partial correlation Xi on Xj (=cause) after removing all other X's}
-\item{ouji}{partial correlation Xj on Xi (=cause) after removing all other X's}
-\item{myk}{list of column numbers whose effect has been removed}
+\item{ouij}{Partial correlation Xi with Xj (=cause) after removing all other X's}
+\item{ouji}{Partial correlation Xj with Xi (=cause) after removing all other X's}
+\item{myk}{A list of column numbers whose effect has been removed}
 }
 \description{
 This function uses a generalized correlation matrix R* as input to compute
-generalized partial correlations between \eqn{X_i} and one of the remaining
-variables after removing the effect of all other variables in the matrix.
+generalized partial correlations between \eqn{X_i} and \eqn{X_j}
+where j can be any one of the remaining
+variables. Computaion removes the effect of all other variables in the matrix.
+The user is encouraged to remove all known irrelevant rows and columns 
+from the R* matrix before submitting it to this function.
 }
 \note{
 This function calls \code{\link{minor}}, and \code{\link{cofactor}} and is called 
@@ -32,7 +35,7 @@ This function calls \code{\link{minor}}, and \code{\link{cofactor}} and is calle
 
 \dontrun{
 set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
-colnames(x)=c("V1", "v2", "V3")
+colnames(x)=c('V1', 'v2', 'V3')
 gm1=gmcmtx0(x)
 parcor_ijk(gm1, 2,3)
 }#' 

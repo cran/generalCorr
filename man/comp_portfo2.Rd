@@ -7,12 +7,12 @@
 comp_portfo2(xa, xb)
 }
 \arguments{
-\item{xa}{{data on returns for portfolio A in the form of a T by 1 vector}}
+\item{xa}{{Data on returns for portfolio A in the form of a T by 1 vector}}
 
-\item{xb}{{data on returns for portfolio B in the form of a T by 1 vector}}
+\item{xb}{{Data on returns for portfolio B in the form of a T by 1 vector}}
 }
 \value{
-returns four numbers as averages of four sophisticated measures of stochastic
+Returns four numbers which are averages of four sophisticated measures of stochastic
 dominance measurements called SD1 to SD4.
 }
 \description{
@@ -22,7 +22,7 @@ to report the simple means of four sophsiticated measures of stochastic dominanc
 \note{
 It is possible to modify this function to report the median or standard
 deviation or any other descriptive statistic by changing the line in the
-code \code{oumean = apply(outb, 2, mean)} toward the end of the function.
+code '\code{oumean = apply(outb, 2, mean)}' toward the end of this function.
 A trimmed mean may be of interest when outliers are suspected.
 
 require(np)

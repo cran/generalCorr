@@ -7,20 +7,20 @@
 minor(x, r, c)
 }
 \arguments{
-\item{x}{{the input matrix}}
+\item{x}{{The input matrix}}
 
-\item{r}{{the row number}}
+\item{r}{{The row number}}
 
-\item{c}{{the column number}}
+\item{c}{{The column number}}
 }
 \value{
-the appropriate `minor' matrix from the original matrix.
+The appropriate `minor' matrix defined from the input matrix.
 }
 \description{
 Function to do compute the minor of a matrix defined by row r and column c.
 }
 \note{
-this is needed by the cofactor function
+This function is needed by the cofactor function.
 }
 \examples{
 

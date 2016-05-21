@@ -2,33 +2,34 @@
 % Please edit documentation in R/kern.R
 \name{kern}
 \alias{kern}
-\title{Function to run kernel regression with options for residuals and gradients.}
+\title{Kernel regression with options for residuals and gradients.}
 \usage{
 kern(dep.y, reg.x, tol = 0.1, ftol = 0.1, gradients = FALSE,
   residuals = FALSE)
 }
 \arguments{
-\item{dep.y}{{has the dependent (response) variable}}
+\item{dep.y}{{Data on the dependent (response) variable}}
 
-\item{reg.x}{{has the regressor (stimulus) variable}}
+\item{reg.x}{{Data on the regressor (stimulus) variable}}
 
 \item{tol}{{=0.1 (default)}}
 
-\item{ftol}{{=0.1 (default)}}
+\item{ftol}{{Tolerance =0.1 (default)}}
 
-\item{gradients}{{set to TRUE if gradients computations are desired}}
+\item{gradients}{{Set to TRUE if gradients computations are desired}}
 
-\item{residuals}{{set to TRUE if residuals are desired}}
+\item{residuals}{{Set to TRUE if residuals are desired}}
 }
 \value{
-Creates a model object `mod' 'containing kernel regression output.
-Type names(mod) to find out the variety of outputs produced by `npreg' of `np' package.
+Creates a model object `mod' containing the entire kernel regression output.
+Type \code{names(mod)} to reveal the variety of outputs produced by `npreg' of the `np' package.
+The user can access all of them at will.
 }
 \description{
 Function to run kernel regression with options for residuals and gradients.
 }
 \note{
-This is a work horse for causal identification
+This is a work horse for causal identification.
 }
 \examples{
 
@@ -44,8 +45,8 @@ print(k1$R2) #prints the R square of the kernel regression
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with 
- Applications in Development Economics" in Communications in 
+Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+ Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

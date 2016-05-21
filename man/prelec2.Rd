@@ -13,7 +13,6 @@ prelec2(n)
 \item{x}{sequence 1:n}
 \item{p}{probabilities p= x[i]/n}
 \item{pdif}{consecutive differences p[i] - p[i - 1]}
-##@note %% ~~further notes~~
 }
 \description{
 Computes cumulative probabilities and difference between consecutive
@@ -24,27 +23,13 @@ of the version in the book without mapping to non-expected utility theory weight
 
  \dontrun{prelec2(10)}
 
-## The function is currently defined as
-function (n)
-{
-    x = 1:n
-    p = rep(0, length(x))
-    for (i in 1:n) {
-        p[i] = x[i]/n
-    }
-    pdif = p
-    for (i in 2:n) {
-        pdif[i] = p[i] - p[i - 1]
-    }
-    list(x = x, p = p, pdif = pdif)
-  }
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D.", "Hands-On Intermediate Econometrics
-Using R"  (2008) World Scientific Publishers: Hackensack, NJ.
+Vinod, H. D.', 'Hands-On Intermediate Econometrics
+Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 \url{http://www.worldscibooks.com/economics/6895.html}
 }
 \keyword{Prelec}

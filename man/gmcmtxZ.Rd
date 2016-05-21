@@ -12,10 +12,10 @@ gmcmtxZ(mym, nam = colnames(mym))
 \item{nam}{{Column names of the variables in the data matrix}}
 }
 \value{
-non-symmetric R* matrix of generalized correlation coefficients
+A non-symmetric R* matrix of generalized correlation coefficients
 }
 \description{
-function checks for missing data separately for each pair using
+This function checks for missing data separately for each pair using
 \code{kern} function to kernel regress x on y, and conversely y on x. It
  needs the library `np' which reports R-squares of each regression. This function
 reports their square roots with the sign of the Pearson correlation coefficients.
@@ -24,13 +24,13 @@ by relaxing the assumption of linearity implicit in usual correlation
 coefficients.
 }
 \note{
-The user may want to modify this function without touching \code{gmcmtx0}.
+This allows the user to change \code{gmcmtx0} and further experiment with my code.
 }
 \examples{
 
 \dontrun{
 set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
-colnames(x)=c("V1", "v2", "V3")
+colnames(x)=c('V1', 'v2', 'V3')
 gmcmtxZ(x)
 }
 
@@ -39,8 +39,8 @@ gmcmtxZ(x)
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with 
- Applications in Development Economics" in Communications in 
+Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+ Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

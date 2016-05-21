@@ -7,22 +7,22 @@
 bigfp(d, p)
 }
 \arguments{
-\item{d}{{a vector of distances from the smallest value from both data vectors}}
+\item{d}{{A vector of distances from the smallest value from both data vectors}}
 
-\item{p}{{vector of probabilities of the type 1/2T, 2/2T, 3/2T etc. to 1.}}
+\item{p}{{Vector of probabilities of the type 1/2T, 2/2T, 3/2T, etc. to 1.}}
 }
 \value{
 Returns a result after pre-multiplication by \eqn{I_F,  I_f}
-matrices, without actually creating the large sparce matrices.
+matrices, without actually creating the large sparse matrices. This is an internal function.
 }
 \description{
-See page 220 of Vinod's ``Hands-on Interemediate Econometrics Using R,'' a
-book by World Scientific publishers for the trapezoidal integration formula
-needed for stochastic dominance.  The book has pre-multiplication by two
+See page 220 of Vinod's ``Hands-on Interemediate Econometrics Using R,'' cited below
+for the trapezoidal integration formula
+needed for stochastic dominance.  The book explains pre-multiplication by two
 large sparse matrices denoted by \eqn{I_F,  I_f}.  Here we accomplish the 
-same without actually creating the large sparse matrices. For example
+same computation without actually creating the large sparse matrices. For example, the
 \eqn{I_f} is replaced by \code{cumsum} in this code (unlike the R code in
-the textbook.
+my textbook).
 }
 \note{
 This is an internal function, called by the function \code{stochdom2}, for
@@ -33,10 +33,15 @@ Typical usage is:
 sd2b=bigfp(d=dj, p=sd1b)
 sd3b=bigfp(d=dj, p=sd2b)
 sd4b=bigfp(d=dj, p=sd3b)}.
-This produces numerical evaluation vectors for the four orders of SD1  to SD4.
+This produces numerical evaluation vectors for the four orders, SD1  to SD4.
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
+\references{
+Vinod, H. D.', 'Hands-On Intermediate Econometrics
+Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
+\url{http://www.worldscibooks.com/economics/6895.html}
 }
 \keyword{SD1}
 \keyword{SD2}

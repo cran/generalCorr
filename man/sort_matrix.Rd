@@ -2,20 +2,21 @@
 % Please edit documentation in R/sort_matrix.R
 \name{sort_matrix}
 \alias{sort_matrix}
-\title{Sort all columns of matrix x by j-th column while carrying along all columns.}
+\title{Sort all columns of matrix x with respect to the j-th column.}
 \usage{
 sort_matrix(x, j)
 }
 \arguments{
-\item{x}{{is a matrix with several columns}}
+\item{x}{{An input matrix with several columns}}
 
-\item{j}{{column number with which to sort}}
+\item{j}{{The column number with reference to which one wants to sort}}
 }
 \value{
 {A sorted matrix}
 }
 \description{
-This function simply uses sort.list function in R.
+This function simply uses sort.list function in R. The reason
+for using it is that one wants the sort to carry along all columns.
 }
 \examples{
 

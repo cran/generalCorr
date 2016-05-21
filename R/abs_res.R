@@ -1,7 +1,7 @@
 #' Absolute residuals of kernel regression of x on y.
 #'
-#' This calls the \code{kern} function to implement kernel regression
-#' with the option residuals=TRUE and returns afbsolute residuals.
+#' This internal function calls the \code{kern} function to implement kernel regression
+#' with the option \code{residuals=TRUE} and returns absolute residuals.
 #'
 #' The first argument is assumed to be the dependent variable.  If
 #' \code{abs_res(x,y)} is used, you are regressing x on y (not the usual y on
@@ -12,8 +12,8 @@
 #' @return absolute values of kernel regression residuals are returned.
 #' @note This function is intended for internal use.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-## @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
-### @references %% ~put references to the literature/web site here ~
+## @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~ @references %%
+## ~put references to the literature/web site here ~
 #' @keywords kern regression residuals
 #' @examples
 #' \dontrun{
@@ -24,8 +24,8 @@
 #' }
 #' @export
 
-abs_res <-
-function(x, y){
-kk1=kern(dep.y=x,reg.x=y,residuals=TRUE)
-ares=abs(kk1$resid)
-return(ares)}
+abs_res <- function(x, y) {
+    kk1 = kern(dep.y = x, reg.x = y, residuals = TRUE)
+    ares = abs(kk1$resid)
+    return(ares)
+} 

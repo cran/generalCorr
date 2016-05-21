@@ -7,30 +7,35 @@
 stochdom2(dj, wpa, wpb)
 }
 \arguments{
-\item{dj}{these are (unequal) distances of consecutive intervals}
+\item{dj}{{Vector of (unequal) distances of consecutive intervals defined on common support
+of two probability distributions being compared}}
 
-\item{wpa}{weighted probabilities of first set of probabilities}
+\item{wpa}{Vector of the first set of (weighted) probabilities}
 
-\item{wpb}{weighted probabilities of second set of probabilities}
+\item{wpb}{Vector of the second set of (weighted) probabilities}
 }
 \value{
-\item{sd1b}{vector measuring stochastic dominance of order 1, SD1} 
-\item{sd2b}{vector measuring stochastic dominance of order 2, SD2} 
-\item{sd3b}{vector measuring stochastic dominance of order 3, SD3} 
-\item{sd4b}{vector measuring stochastic dominance of order 4, SD4}
+\item{sd1b}{Vector measuring stochastic dominance of order 1, SD1} 
+\item{sd2b}{Vector measuring stochastic dominance of order 2, SD2} 
+\item{sd3b}{Vector measuring stochastic dominance of order 3, SD3} 
+\item{sd4b}{Vector measuring stochastic dominance of order 4, SD4}
 }
 \description{
-Stochastic dominance is a sophisticated comparison of two distributions of
-stock market returns.  The dominating distribution is superior in terms of
+Stochastic dominance originated as a sophisticated comparison of two distributions of
+stock market returns.  The dominating distribution is superior in terms of local
 mean, variance, skewness and kurtosis respectively, representing dominance
-orders 1 to 4, without directly computing four moments.  Vinod(2008) sec. 4.3
-explains the details.  This function directly uses the output of `wtdpapb'.
+orders 1 to 4, without simply computing the four moment summary measures for the entire
+data.  Vinod (2008, sec. 4.3)
+explains the details.  This function uses the output of `wtdpapb'.
+}
+\note{
+The input to this function is the output of the function \code{wtdpapb}.
 }
 \examples{
 
  \dontrun{
  set.seed(234);x=sample(1:30);y=sample(5:34)
- w1=wtdpapb(x,y)
+ w1=wtdpapb(x,y) #y should dominate x with mostly positive SDs
  stochdom2(w1$dj, w1$wpa, w1$wpb) }
 
 }
@@ -38,12 +43,12 @@ explains the details.  This function directly uses the output of `wtdpapb'.
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D.", "Hands-On Intermediate Econometrics 
- Using R"  (2008) World Scientific Publishers: Hackensack, NJ.
+Vinod, H. D.', 'Hands-On Intermediate Econometrics 
+ Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
  \url{http://www.worldscibooks.com/economics/6895.html}
 
-Vinod, H. D. "Ranking Mutual Funds Using 
-Unconventional Utility Theory and Stochastic Dominance,"
+Vinod, H. D. 'Ranking Mutual Funds Using 
+Unconventional Utility Theory and Stochastic Dominance,'
 Journal of Empirical Finance Vol. 11(3) 2004, pp. 353-377.
 }
 \seealso{

@@ -7,39 +7,44 @@
 allPairs(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE)
 }
 \arguments{
-\item{mtx}{{input matrix with variable names}}
+\item{mtx}{{Input matrix with variable names}}
 
-\item{dig}{{digits of accuracy in reporting (=6, default)}}
+\item{dig}{{Digits of accuracy in reporting (=6, default)}}
 
-\item{verbo}{{logical, set to TRUE if printing desired}}
+\item{verbo}{{Logical variable, set to 'TRUE' if printing is desired}}
 
 \item{typ}{{Causal direction criterion number (typ=1 is default)
 Criterion 1 (Cr1) compares kernel regression absolute values of gradients.
 Criterion 2 (Cr2) compares kernel regression absolute values of residuals.
-Criterion 1 (Cr1) compares kernel regression based r*(x|y) with r*(y|x)}.}
+Criterion 3 (Cr3) compares kernel regression based r*(x|y) with r*(y|x)}.}
 
-\item{rnam}{{logical variable default=FALSE means row names are not set by
-the function.}}
+\item{rnam}{{Logical variable, default \code{rnam=FALSE} means the user does
+not want the row row names to be
+(somewhat too cleverly) assigned by the function.}}
 }
 \value{
-A 7-column matrix called outcause with names of variables
- X and Y in the first two columns and name of the causal variable in 3rd col.
- Remaining 4 columns report numerical computations of SD1 to SD4, r*(x|y),
- r*(y|x).  Pearson r and p-values for traditional significance testing.
+A 7-column matrix called 'outcause' with names of variables
+ X and Y in the first two columns and the name of the 'causal' variable in 3rd col.
+ Remaining four columns report numerical computations of SD1 to SD4, r*(x|y),
+ r*(y|x).  Pearson r and p-values for its traditional significance testing.
 }
 \description{
-This is a convenient way to study causal directions in a matrix. It calls
+This is a convenient way to study all possible (perhaps too many)
+causal directions in a matrix. It calls
 \code{abs_stdapd}, \code{abs_stdres}, \code{comp_portfo2}, etc. and returns
 a matrix with 7 columns with detailed output.
 }
 \note{
-The cause is identified from the sign of SD1 only
+The cause reported in the third column
+ is identified from the sign of the first SD1 only,
  ignoring SD2, SD3 and SD4  under both Cr1 and Cr2. It is
  a good idea to loop a call to this function with typ=1:3. One can print
- the resulting outcause matrix with the xtable(outcause) for Latex output.
- A similar function called \code{some0Pairs} incorporates all SD1 to SD4 and all
+ the resulting 'outcause' matrix with the 
+ \code{xtable(outcause)} for the Latex output.
+ A similar (perhaps better) function included in this package,
+  called \code{some0Pairs}, incorporates all SD1 to SD4 and all
  three criteria Cr1 rto Cr3 to report a `sum' of indexes representing the signed 
- number whose sign cam help determine the causal direction.
+ number whose sign can more comprehensively help determine the causal direction(s).
 }
 \examples{
 
@@ -53,8 +58,8 @@ print(a1)}
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with
- Applications in Development Economics" in Communications in
+Vinod, H. D.'Generalized Correlation and Kernel Causality with
+ Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

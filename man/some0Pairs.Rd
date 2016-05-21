@@ -2,55 +2,66 @@
 % Please edit documentation in R/some0Pairs.R
 \name{some0Pairs}
 \alias{some0Pairs}
-\title{Function reporting kernel causality results as a 7-column matrix where
-stochastic dominances orders are weighted by c(1.2,1.1, 1.05, 1) to
-compute an overall result for all orders of stochastic dominance.}
+\title{Function reporting kernel causality results as a detailed 7-column matrix}
 \usage{
 some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2, 1.1,
   1.05, 1), sumwt = 4)
 }
 \arguments{
-\item{mtx}{{the data matrix in the first column is paired with all others.}}
+\item{mtx}{{The data matrix in the first column is paired with all others.}}
 
-\item{dig}{{=6 (default) number of digits for reporting.}}
+\item{dig}{{Number of digits for reporting (default \code{dig}=6).}}
 
-\item{verbo}{{=FALSE (default). Make it TRUE for printing steps.}}
+\item{verbo}{{Make \code{verbo= TRUE} for printing detailed steps.}}
 
-\item{rnam}{{=FALSE (default). Make it TRUE if created rownames are wanted.}}
+\item{rnam}{{Make \code{rnam= TRUE} if cleverly created rownames are desired.}}
 
-\item{wt}{{allows user to choose alternative weights for SD1 to SD4.}}
+\item{wt}{{Allows user to choose a vector of four alternative weights for SD1 to SD4.}}
 
-\item{sumwt}{{=4(default) sum of weights can be changed here.}}
+\item{sumwt}{{ Sum of weights can be changed here =4(default).}}
 }
 \value{
 Prints three matrices detailing results for Cr1, Cr2 and Cr3.
-It returns a matrix called `outVote' which summarizes the three criteria.
+It also returns a grand summary matrix called `outVote' which summarizes all three criteria.
 In general, a positive sign for weighted sum reported in the column `sum' means
 that the first variable listed as the input to this function is the `kernel cause.'  
-For example, crime `kernel causes' officer deployment (not vice versa) is indicated by 
+For example, crime `kernel causes' police officer deployment (not vice versa) is indicated by 
 the positive sign of `sum' (=3.175) reported for that example included in this package.
 }
 \description{
-Three criteria are used and further summarized into one matrix called \code{outVote}: 
-  
-typ=1 reports ("Y", "X", "Cause",
-"SD1apd", "SD2apd", "SD3apd", "SD4apd") nameing variables identifying "cause"
-and measures of stochastic dominance using absolute values of kernel
-regression gradients comparing regresson of X on Y with that of Y on X.
+The seven columns produced by this function summarize the results where the signs of
+stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
+compute an overall result for all orders of stochastic dominance by a weighted sum for
+the crietria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
 }
 \details{
-typ=2 reports ("Y", "X", "Cause", "SD1res", "SD2res", "SD3res", "SD4res")
+The reason for slightly declining weights on the signs from
+SD1 to SD4 is simply that the local mean comparisons 
+implicit in SD1 are known to be
+more reliable than local variance implicit in SD2, local skewness implicit in
+SD3 and local kurtosis implicit in SD4. The source of slightly declining sampling
+unreliability of higher moments is the
+higher power of the deviations from the mean needed in their computations.
+The summary results for all
+three criteria are reported in one matrix called \code{outVote}: 
+  
+typ=1 reports ('Y', 'X', 'Cause',
+'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') nameing variables identifying 'cause'
+and measures of stochastic dominance using absolute values of kernel
+regression gradients (or amorphous partial derivatives, apd-s) being minimized by
+the kernel regression algorithm while
+comparing the kernel regresson of X on Y with that of Y on X.
+
+typ=2 reports ('Y', 'X', 'Cause', 'SD1res', 'SD2res', 'SD3res', 'SD4res')
 and measures of stochastic dominance using absolute values of kernel
 regression residuals comparing regresson of X on Y with that of Y on X.
 
-typ=3 reports ("Y", "X", "Cause", "r*x|y", "r*y|x", "r", "p-val")
+typ=3 reports ('Y', 'X', 'Cause', 'r*x|y', 'r*y|x', 'r', 'p-val')
 containing generalized correlation coefficients r*, 'r' refers to.
 Pearson correlation coefficient p-val is the p-value for 
 testing the significance of 'r'
 }
 \note{
-This will not work without several functions and packages in R memory.
-
 The output matrix last column for `mtcars' example
 has the sum of the scores by the three criteria
 combined. If `sum' is positive, then variable X (mpg) is more likely to have been
@@ -63,7 +74,6 @@ high crime rate kernel causes the deployment of a large number of police officer
 
 
 \dontrun{
-data(mtcars) #brings the Motor Trend data into the memory of R
 some0Pairs(mtcars) # first variable is mpg and effect on mpg is of interest
 }
 
@@ -76,11 +86,11 @@ some0Pairs(cbind(crim,off))
 
 }
 \author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
 \references{
-"Generalized Correlation and Kernel Causality with
-   Applications in Development Economics" in Communications in
+'Generalized Correlation and Kernel Causality with
+   Applications in Development Economics' in Communications in
    Statistics -Simulation and Computation, 2015,
    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

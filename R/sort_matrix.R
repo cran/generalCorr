@@ -1,9 +1,10 @@
-#' Sort all columns of matrix x by j-th column while carrying along all columns.
+#' Sort all columns of matrix x with respect to the j-th column.
 #'
-#' This function simply uses sort.list function in R.
+#' This function simply uses sort.list function in R. The reason
+#' for using it is that one wants the sort to carry along all columns.
 #'
-#' @param  x {is a matrix with several columns}
-#' @param j {column number with which to sort}
+#' @param  x {An input matrix with several columns}
+#' @param j {The column number with reference to which one wants to sort}
 #' @return {A sorted matrix}
 #' @examples
 #'
@@ -12,8 +13,7 @@
 #' y=sort_matrix(x,3);y
 #' @export
 
-sort_matrix <-
-function(x,j)
+sort_matrix <- function(x, j) 
 {
-y=x[sort.list(x[,j]),]
-return(y)  }
+  x[order(x[,j]),]
+}

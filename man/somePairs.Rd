@@ -7,42 +7,41 @@
 somePairs(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE)
 }
 \arguments{
-\item{mtx}{{the data matrix in the first column is paired with all others.}}
+\item{mtx}{{The data matrix in the first column is paired with all others.}}
 
-\item{dig}{{=6 (default) number of digits for reporting.}}
+\item{dig}{{Number of digits for reporting (default \code{dig}=6).}}
 
-\item{verbo}{{=FALSE (default). Make it TRUE for printing steps.}}
+\item{verbo}{{Make \code{verbo= TRUE} for printing detailed steps.}}
 
-\item{typ}{{must be 1 (default), 2 or 3 for the three criteria.}}
+\item{typ}{{Must be 1 (default), 2 or 3 for the three criteria.}}
 
-\item{rnam}{{=FALSE (default). Make it TRUE if created rownames are wanted}}
+\item{rnam}{{Make \code{rnam= TRUE} if cleverly created rownames are desired.}}
 }
 \value{
 A matrix containing causal identification results.  The last matrix
 outVote reports summary results for all three criteria in column `sum'.
 }
 \description{
-Three criteria are used:
+Three criteria are used optinally by specifying typ as 1, 2 or 3.  One considers
+only one criterion at a time unlike the function \code{some0Pairs} which
+summarizes the resulting signs for all criteria with suitable weights:
 }
 \details{
-(typ=1) reports ("Y", "X", "Cause",
-"SD1apd", "SD2apd", "SD3apd", "SD4apd") nameing variables identifying "cause"
+(typ=1) reports ('Y', 'X', 'Cause',
+'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') nameing variables identifying 'cause'
 and measures of stochastic dominance using absolute values of kernel
 regression gradients comparing regresson of X on Y with that of Y on X.
 
 {(typ=2)} 
- reports ("Y", "X", "Cause", "SD1res", "SD2res", "SD3res", "SD4res")
+ reports ('Y', 'X', 'Cause', 'SD1res', 'SD2res', 'SD3res', 'SD4res')
  and measures of stochastic dominance using absolute values of kernel
  regression residuals comparing regresson of X on Y with that of Y on X.
 
 {(typ=3)} 
-reports ("Y", "X", "Cause", "r*x|y", "r*y|x", "r", "p-val")
-containing generalized correlation coefficients r*, 'r' refers to.
-Pearson correlation coefficient p-val is the p-value for 
-testing the significance of Pearson 'r'
-}
-\note{
-will not work without several functions and packages in memory
+reports ('Y', 'X', 'Cause', 'r*X|Y', 'r*Y|X', 'r', 'p-val')
+containing generalized correlation coefficients r*, 'r' refers to the
+Pearson correlation coefficient and p-val column has the p-values for 
+testing the significance of Pearson's 'r'
 }
 \examples{
 
@@ -56,8 +55,8 @@ somePairs(mtcars)
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-H. D. Vinod "Generalized Correlation and Kernel Causality with
- Applications in Development Economics" in Communications in
+H. D. Vinod 'Generalized Correlation and Kernel Causality with
+ Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

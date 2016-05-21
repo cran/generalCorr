@@ -15,13 +15,15 @@ gmcmtx0(mym, nam = colnames(mym))
 A non-symmetric R* matrix of generalized correlation coefficients
 }
 \description{
-This function checks for missing data separately for each pair. It then uses the
+This function checks for missing data for each pair individually. It then uses the
 \code{kern} function to kernel regress x on y, and conversely y on x. It
  needs the library `np' which reports R-squares of each regression. This function
-reports their square roots after assigning them the the sign of the Pearson 
-correlation coefficients.
-Its appeal is that it is asymmetric yielding causal direction information,
+reports their square roots after assigning them the observed sign of the Pearson 
+correlation coefficient. Its advantages are (i)
+It is asymmetric yielding causal direction information,
 by relaxing the assumption of linearity implicit in usual correlation coefficients.
+(ii) The r* correlation coefficients are genearally larger upon admitting 
+arbitrary nonlinearities.
 }
 \examples{
 
@@ -29,7 +31,7 @@ gmcmtx0(mtcars[,1:3])
 
 \dontrun{
 set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
-colnames(x)=c("V1", "v2", "V3")
+colnames(x)=c('V1', 'v2', 'V3')
 gmcmtx0(x)}
 
 }
@@ -37,18 +39,18 @@ gmcmtx0(x)}
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with 
- Applications in Development Economics" in Communications in 
+Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+ Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 
-Vinod, H. D. "Matrix Algebra Topics in Statistics and Economics
-Using R, Chapter 4 in Handbook of Statistics: Computational Statistics
-with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
+Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
+Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
+with R', Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 
-Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). Generalized measures 
- of correlation for asymmetry, nonlinearity, and beyond. 
+Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures 
+ of correlation for asymmetry, nonlinearity, and beyond,' 
  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
 }
 \keyword{R*}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/heurist.R
 \name{heurist}
 \alias{heurist}
-\title{Function to run a heuristic t test of the difference between two generalized correlations.}
+\title{Heuristic t test of the difference between two generalized correlations.}
 \usage{
 heurist(rxy, ryx, n)
 }

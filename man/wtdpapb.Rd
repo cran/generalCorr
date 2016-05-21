@@ -7,15 +7,15 @@
 wtdpapb(xa, xb)
 }
 \arguments{
-\item{xa}{{vector of (excess) returns for the first investment option A or
+\item{xa}{{Vector of (excess) returns for the first investment option A or
 values of any random variable being compared to another.}}
 
-\item{xb}{vector of returns for the second option B}
+\item{xb}{Vector of returns for the second option B}
 }
 \value{
-\item{wpa}{weighted vector of probabilities for option A} 
-\item{wpb}{weighted vector of probabilities for option B} 
-\item{dj}{vector of distances when both values atre forced on the same support}
+\item{wpa}{Weighted vector of probabilities for option A} 
+\item{wpb}{Weighted vector of probabilities for option B} 
+\item{dj}{Vector of distances when both sets of data are forced on a common support}
 }
 \description{
 Stochastic dominance is a sophisticated comparison of two distributions of
@@ -27,14 +27,17 @@ for stochdom2 which in turn computes the stochsastic dominance.
 See Vinod (2004) for details about quantitative stochastic dominance.
 }
 \note{
-Internal function needed for stochastic dominance
+Function is needed before using stochastic dominance
 
 In Vinod (2008) where the purpose of \code{wtdpapb} is to map from standard
 `expected utility theory' weights to more sophisticated `non-expected utility
 theory' weights using Prelec's (1998, Econometrica, p. 497) method.  These
  weights are not needed here. Hence we provide the function \code{prelec2}
  which does not use Prelec weights at all, thereby simplifying and speeding up
- the R code provided in Vinod (2008).
+ the R code provided in Vinod (2008). This function avoids sophisticated `non-expected'
+ utility theory which inocorporates commonly observed human behavior favoring
+ loss aversion and other anomalies inconsistent with precepts of the
+ expected utility theory. Such weighting is not needed for our application.
 }
 \examples{
 
@@ -47,13 +50,16 @@ theory' weights using Prelec's (1998, Econometrica, p. 497) method.  These
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D.", "Hands-On Intermediate Econometrics 
-Using R"  (2008) World Scientific Publishers: Hackensack, NJ.
+Vinod, H. D.', 'Hands-On Intermediate Econometrics 
+Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 \url{http://www.worldscibooks.com/economics/6895.html}
 
-Vinod, H. D. "Ranking Mutual Funds Using 
-Unconventional Utility Theory and Stochastic Dominance,"
+Vinod, H. D. 'Ranking Mutual Funds Using 
+Unconventional Utility Theory and Stochastic Dominance,'
 Journal of Empirical Finance Vol. 11(3) 2004, pp. 353-377.
+}
+\seealso{
+See Also \code{\link{stochdom2}}
 }
 \keyword{dominance}
 \keyword{stochastic}

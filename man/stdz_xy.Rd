@@ -2,21 +2,21 @@
 % Please edit documentation in R/stdz_xy.R
 \name{stdz_xy}
 \alias{stdz_xy}
-\title{Standardize x and y vectors to force zero mean and unit variance.}
+\title{Standardize x and y vectors to achieve zero mean and unit variance.}
 \usage{
 stdz_xy(x, y)
 }
 \arguments{
-\item{x}{vector of data which can have NA's}
+\item{x}{Vector of data which can have NA's}
 
-\item{y}{vector of data which can have NA's}
+\item{y}{Vector of data which can have NA's}
 }
 \value{
 \item{stdx}{standardized values of x}
 \item{stdy}{standardized values of y}
 }
 \description{
-Standardize x and y vectors to force zero mean and unit variance.
+Standardize x and y vectors to achieve zero mean and unit variance.
 }
 \note{
 This works even if there are missing x or y values.

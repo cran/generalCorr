@@ -1,5 +1,6 @@
-#' Function to run a heuristic t test of the difference between two generalized correlations.
+#' Heuristic t test of the difference between two generalized correlations.
 #' 
+#' Function to run a heuristic t test of the difference between two generalized correlations.
 #' 
 #' @param rxy {generalized correlation r*(x|y) where y is the kernel cause.}
 #' @param ryx {generalized correlation r*(y|x) where x is the kernel cause.}
@@ -22,6 +23,7 @@
 #' print(h1$p) #p-value
 #' @export
 
-heurist=function(rxy,ryx,n){
-tstat = paired.r(xy=rxy, xz=ryx, yz = min(rxy,ryx), n)
-return(tstat)}
+heurist = function(rxy, ryx, n) {
+    tstat = paired.r(xy = rxy, xz = ryx, yz = min(rxy, ryx), n)
+    return(tstat)
+} 

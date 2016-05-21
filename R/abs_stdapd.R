@@ -31,14 +31,16 @@
 #' @export
 
 
-abs_stdapd <-
-function(x, y){
-stdx=function(x)(x-mean(x,na.rm=TRUE))/sd(x, na.rm=TRUE)
-#allows y to be a matrix
-stx=(x-mean(x,na.rm=TRUE))/sd(x, na.rm=TRUE)
-p=NCOL(y)
-if (p==1) sty=(y-mean(y,na.rm=TRUE))/sd(y, na.rm=TRUE)
-if (p>1) sty=apply(y,2,stdx)
-kk1=kern(dep.y=as.vector(stx),reg.x=sty,gradients=TRUE)
-agrad=abs(kk1$grad)
-return(agrad)}
+abs_stdapd <- function(x, y) {
+    stdx = function(x) (x - mean(x, na.rm = TRUE))/sd(x, na.rm = TRUE)
+    # allows y to be a matrix
+    stx = (x - mean(x, na.rm = TRUE))/sd(x, na.rm = TRUE)
+    p = NCOL(y)
+    if (p == 1) 
+        sty = (y - mean(y, na.rm = TRUE))/sd(y, na.rm = TRUE)
+    if (p > 1) 
+        sty = apply(y, 2, stdx)
+    kk1 = kern(dep.y = as.vector(stx), reg.x = sty, gradients = TRUE)
+    agrad = abs(kk1$grad)
+    return(agrad)
+} 

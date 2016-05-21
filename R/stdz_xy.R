@@ -1,7 +1,7 @@
-#' Standardize x and y vectors to force zero mean and unit variance.
+#' Standardize x and y vectors to achieve zero mean and unit variance.
 #'
-#' @param x vector of data which can have NA's
-#' @param y  vector of data which can have NA's
+#' @param x Vector of data which can have NA's
+#' @param y  Vector of data which can have NA's
 #' @importFrom stats sd
 #' @return
 #' \item{stdx}{standardized values of x}
@@ -18,8 +18,8 @@
 #'
 #' @export
 
-stdz_xy <-
-function(x, y){
-stdx=(x-mean(x,na.rm=TRUE))/sd(x, na.rm=TRUE)
-stdy= (y-mean(y, na.rm=TRUE))/sd(y, na.rm=TRUE)
-list(stdx=stdx,stdy=stdy)}
+stdz_xy <- function(x, y) {
+    stdx = (x - mean(x, na.rm = TRUE))/sd(x, na.rm = TRUE)
+    stdy = (y - mean(y, na.rm = TRUE))/sd(y, na.rm = TRUE)
+    list(stdx = stdx, stdy = stdy)
+} 

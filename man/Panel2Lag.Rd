@@ -7,9 +7,9 @@
 Panel2Lag(ID, xj)
 }
 \arguments{
-\item{ID}{{location of the column having time identities (e.g. the week number)}}
+\item{ID}{{Location of the column having time identities (e.g. the week number)}}
 
-\item{xj}{{data on variable to be lagged linked to ID}}
+\item{xj}{{Data on variable to be lagged linked to ID}}
 }
 \value{
 Vector containing  2 lagged values of xj.

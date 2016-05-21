@@ -2,28 +2,31 @@
 % Please edit documentation in R/pcause.R
 \name{pcause}
 \alias{pcause}
-\title{Compute the bootstrap probability of correct determination of the causal direction.}
+\title{Compute the bootstrap probability of correct causal direction.}
 \usage{
 pcause(x, y, n999 = 999)
 }
 \arguments{
-\item{x}{{vector of x data}}
+\item{x}{{Vector of x data}}
 
-\item{y}{{vector of y data}}
+\item{y}{{Vector of y data}}
 
-\item{n999}{{number of bootstrap replications (default=999)}}
+\item{n999}{{Number of bootstrap replications (default=999)}}
 }
 \value{
 P(cause) the bootstrap proportion of correct causal determinations.
 }
 \description{
-maximum entropy bootstrap (meboot) package is used for statistical inference
+Maximum entropy bootstrap (meboot) package is used for statistical inference
 regarding \eqn{\delta} which equals GMC(X|Y)-GMC(Y|X) defined by Zheng et al (2012).
+The bootstrap provides an approximation to chances of correct determination of
+the causal direction.
 }
 \note{
-This is computer intensive and generally slow. It may be better to use
-  it at a later stage in the investigation when causal determination is made
-  instead of during the exploratory phase.
+'pcause' is computer intensive and generally slow. It may be better to use
+  it at a later stage in the investigation when a preliminary causal determination 
+  is already made.  Its use may slow the exploratory phase. In my experience, if
+  P(cause) is less than 0.55, there is a cause for concern.
 }
 \examples{
 
@@ -31,7 +34,7 @@ This is computer intensive and generally slow. It may be better to use
 set.seed(34);x=sample(1:10);y=sample(2:11)
 pcause(x,y,n999=29)
 
-data("EuroCrime")
+data('EuroCrime')
 attach(EuroCrime)
 pcause(crim,off,n999=29)
 }
@@ -40,8 +43,8 @@ pcause(crim,off,n999=29)
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with 
- Applications in Development Economics" in Communications in 
+Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+ Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 
@@ -49,8 +52,8 @@ Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). Generalized measures
  of correlation for asymmetry, nonlinearity, and beyond. 
  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
 
-Vinod, H. D. and Lopez-de-Lacalle, J. (2009). "Maximum entropy bootstrap
- for time series: The meboot R package." Journal of Statistical Software,
+Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
+ for time series: The meboot R package.' Journal of Statistical Software,
  Vol. 29(5), pp. 1-19.
 }
 \keyword{asymmetric}

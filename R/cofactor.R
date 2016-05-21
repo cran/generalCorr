@@ -18,7 +18,7 @@
 #'   }
 #' @export
 
-cofactor <-
-function(x,r,c){
-out=minor(x,r,c)*((-1)^(r+c))
-return(out)}
+cofactor <- function(x, r, c) {
+    out = minor(x, r, c) * ((-1)^(r + c))
+    return(out)
+} 

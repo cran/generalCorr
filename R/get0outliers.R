@@ -23,10 +23,9 @@
 #' 
 #' @export
 
-get0outliers <-
-function(x,verbo=TRUE,mult=1.5) {
-    # function to compute the number of outliers automatically author
-    # H. D. Vinod, Fordham university, New York, 24 March, 2006
+get0outliers <- function(x, verbo = TRUE, mult = 1.5) {
+    # function to compute the number of outliers automatically author H. D. Vinod,
+    # Fordham university, New York, 24 March, 2006
     x2 = x[!is.na(x)]
     su = summary(x2)
     if (ncol(as.matrix(x)) > 1) {
@@ -40,25 +39,24 @@ function(x,verbo=TRUE,mult=1.5) {
     nLO = length(LO)
     UP = which(x2 > up)
     nUP = length(UP)
-if (verbo) print(c(" Q1-1.5*(inter quartile range)=", as.vector(dn), 
-"number of outliers below it are=", 
-        as.vector(nLO)), quote = F)
+    if (verbo) 
+        print(c(" Q1-1.5*(inter quartile range)=", as.vector(dn), "number of outliers below it are=", 
+            as.vector(nLO)), quote = F)
     
     if (nLO > 0) {
-if(verbo) print(c("Actual values below the lower limit are:", x2[LO]), 
-            quote = F)
+        if (verbo) 
+            print(c("Actual values below the lower limit are:", x2[LO]), quote = F)
     }
     
     # print(up, nUP)
-if(verbo) print(c(" Q3+1.5*(inter quartile range)=", as.vector(up), 
-" number of outliers above it are=", 
-        as.vector(nUP)), quote = F)
+    if (verbo) 
+        print(c(" Q3+1.5*(inter quartile range)=", as.vector(up), " number of outliers above it are=", 
+            as.vector(nUP)), quote = F)
     
     if (nUP > 0) {
-if(verbo)   print(c("Actual values above the upper limit are:", x2[UP]), 
-            quote = F)
+        if (verbo) 
+            print(c("Actual values above the upper limit are:", x2[UP]), quote = F)
     }
     
-    list(below = LO, nLO = nLO, above = UP, nUP = nUP, low.lim = dn, 
-        up.lim = up)
-}
+    list(below = LO, nLO = nLO, above = UP, nUP = nUP, low.lim = dn, up.lim = up)
+} 

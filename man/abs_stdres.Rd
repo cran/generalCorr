@@ -13,7 +13,7 @@ abs_stdres(x, y)
 \item{y}{{data on the regressors which can be a matrix}}
 }
 \value{
-absolute values of kernel regression residuals are returned after
+Absolute values of kernel regression residuals are returned after
 standardizing the data on both sides so that the magnitudes of residuals are
 comparable between regression of x on y on the one hand and regression of y
 on x on the other.
@@ -43,8 +43,8 @@ abs_stdres(x,y)
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
-Vinod, H. D."Generalized Correlation and Kernel Causality with
- Applications in Development Economics" in Communications in
+Vinod, H. D.'Generalized Correlation and Kernel Causality with
+ Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }

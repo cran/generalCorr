@@ -7,9 +7,9 @@
 PanelLag(ID, xj, lag = 1)
 }
 \arguments{
-\item{ID}{{location of the column having time identities (e.g. week number).}}
+\item{ID}{{Location of the column having time identities (e.g. week number).}}
 
-\item{xj}{{data on variable to be lagged linked with the ID.}}
+\item{xj}{{Data vector of variable to be lagged and is linked with the ID.}}
 
 \item{lag}{{Number of lags desired (lag=1 is the default).}}
 }
@@ -32,7 +32,7 @@ indiv=gl(6,12,labels=LETTERS[1:6])
 set.seed(99);cost=sample(30:90, 72, replace=TRUE)
 revenu=sample(50:110, 72, replace=TRUE); month=rep(1:12,6)
 df=data.frame(indiv,month,cost,revenu);head(df);tail(df)
-L2cost=PanelLag(ID=month,xj=df[,"cost"], lag=2)
+L2cost=PanelLag(ID=month,xj=df[,'cost'], lag=2)
 head(L2cost)
 tail(L2cost)
 
