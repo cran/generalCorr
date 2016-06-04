@@ -1,8 +1,9 @@
 #' Function reporting kernel causality results as a 7-column matrix.
 #'
-#' Three criteria are used optinally by specifying typ as 1, 2 or 3.  One considers
+#' This function lets the user choose one of three criteria to determine causal direction
+#' by setting \code{typ} as 1, 2 or 3.  This function reports results for 
 #' only one criterion at a time unlike the function \code{some0Pairs} which
-#' summarizes the resulting signs for all criteria with suitable weights: 
+#' summarizes the resulting causal directions for all criteria with suitable weights: 
 #' 
 #' (typ=1) reports ('Y', 'X', 'Cause',
 #' 'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') nameing variables identifying 'cause'
@@ -18,18 +19,23 @@
 #' reports ('Y', 'X', 'Cause', 'r*X|Y', 'r*Y|X', 'r', 'p-val')
 #' containing generalized correlation coefficients r*, 'r' refers to the
 #' Pearson correlation coefficient and p-val column has the p-values for 
-#' testing the significance of Pearson's 'r'
+#' testing the significance of Pearson's 'r'.
 #' @param mtx {The data matrix in the first column is paired with all others.}
 #' @param dig {Number of digits for reporting (default \code{dig}=6).}
 #' @param verbo {Make \code{verbo= TRUE} for printing detailed steps.}
 #' @param typ {Must be 1 (default), 2 or 3 for the three criteria.}
 #' @param rnam {Make \code{rnam= TRUE} if cleverly created rownames are desired.}
-#' @return A matrix containing causal identification results.  The last matrix
-#' outVote reports summary results for all three criteria in column `sum'.
+#' @return A matrix containing causal identification results for one criterion.
+#' The first column of the input \code{mtx} having p columns
+#' is paired with (p-1) other columns  The output matrix headings are
+#' self-explanatory and distinct for each criterion Cr1 to Cr3.
+#' 
 #' @keywords  causal criteria, SD1, SD2, SD3, SD4, generalized correlations
 #'
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @seealso See Also \code{\link{some0Pairs}}.
+#' @seealso The related function \code{\link{some0Pairs}} may be more useful, since it
+#' reports on all three criteria and
+#' further summarizes their results by weighting to help choose causal paths. 
 #' @references H. D. Vinod 'Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,

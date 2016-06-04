@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version: 1.0.2 [2016-05-20]
+o New functions added to treat some variables as control variables,
+  not part of causal paths.
 
 Version: 1.0.1 [2016-05-20]
 o cosmetic changes to many functions, changed output

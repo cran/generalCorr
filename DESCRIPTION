@@ -1,7 +1,7 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations and Initial Causal Path
-Version: 1.0.1
+Version: 1.0.2
 Date: 2016-04-10
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
@@ -30,6 +30,6 @@ License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-05-20 18:22:43 UTC; hd
+Packaged: 2016-06-04 17:04:59 UTC; hd
 Repository: CRAN
-Date/Publication: 2016-05-21 00:05:33
+Date/Publication: 2016-06-04 19:34:56

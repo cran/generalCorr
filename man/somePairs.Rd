@@ -18,13 +18,16 @@ somePairs(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE)
 \item{rnam}{{Make \code{rnam= TRUE} if cleverly created rownames are desired.}}
 }
 \value{
-A matrix containing causal identification results.  The last matrix
-outVote reports summary results for all three criteria in column `sum'.
+A matrix containing causal identification results for one criterion.
+The first column of the input \code{mtx} having p columns
+is paired with (p-1) other columns  The output matrix headings are
+self-explanatory and distinct for each criterion Cr1 to Cr3.
 }
 \description{
-Three criteria are used optinally by specifying typ as 1, 2 or 3.  One considers
+This function lets the user choose one of three criteria to determine causal direction
+by setting \code{typ} as 1, 2 or 3.  This function reports results for 
 only one criterion at a time unlike the function \code{some0Pairs} which
-summarizes the resulting signs for all criteria with suitable weights:
+summarizes the resulting causal directions for all criteria with suitable weights:
 }
 \details{
 (typ=1) reports ('Y', 'X', 'Cause',
@@ -41,7 +44,7 @@ regression gradients comparing regresson of X on Y with that of Y on X.
 reports ('Y', 'X', 'Cause', 'r*X|Y', 'r*Y|X', 'r', 'p-val')
 containing generalized correlation coefficients r*, 'r' refers to the
 Pearson correlation coefficient and p-val column has the p-values for 
-testing the significance of Pearson's 'r'
+testing the significance of Pearson's 'r'.
 }
 \examples{
 
@@ -61,7 +64,9 @@ H. D. Vinod 'Generalized Correlation and Kernel Causality with
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
 \seealso{
-See Also \code{\link{some0Pairs}}.
+The related function \code{\link{some0Pairs}} may be more useful, since it
+reports on all three criteria and
+further summarizes their results by weighting to help choose causal paths.
 }
 \keyword{SD1,}
 \keyword{SD2,}

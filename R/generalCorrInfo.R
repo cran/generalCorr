@@ -1,0 +1,63 @@
+#' generalCorr package description: 
+#' 
+#' This package provides convenient software tools for causal path determinations
+#' using Vinod (2014, 2015) and extends them. 
+#' A matrix of asymmetric generalized correlations r*(x|y) is reported by the
+#' functions \code{rstar} and \code{gmcmtx0}. The r*(x|y)
+#' measures the  strength of the
+#' dependence of x on y. If |r*(x|y)|> |r*(y|x)| it suggests that y is more likely
+#' the "kernel cause" of x. This package refers to
+#' the r* based criterion as  criterion 3 (Cr3) and further adds
+#' two additional ways of comparing
+#' two kernel regressions helping identify the `cause' called criterion 1 and 2
+#' (Cr1 and Cr2) using absolute values of gradients and residuals, respectively.
+#' See references below. The package has one-line commands summarizing all three criteria
+#' leading to high (over 70 \%) success rates in causal path identifications.
+#' 
+#' The usual partial correlations are generalized for the asymmetric matrix of r*'s.
+#' Partial correlations help asses the effect of x on y after removing the effect of a
+#' set of (control) variables. See \code{parcor_ijk} and \code{parcor_ridg}.
+#' Another way of generalizing partial correlations
+#' by using incremental R-square values in kernel regressions are provided in functions
+#' \code{mag_ctrl} and \code{someMagPairs}.
+#' 
+#' The package provides additional tools for causal assessment,
+#' for printing the causal detections in a clear, comprehensive compact summary form,
+#' such as \code{somePairs}, \code{some0Pairs}, \code{someCPairs}
+#' for matrix algebra, such as 
+#' \code{cofactor}, for outlier detection \code{get0outlier}, for numerical integration by the
+#' trapezoidal rule, stochastic dominance \code{stochdom2} and \code{comp_portfo2}, etc. 
+#' 
+#' The package has a function \code{pcause} for bootstrap-based statistical 
+#' inference and another one 
+#' for a heuristic t-test called \code{heurist}.  Pairwise deletion of missing data
+#' is done in \code{napair}, while triplet-wise deletion is in \code{naTriplet}
+#' intended for use when control variable(s) are also present. If one has
+#' panel data, functions \code{PanelLag} and \code{Panel2Lag} are relevant.
+#' 
+#' In simultaneous equation
+#' models where endogeneity of regressors is feared, we suggest using Prof. Koopmans' method
+#' which suggests ignoring endogeneity issues for all variables ``causing'' the dependent variable
+#' assessed by our three criteria. Weighted summary of all three criteria is in \code{someCPairs}.
+#' 
+#' @note A vignette provided with this package generalCorr at CRAN
+#' describes the usage of the package with examples. Type the following command:
+#' \code{vignette("generalCorr-vignette", package="generalCorr")} to read the vignette.
+#' See also additional citations in the vignette, the references here and their citations
+#' for further details.
+#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#'  Applications in Development Economics' in Communications in 
+#'  Statistics -Simulation and Computation, 2015, 
+#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
+#'  
+#' @references Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
+#' Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
+#' with R', Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
+#' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
+#' @references Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures 
+#'  of correlation for asymmetry, nonlinearity, and beyond,' 
+#'  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
+#'  
+#' @docType package  
+#' @name generalCorrInfo
+NULL
