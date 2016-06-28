@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.0.3 [2016-06-28]
+o New functions added for bootstrap and causal path assessment without much printing.
+
 Version: 1.0.2 [2016-05-20]
 o New functions added to treat some variables as control variables,
   not part of causal paths.

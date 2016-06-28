@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations and Initial Causal Path
-Version: 1.0.2
-Date: 2016-04-10
+Version: 1.0.3
+Date: 2016-06-28
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -24,12 +24,12 @@ Description: Asymmetric generalized correlations r*(x|y) measure strength of the
     for printing the causal detections in a clear, comprehensive compact summary form,
     for matrix algebra, for outlier detection, and for numerical integration by the
     trapezoidal rule, stochastic dominance, etc. 
-    The package has a function for bootstrap-based statistical inference and one 
+    The package has functions for bootstrap-based statistical inference and one 
     for a heuristic t-test.
 License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-06-04 17:04:59 UTC; hd
+Packaged: 2016-06-28 17:39:34 UTC; hd
 Repository: CRAN
-Date/Publication: 2016-06-04 19:34:56
+Date/Publication: 2016-06-28 20:13:19
