@@ -33,7 +33,8 @@ of the `np' package.
 The user can access all of them at will using the dollar notation of R.
 }
 \description{
-Allowing matrix input of control variable, this function runs kernel regression with options for residuals and gradients.
+Allowing matrix input of control variables, this function runs kernel regression 
+with options for residuals and gradients.
 }
 \note{
 This is a work horse for causal identification.
@@ -48,17 +49,17 @@ print(k1$R2) #prints the R square of the kernel regression
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+Vinod, H. D. `Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
 \seealso{
 See \code{\link{kern}}.
+}
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \keyword{amorphous}
 \keyword{apd}
@@ -67,4 +68,3 @@ See \code{\link{kern}}.
 \keyword{partial}
 \keyword{regression}
 \keyword{residuals}
-

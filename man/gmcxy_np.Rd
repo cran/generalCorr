@@ -27,11 +27,8 @@ set.seed(34);x=sample(1:10);y=sample(2:11)
 gmcxy_np(x,y)}
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with
+Vinod, H. D. `Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -41,8 +38,10 @@ Using R,' Chapter 4 in 'Handbook of Statistics: Computational Statistics
 with R,' Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{R*}
 \keyword{asymmetric}
 \keyword{kernel}
 \keyword{regression,}
-

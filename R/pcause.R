@@ -9,13 +9,14 @@
 #' @param y {Vector of y data}
 #' @param n999 {Number of bootstrap replications (default=999)}
 #' @importFrom meboot meboot
+#' @importFrom stats complete.cases
 #' @return  P(cause) the bootstrap proportion of correct causal determinations.
 #' @note 'pcause' is computer intensive and generally slow. It may be better to use
 #'   it at a later stage in the investigation when a preliminary causal determination 
 #'   is already made.  Its use may slow the exploratory phase. In my experience, if
 #'   P(cause) is less than 0.55, there is a cause for concern.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
@@ -43,10 +44,11 @@ pcause = function(x, y, n999 = 999) {
         p.cause = NA
         return(p.cause)
     } else {
-        xboot = meboot(x = x, reps = n999)$ensemble
-        xb = x
-        yboot = meboot(x = y, reps = n999)$ensemble
-        yb = y
+    ok= complete.cases(x,y) 
+        xboot = meboot(x = x[ok], reps = n999)$ensemble
+        xb = x[ok]
+        yboot = meboot(x = y[ok], reps = n999)$ensemble
+        yb = y[ok]
         out.diff = rep(NA, n999)
         out.corxy = rep(NA, n999)
         out.coryx = rep(NA, n999)
@@ -63,4 +65,4 @@ pcause = function(x, y, n999 = 999) {
         p.cause = max(ou.nega, ou.posi)/n999
     }  #end of else
     return(p.cause)
-} 
+}

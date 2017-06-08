@@ -23,7 +23,7 @@ parcor_ijk(x, i, j)
 This function uses a generalized correlation matrix R* as input to compute
 generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 where j can be any one of the remaining
-variables. Computaion removes the effect of all other variables in the matrix.
+variables. Computation removes the effect of all other variables in the matrix.
 The user is encouraged to remove all known irrelevant rows and columns 
 from the R* matrix before submitting it to this function.
 }
@@ -40,4 +40,3 @@ gm1=gmcmtx0(x)
 parcor_ijk(gm1, 2,3)
 }#' 
 }
-

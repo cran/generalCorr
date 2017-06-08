@@ -1,7 +1,7 @@
 #' Function for computing a vector of one-lagged values of xj, a variable from panel data.
 #'
 #' Panel data have a set of time series for each entity (e.g. country)
-#' arranged such that all time series data for one entitiy is together, and the
+#' arranged such that all time series data for one entity is together, and the
 #' data for the second entity should be below the entire data for first entity
 #' and so on for entities. In such a data setup,
 #' When a variable is lagged once, special care is needed to insert an NA for
@@ -43,4 +43,4 @@ PanelLag <- function(ID, xj, lag = 1) {
             outj[i] = xj[i - lag]
     }
     return(outj)
-} 
+}

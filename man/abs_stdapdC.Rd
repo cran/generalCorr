@@ -41,14 +41,13 @@ z=sample(20:50)
 abs_stdapdC(x,y,ctrl=z)
 }
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \seealso{
 See  \code{\link{abs_stdapd}}.
+}
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \keyword{apd}
 \keyword{gradients}
 \keyword{kern}
 \keyword{regression}
-

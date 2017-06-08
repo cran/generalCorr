@@ -31,7 +31,9 @@ function (x, r, c)
     return(out)
   }
 }
+\seealso{
+\code{minor(x,r,c)}
+}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-

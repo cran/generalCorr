@@ -2,7 +2,7 @@
 % Please edit documentation in R/naTriplet.R
 \name{naTriplet}
 \alias{naTriplet}
-\title{Function to do matdched deletion of missing rows from x, y and control variable(s).}
+\title{Function to do matched deletion of missing rows from x, y and control variable(s).}
 \usage{
 naTriplet(x, y, ctrl)
 }
@@ -30,10 +30,9 @@ w=sample(2:11)
 naTriplet(x,y,w)}
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \seealso{
 See \code{\link{napair}}.
 }
-
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}

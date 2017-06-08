@@ -1,6 +1,6 @@
 #' European Crime Data
 #'
-#' This data set refers to crime in Euoropean countries during 2008.
+#' This data set refers to crime in European countries during 2008.
 #' The sources are World Bank and Eurostat.  The crime statistics refers
 #' to homicides. It avoids possible reporting bias from the presence
 #' of police officers, because homicide reporting in most countries is
@@ -16,4 +16,4 @@
 #'
 #' @name EuroCrime
 #' @docType data
-NULL 
+NULL

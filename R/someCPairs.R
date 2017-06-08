@@ -17,17 +17,17 @@
 #' three criteria are reported in one matrix called \code{outVote}: 
 #'   
 #' typ=1 reports ('Y', 'X', 'Cause',
-#' 'SD1apdC', 'SD2apdC', 'SD3apdC', 'SD4apdC') nameing variables identifying 'cause'
+#' 'SD1apdC', 'SD2apdC', 'SD3apdC', 'SD4apdC') naming variables identifying 'cause'
 #' and measures of stochastic dominance using absolute values of kernel
 #' regression gradients (or amorphous partial derivatives, apd-s) being minimized by
 #' the kernel regression algorithm while
-#' comparing the kernel regresson of X on Y with that of Y on X.
+#' comparing the kernel regression of X on Y with that of Y on X.
 #' The letter C in the titles reminds presence of control variable(s).
 #' 
 #' 
 #' typ=2 reports ('Y', 'X', 'Cause', 'SD1resC', 'SD2resC', 'SD3resC', 'SD4resC')
 #' and measures of stochastic dominance using absolute values of kernel
-#' regression residuals comparing regresson of X on Y with that of Y on X.
+#' regression residuals comparing regression of X on Y with that of Y on X.
 #' 
 #' 
 #' typ=3 reports ('Y', 'X', 'Cause', 'r*x|yC', 'r*y|xC', 'r', 'p-val')
@@ -53,7 +53,7 @@
 #' @importFrom xtable xtable
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See Also \code{\link{somePairs}}, \code{\link{some0Pairs}}
-#' @references 'Generalized Correlation and Kernel Causality with
+#' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}

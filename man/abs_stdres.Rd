@@ -19,7 +19,7 @@ comparable between regression of x on y on the one hand and regression of y
 on x on the other.
 }
 \description{
-1) standardize the data to force mean zero and variance unity, 2) kernel
+1) Standardize the data to force mean zero and variance unity, 2) kernel
 regress x on y, with the option `residuals = TRUE' and finally 3) compute
 the absolute values of residuals.
 }
@@ -39,16 +39,15 @@ abs_stdres(x,y)
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with
+Vinod, H. D. `Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{kern}
 \keyword{regression}
 \keyword{residuals}
-

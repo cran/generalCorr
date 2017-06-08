@@ -4,7 +4,7 @@
 #' uses a generalized correlation matrix R* as input to compute
 #' generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 #' where j can be any one of the remaining
-#' variables. Computaion removes the effect of all other variables in the matrix.
+#' variables. Computation removes the effect of all other variables in the matrix.
 #' It further adjusts the resulting partial correlation coefficients to be in the
 #' appropriate [-1,1] range by using an additive constant in the fashion of ridge regression.
 #' 
@@ -16,7 +16,7 @@
 #' @param incr {incremental constant for iteratively adjusting `ridgek'
 #'        where ridgek is the constant times the identity matrix used to
 #'    make sure that the gmc0 matrix is positive definite. If not, this function iteratively
-#'  increas the \code{incr} till relevant partial correlations are within the [-1,1] interval.}
+#'  increases the \code{incr} till relevant partial correlations are within the [-1,1] interval.}
 #' @return A five column `out' matrix containing partials. The first column
 #'   has the name of the \code{idep} variable. The
 #'    second column has the name of the j variable, while the third column has  r*(i,j | k).
@@ -123,4 +123,4 @@ parcorSilent <- function(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3) {
     namj = nam[j.other]
     out = cbind(nami, namj, cb2)
     return(out)
-} 
+}

@@ -1,6 +1,6 @@
 #'  Compute the numerical integration by the trapezoidal rule.
 #' 
-#' See page 220 of Vinod's ``Hands-on Interemediate Econometrics Using R,'' cited below
+#' See page 220 of Vinod's ``Hands-on Intermediate Econometrics Using R,'' cited below
 #' for the trapezoidal integration formula
 #' needed for stochastic dominance.  The book explains pre-multiplication by two
 #' large sparse matrices denoted by \eqn{I_F,  I_f}.  Here we accomplish the 
@@ -44,4 +44,4 @@ bigfp <- function(d, p) {
         ans[i] = Fp1[i] + term2[i]
     }
     return(ans)
-} 
+}

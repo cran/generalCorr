@@ -1,6 +1,6 @@
 #' Sort all columns of matrix x with respect to the j-th column.
 #'
-#' This function simply uses sort.list function in R. The reason
+#' This function can use the sort.list function in R. The reason
 #' for using it is that one wants the sort to carry along all columns.
 #'
 #' @param  x {An input matrix with several columns}

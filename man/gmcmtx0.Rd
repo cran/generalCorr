@@ -22,7 +22,7 @@ reports their square roots after assigning them the observed sign of the Pearson
 correlation coefficient. Its advantages are (i)
 It is asymmetric yielding causal direction information,
 by relaxing the assumption of linearity implicit in usual correlation coefficients.
-(ii) The r* correlation coefficients are genearally larger upon admitting 
+(ii) The r* correlation coefficients are generally larger upon admitting 
 arbitrary nonlinearities.
 }
 \examples{
@@ -34,9 +34,6 @@ set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
 colnames(x)=c('V1', 'v2', 'V3')
 gmcmtx0(x)}
 
-}
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
 Vinod, H. D.'Generalized Correlation and Kernel Causality with 
@@ -53,8 +50,10 @@ Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures
  of correlation for asymmetry, nonlinearity, and beyond,' 
  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{R*}
 \keyword{asymmetric}
 \keyword{kernel}
 \keyword{regression,}
-

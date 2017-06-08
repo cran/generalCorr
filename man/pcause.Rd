@@ -39,11 +39,8 @@ attach(EuroCrime)
 pcause(crim,off,n999=29)
 }
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+Vinod, H. D. `Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -56,7 +53,9 @@ Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
  for time series: The meboot R package.' Journal of Statistical Software,
  Vol. 29(5), pp. 1-19.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{asymmetric}
 \keyword{kernel}
 \keyword{regression,}
-

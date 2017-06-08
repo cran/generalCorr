@@ -4,7 +4,7 @@
 #' This function uses a generalized correlation matrix R* as input to compute
 #' generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 #' where j can be any one of the remaining
-#' variables. Computaion removes the effect of all other variables in the matrix.
+#' variables. Computation removes the effect of all other variables in the matrix.
 #' The user is encouraged to remove all known irrelevant rows and columns 
 #' from the R* matrix before submitting it to this function.
 #'
@@ -46,4 +46,4 @@ parcor_ijk = function(x, i, j) {
     ouij = (numij)/sqrt(deni * denj)
     ouji = (numji)/sqrt(deni * denj)
     list(ouij = ouij, ouji = ouji, myk = myk)
-} 
+}

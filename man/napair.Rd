@@ -29,4 +29,3 @@ napair(x,y)}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-

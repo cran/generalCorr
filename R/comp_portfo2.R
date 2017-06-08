@@ -1,7 +1,7 @@
 #' Compares two vectors (portfolios) using stochastic dominance of orders 1 to 4.
 #'
 #' Given two vectors of portfolio returns this function calls the internal function wtdpapb
-#' to report the simple means of four sophsiticated measures of stochastic dominance.
+#' to report the simple means of four sophisticated measures of stochastic dominance.
 #'
 #' @param xa {Data on returns for portfolio A in the form of a T by 1 vector}
 #' @param xb {Data on returns for portfolio B in the form of a T by 1 vector}
@@ -35,4 +35,4 @@ comp_portfo2 <- function(xa, xb) {
     # print(outb) column sums for 4 orders of stochastic dominance
     oumean = apply(outb, 2, mean)
     return(oumean)
-} 
+}

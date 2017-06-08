@@ -15,7 +15,7 @@ sort_matrix(x, j)
 {A sorted matrix}
 }
 \description{
-This function simply uses sort.list function in R. The reason
+This function can use the sort.list function in R. The reason
 for using it is that one wants the sort to carry along all columns.
 }
 \examples{
@@ -24,4 +24,3 @@ set.seed(30)
 x=matrix(sample(1:50),ncol=5)
 y=sort_matrix(x,3);y
 }
-

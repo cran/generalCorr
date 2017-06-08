@@ -14,7 +14,7 @@ some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2, 1.1,
 
 \item{verbo}{{Make \code{verbo= TRUE} for printing detailed steps.}}
 
-\item{rnam}{{Make \code{rnam= TRUE} if cleverly created rownames are desired.}}
+\item{rnam}{{Make \code{rnam= TRUE} if cleverly created row-names are desired.}}
 
 \item{wt}{{Allows user to choose a vector of four alternative weights for SD1 to SD4.}}
 
@@ -32,7 +32,7 @@ the positive sign of `sum' (=3.175) reported for that example included in this p
 The seven columns produced by this function summarize the results where the signs of
 stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
 compute an overall result for all orders of stochastic dominance by a weighted sum for
-the crietria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
+the criteria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
 }
 \details{
 The reason for slightly declining weights on the signs from
@@ -46,15 +46,15 @@ The summary results for all
 three criteria are reported in one matrix called \code{outVote}: 
   
 typ=1 reports ('Y', 'X', 'Cause',
-'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') nameing variables identifying 'cause'
+'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') naming variables identifying 'cause'
 and measures of stochastic dominance using absolute values of kernel
 regression gradients (or amorphous partial derivatives, apd-s) being minimized by
 the kernel regression algorithm while
-comparing the kernel regresson of X on Y with that of Y on X.
+comparing the kernel regression of X on Y with that of Y on X.
 
 typ=2 reports ('Y', 'X', 'Cause', 'SD1res', 'SD2res', 'SD3res', 'SD4res')
 and measures of stochastic dominance using absolute values of kernel
-regression residuals comparing regresson of X on Y with that of Y on X.
+regression residuals comparing regression of X on Y with that of Y on X.
 
 typ=3 reports ('Y', 'X', 'Cause', 'r*x|y', 'r*y|x', 'r', 'p-val')
 containing generalized correlation coefficients r*, 'r' refers to.
@@ -65,7 +65,7 @@ testing the significance of 'r'
 The output matrix last column for `mtcars' example
 has the sum of the scores by the three criteria
 combined. If `sum' is positive, then variable X (mpg) is more likely to have been
-engineerd to kernel cause the response variable Y, rather than vice versa.
+engineered to kernel cause the response variable Y, rather than vice versa.
 
 The European Crime data has all three criteria correctly suggesting that
 high crime rate kernel causes the deployment of a large number of police officers.
@@ -85,17 +85,17 @@ some0Pairs(cbind(crim,off))
 
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-}
 \references{
-'Generalized Correlation and Kernel Causality with
+Vinod, H. D. 'Generalized Correlation and Kernel Causality with
    Applications in Development Economics' in Communications in
    Statistics -Simulation and Computation, 2015,
    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
 \seealso{
 See Also \code{\link{somePairs}}
+}
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
 \keyword{SD1,}
 \keyword{SD2,}
@@ -105,4 +105,3 @@ See Also \code{\link{somePairs}}
 \keyword{correlations}
 \keyword{criteria,}
 \keyword{generalized}
-

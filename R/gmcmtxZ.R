@@ -12,10 +12,11 @@
 #' @param nam {Column names of the variables in the data matrix}
 #' @return  A non-symmetric R* matrix of generalized correlation coefficients
 #' @importFrom stats cor
+#' @importFrom stats complete.cases
 #' @note This allows the user to change \code{gmcmtx0} and further experiment with my code.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 ## @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
@@ -61,4 +62,4 @@ gmcmtxZ <- function(mym, nam = colnames(mym)) {
     colnames(out1) = nam
     rownames(out1) = nam
     return(out1)
-} 
+}

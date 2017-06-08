@@ -46,9 +46,6 @@ theory' weights using Prelec's (1998, Econometrica, p. 497) method.  These
  wtdpapb(x,y)}
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics 
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
@@ -61,6 +58,8 @@ Journal of Empirical Finance Vol. 11(3) 2004, pp. 353-377.
 \seealso{
 See Also \code{\link{stochdom2}}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{dominance}
 \keyword{stochastic}
-

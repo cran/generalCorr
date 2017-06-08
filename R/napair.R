@@ -9,6 +9,7 @@
 #' \item{newx}{A new vector x after removing pairwise missing data} 
 #' \item{newy}{A new vector y after removing pairwise missing data} 
 ## @note %% ~~further notes~~
+#' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @examples
 #' 
@@ -21,8 +22,6 @@
 
 napair <- function(x, y) {
     # author: H D Vinod, Fordham University, 2013
-    ava.x = which(!is.na(x))  #ava means available
-    ava.y = which(!is.na(y))  #ava means non-missing
-    ava.both = intersect(ava.x, ava.y)
-    list(newx = x[ava.both], newy = y[ava.both])  #delete NAs from x and y
+    ok=complete.cases(x,y)
+    list(newx = x[ok], newy = y[ok])  #delete NAs from x and y
 } 

@@ -27,7 +27,8 @@ self-explanatory and distinct for each criterion Cr1 to Cr3.
 This function lets the user choose one of three criteria to determine causal direction
 by setting \code{typ} as 1, 2 or 3.  This function reports results for 
 only one criterion at a time unlike the function \code{some0Pairs} which
-summarizes the resulting causal directions for all criteria with suitable weights:
+summarizes the resulting causal directions for all criteria with suitable weights.
+If some variables are `control' variables, use \code{someCPairs}, C=control.
 }
 \details{
 (typ=1) reports ('Y', 'X', 'Cause',
@@ -54,9 +55,6 @@ somePairs(mtcars)
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 H. D. Vinod 'Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
@@ -68,6 +66,9 @@ The related function \code{\link{some0Pairs}} may be more useful, since it
 reports on all three criteria and
 further summarizes their results by weighting to help choose causal paths.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{SD1,}
 \keyword{SD2,}
 \keyword{SD3,}
@@ -76,4 +77,3 @@ further summarizes their results by weighting to help choose causal paths.
 \keyword{correlations}
 \keyword{criteria,}
 \keyword{generalized}
-

@@ -13,7 +13,7 @@
 #'  Criterion 2 (Cr2) compares kernel regression absolute values of residuals.
 #'  Criterion 3 (Cr3) compares kernel regression based r*(x|y) with r*(y|x)}.
 #' @param rnam {Logical variable, default \code{rnam=FALSE} means the user does
-#' not want the row row names to be
+#' not want the row names to be
 #' (somewhat too cleverly) assigned by the function.}
 #' @return A 7-column matrix called 'outcause' with names of variables
 #'  X and Y in the first two columns and the name of the 'causal' variable in 3rd col.
@@ -48,7 +48,7 @@
 
 
 allPairs <- function(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE) {
-    # author: H.D.Vinod, Prof of Economics, Forhdam Univ. NY Sept2013 input matrix
+    # author: H.D.Vinod, Prof of Economics, Fordham Univ. NY Sept2013 input matrix
     # of data with p columns with colnames input dig=digits for rounding typ==3
     # added for r*
     
@@ -141,4 +141,4 @@ allPairs <- function(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE) {
     if (verbo) 
         print(xtable(outcause))
     return(outcause)
-} 
+}

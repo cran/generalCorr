@@ -3,7 +3,7 @@
 \name{get0outliers}
 \alias{get0outliers}
 \title{Function to compute outliers and their count using Tukey method
-using 1.5 times interquartile range (IQR) to define boundarirs.}
+using 1.5 times interquartile range (IQR) to define boundaries.}
 \usage{
 get0outliers(x, verbo = TRUE, mult = 1.5)
 }
@@ -25,7 +25,7 @@ in defining outlier boundaries.}}
 }
 \description{
 Function to compute outliers and their count using Tukey method
-using 1.5 times interquartile range (IQR) to define boundarirs.
+using 1.5 times interquartile range (IQR) to define boundaries.
 }
 \note{
 The function removes the missing data before checking for outliers.
@@ -40,4 +40,3 @@ get0outliers(x)#correctly identifies outlier=150
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-

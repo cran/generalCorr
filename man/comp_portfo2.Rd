@@ -17,7 +17,7 @@ dominance measurements called SD1 to SD4.
 }
 \description{
 Given two vectors of portfolio returns this function calls the internal function wtdpapb
-to report the simple means of four sophsiticated measures of stochastic dominance.
+to report the simple means of four sophisticated measures of stochastic dominance.
 }
 \note{
 It is possible to modify this function to report the median or standard
@@ -50,4 +50,3 @@ Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 \keyword{dominance}
 \keyword{stochastic}
 \keyword{wtdpapb}
-

@@ -1,4 +1,5 @@
-#' Compute the bootstrap `sum' of all scores using Cr1 to Cr3.
+#' Compute matrix of n999 rows and p-1 columns of bootstrap `sum' 
+#' (strength from Cr1 to Cr3).
 #' 
 #' Maximum entropy bootstrap (meboot) package is used for statistical inference
 #' using the sum of three signs sg1 to sg3 from the three criteria Cr1 to Cr3 to
@@ -9,20 +10,31 @@
 #' 
 #' @param mtx {data matrix with two or more columns}
 #' @param ctrl {data matrix having control variable(s) if any}
-#' @param n999 {Number of bootstrap replications (default=999)}
+#' @param n999 {Number of bootstrap replications (default=9)}
 #' @importFrom meboot meboot
-#' @return {A vector of n999 `sum' values summarizing the weighted sums associaed with all three
-#'    criteria}  
-#' @note This computation is computer intensive and generally very slow. It may be better to use
-#'   it at a later stage in the investigation when a preliminary causal determination 
-#'   is already made. If you call it with command \code{f1=bootPairs(mtx, n999=n999)}, then
-#'   the following code computes the proportion of negative signs: 
-#'   \code{length(f1[f1<0])/length(f1)}.
-#' In general, a positive sign for weighted sum reported in the column `sum' means
-#' that the first variable listed as the input matrix to this function is the `kernel cause.' 
+#' @importFrom stats complete.cases
+#' @return  out {When \code{mtx} has p columns, the first output called \code{out}
+#' of \code{bootPairs(mtx)} is a matrix of n999 rows and p-1 columns
+#' each containing resampled `sum' values summarizing the weighted sums 
+#' associated with all three  criteria from the function \code{silentPairs(mtx)}
+#' applied to each bootstrap sample separately.} 
+#' 
+#' {probSign} {The second output 
+#' called \code{probSign} is  a p-1 vector
+#' of probabilities of correct signs assuming that the mean of n999 values
+#' has the correct sign and assuming that sum index values inside the
+#' range [-0.05, 0.05] are neither positive nor negative but ambiguous}  
+#' @note This computation is computer intensive and generally very slow. 
+#'   It may be better to use
+#'   it at a later stage in the investigation when a preliminary 
+#'   causal determination 
+#'   is already made.
+#' A positive sign for j-th weighted sum reported in the column `sum' means
+#' that the first variable listed in the argument matrix \code{mtx} is the 
+#' `kernel cause' of the variable in the (j+1)-th column of \code{mtx}.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See Also \code{\link{silentPairs}}.
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#' @references Vinod, H. D.' Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
@@ -32,29 +44,48 @@
 #' @references Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
 #'  for time series: The meboot R package.' Journal of Statistical Software,
 #'  Vol. 29(5), pp. 1-19. 
-#' @keywords kernel regression, asymmetric
+#' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
+#' in {Generalcorr} Package for Air Pollution and Monetary Policy 
+#' (June 6, 2017). Available at SSRN: \url{https://ssrn.com/abstract=2982128}
+#' @keywords kernel regression, asymmetric correlations
 #' @examples
-#'
 #' \dontrun{
 #' set.seed(34);x=sample(1:10);y=sample(2:11)
-#' bootPairs(cbind(x,y),n999=29)
+#' bb=bootPairs(cbind(x,y),n999=29)
+#' apply(bb$out,2,summary) #gives summary stats for n999 bootstrap sum computations
+#' bb$probSign #reports success proportion out of n999
+#' 
+#' 
+#' bb=bootPairs(airquality,n999=999);options(np.messages=FALSE)
+#' apply(bb$out,2,summary) #gives summary stats for n999 bootstrap sum computations
+#' bb$probSign #reports success proportion out of n999 replicates
 #' 
 #' data('EuroCrime')
 #' attach(EuroCrime)
-#' bootPairs(cbind(crim,off),n999=29) #first column crim is the cause for majority positive signso
+#' bootPairs(cbind(crim,off),n999=29) #col.1= crim causes off hence positive signs
 #' }
 #' @export
 
 bootPairs = function(mtx, ctrl = 0, n999 = 9) {
-    p = NCOL(mtx)
-    n = NROW(mtx)
-    out = matrix(NA, nrow = n999, ncol = p - 1)
-    Memtx <- array(NA, dim = c(n, n999, p))  #3 dimensional matrix
-    for (i in 1:p) {
-        Memtx[, , i] = meboot(mtx[, i], reps = n999)$ensem
-    }
-    for (k in 1:n999) {
-        out[k, ] = silentPairs(mtx = Memtx[, k, 1:p], ctrl = ctrl)
-    }
-    return(out)
+  ok= complete.cases(mtx) 
+  p = NCOL(mtx[ok,])
+  n = NROW(mtx[ok,])
+  out = matrix(NA, nrow = n999, ncol = p - 1)
+  Memtx <- array(NA, dim = c(n, n999, p))  #3 dimensional matrix
+  for (i in 1:p) {
+    Memtx[, , i] = meboot(x=mtx[ok, i], reps = n999)$ensem
+  }
+  for (k in 1:n999) {
+    out[k, ] = silentPairs(mtx = Memtx[, k, 1:p], ctrl = ctrl)
+    if (k%%50 ==1) print(c("k=",k))
+  }
+  colnames(out) =colnames(mtx)[2:p]
+  signNull=sign(apply(out,2,mean))
+  probSign=rep(NA,p-1)
+  for (j in 1:(p-1)) {
+    zj=out[,j]
+    if (signNull[j]==1) probSign[j]= length(zj[zj > 0.05]) /n999
+    if (signNull[j]==-1) probSign[j]= length(zj[zj < -0.05]) /n999
+  }  
+  list(out=out, probSign=probSign)
 }

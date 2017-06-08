@@ -7,7 +7,7 @@
 #' correlation coefficient. Its advantages are (i)
 #' It is asymmetric yielding causal direction information,
 #' by relaxing the assumption of linearity implicit in usual correlation coefficients.
-#' (ii) The r* correlation coefficients are genearally larger upon admitting 
+#' (ii) The r* correlation coefficients are generally larger upon admitting 
 #' arbitrary nonlinearities.
 #' 
 #' @param mym {A matrix of data on variables in columns}
@@ -74,4 +74,4 @@ gmcmtx0 <- function(mym, nam = colnames(mym)) {
     colnames(out1) = nam
     rownames(out1) = nam
     return(out1)
-} 
+}

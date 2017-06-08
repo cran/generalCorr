@@ -24,13 +24,12 @@ of the version in the book without mapping to non-expected utility theory weight
  \dontrun{prelec2(10)}
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 \url{http://www.worldscibooks.com/economics/6895.html}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{Prelec}
-

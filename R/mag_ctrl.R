@@ -1,7 +1,7 @@
 #' After removing control variables, magnitude of effect of x on y, and of y on x.
 #'
 #' Uses Vinod (2015) and runs kernel regressions: \code{x~ y + ctrl}
-#' and  \code{x~ ctrl} to evaluate the`incremental change' in R-squares.
+#' and  \code{x~ ctrl} to evaluate the `incremental change' in R-squares.
 #' Let (rxy;ctrl) denote the square root of that `incremental change' after its sign is made the
 #' same as that of the Pearson correlation coefficient from
 #' \code{cor(x,y)}). One can interpret (rxy;ctrl) as
@@ -34,7 +34,7 @@
 #' 
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See  \code{\link{mag}}
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}

@@ -32,4 +32,3 @@ minor(x,1,2)}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-

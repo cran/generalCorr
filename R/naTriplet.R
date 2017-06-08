@@ -1,4 +1,4 @@
-#' Function to do matdched deletion of missing rows from x, y and control variable(s). 
+#' Function to do matched deletion of missing rows from x, y and control variable(s). 
 #' 
 #' The aim in three-way deletions is to retain only the largest 
 #' number of available data triplets with all non-missing data.
@@ -11,6 +11,7 @@
 #' \item{newy}{A new vector y after removing triplet-wise missing data} 
 #' \item{newctrl}{A new vector ctrl after removing triplet-wise missing data} 
 ## @note %% ~~further notes~~
+#' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See \code{\link{napair}}.
 #' @examples
@@ -24,25 +25,24 @@
 
 
 naTriplet = function(x, y, ctrl) {
-  # ctrl is a mtrix of control variables
-  nk = NCOL(ctrl)  #number of control variables in ctrl matrix
-  ava.x = which(!is.na(x))  #ava means available
-  ava.y = which(!is.na(y))  #ava means non-missing
-  ava3 = intersect(ava.x, ava.y)
-  if (nk == 1) 
-    ava.k = which(!is.na(ctrl))
-  if (nk > 1) {
-    for (k in 1:nk) {
-      ava.k = which(!is.na(ctrl[, k]))
-    }  #non-missing from kth control variable
-    ava3 = intersect(ava3, ava.k)
-  }
-  if (nk == 1) 
-    newctrl = ctrl[ava3]
-  if (nk > 1) 
-    newctrl = ctrl[ava3, ]
-  newx = x[ava3]
-  newy = y[ava3]
+  # ctrl is a matrix of control variables
+  p=NCOL(y)
+  pc=NCOL(ctrl)
+  len=length(ctrl)
+  if(len==1) {  newctrl=0
+    ok=complete.cases(x,y)
+    newx = x[ok]
+    if(p==1)newy = y[ok] 
+    if(p>1)newy=y[ok,]
+    }  #delete NAs from x and y   
+    if(len>1) {
+    ok=complete.cases(x,y,ctrl)
+    newx = x[ok]
+    if(p==1)newy = y[ok] 
+    if(p>1) newy=y[ok,]
+    if (pc==1) newctrl=ctrl[ok]
+    if(pc>1) newctrl=ctrl[ok,] }  
+  #delete NAs from x, y, ctrl   
   list(newx = newx, newy = newy, newctrl = newctrl)  #delete NAs
 }
 

@@ -18,7 +18,7 @@ parcorSilent(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3)
 \item{incr}{{incremental constant for iteratively adjusting `ridgek'
       where ridgek is the constant times the identity matrix used to
   make sure that the gmc0 matrix is positive definite. If not, this function iteratively
-increas the \code{incr} till relevant partial correlations are within the [-1,1] interval.}}
+increases the \code{incr} till relevant partial correlations are within the [-1,1] interval.}}
 }
 \value{
 A five column `out' matrix containing partials. The first column
@@ -32,7 +32,7 @@ This function calls \code{parcor_ijk} function which
 uses a generalized correlation matrix R* as input to compute
 generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 where j can be any one of the remaining
-variables. Computaion removes the effect of all other variables in the matrix.
+variables. Computation removes the effect of all other variables in the matrix.
 It further adjusts the resulting partial correlation coefficients to be in the
 appropriate [-1,1] range by using an additive constant in the fashion of ridge regression.
 }
@@ -63,9 +63,6 @@ parcorSilent(gm1, idep=1)
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-}
 \references{
 Vinod, H. D. 'Generalized Correlations and Instantaneous
  Causality for Data Pairs Benchmark,' (March 8, 2015)
@@ -83,9 +80,11 @@ Vol. 60, February 1978, pp. 121-131.
 \seealso{
 See Also \code{\link{parcor_ijk}}.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
+}
 \keyword{biasing}
 \keyword{correlations,}
 \keyword{factor,}
 \keyword{partial}
 \keyword{ridge}
-

@@ -1,5 +1,5 @@
 #' Function to compute outliers and their count using Tukey method
-#' using 1.5 times interquartile range (IQR) to define boundarirs.
+#' using 1.5 times interquartile range (IQR) to define boundaries.
 #' 
 #' 
 #' @param x {vector of data.}
@@ -59,4 +59,4 @@ get0outliers <- function(x, verbo = TRUE, mult = 1.5) {
     }
     
     list(below = LO, nLO = nLO, above = UP, nUP = nUP, low.lim = dn, up.lim = up)
-} 
+}

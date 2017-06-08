@@ -3,7 +3,8 @@
 #' This function lets the user choose one of three criteria to determine causal direction
 #' by setting \code{typ} as 1, 2 or 3.  This function reports results for 
 #' only one criterion at a time unlike the function \code{some0Pairs} which
-#' summarizes the resulting causal directions for all criteria with suitable weights: 
+#' summarizes the resulting causal directions for all criteria with suitable weights.
+#' If some variables are `control' variables, use \code{someCPairs}, C=control. 
 #' 
 #' (typ=1) reports ('Y', 'X', 'Cause',
 #' 'SD1apd', 'SD2apd', 'SD3apd', 'SD4apd') nameing variables identifying 'cause'

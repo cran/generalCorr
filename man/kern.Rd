@@ -10,7 +10,7 @@ kern(dep.y, reg.x, tol = 0.1, ftol = 0.1, gradients = FALSE,
 \arguments{
 \item{dep.y}{{Data on the dependent (response) variable}}
 
-\item{reg.x}{{Data on the regressor (stimulus) variable}}
+\item{reg.x}{{Data on the regressor (stimulus) variables}}
 
 \item{tol}{{Tolerance on the position of located minima of the cross-validation 
 function (default =0.1)}}
@@ -18,9 +18,9 @@ function (default =0.1)}}
 \item{ftol}{{Fractional tolerance on the value of cross validation function
 evaluated at local minima (default =0.1)}}
 
-\item{gradients}{{Set to TRUE if gradients computations are desired}}
+\item{gradients}{{Make this TRUE if gradients computations are desired}}
 
-\item{residuals}{{Set to TRUE if residuals are desired}}
+\item{residuals}{{Make this TRUE if residuals are desired}}
 }
 \value{
 Creates a model object `mod' containing the entire kernel regression output.
@@ -28,7 +28,8 @@ Type \code{names(mod)} to reveal the variety of outputs produced by `npreg' of t
 The user can access all of them at will by using the dollar notation of R.
 }
 \description{
-Function to run kernel regression with options for residuals and gradients.
+Function to run kernel regression with options for residuals and gradients
+asssuming no missing data.
 }
 \note{
 This is a work horse for causal identification.
@@ -37,14 +38,11 @@ This is a work horse for causal identification.
 
 \dontrun{
 set.seed(34);x=matrix(sample(1:600)[1:50],ncol=2)
-require(np)
+require(np); options(np.messages=FALSE)
 k1=kern(x[,1],x[,2])
 print(k1$R2) #prints the R square of the kernel regression
 }
 
-}
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
 \references{
 Vinod, H. D.'Generalized Correlation and Kernel Causality with 
@@ -52,11 +50,14 @@ Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{amorphous}
 \keyword{apd}
 \keyword{derivative,}
+\keyword{gradients}
 \keyword{kernel}
 \keyword{partial}
 \keyword{regression}
 \keyword{residuals}
-

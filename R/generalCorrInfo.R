@@ -26,7 +26,10 @@
 #' such as \code{somePairs}, \code{some0Pairs}, \code{someCPairs}
 #' for matrix algebra, such as 
 #' \code{cofactor}, for outlier detection \code{get0outlier}, for numerical integration by the
-#' trapezoidal rule, stochastic dominance \code{stochdom2} and \code{comp_portfo2}, etc. 
+#' trapezoidal rule, stochastic dominance \code{stochdom2} and \code{comp_portfo2}, etc.
+#' The function \code{causeSummary} gives an overall summary of causal path results.
+#' The compact function \code{silentPairs} gives one-line summary of causal path strengths,
+#' where negative strength means that variable `causes' the variable in the first column.
 #' 
 #' The package has a function \code{pcause} for bootstrap-based statistical 
 #' inference and another one 
@@ -40,11 +43,12 @@
 #' which suggests ignoring endogeneity issues for all variables ``causing'' the dependent variable
 #' assessed by our three criteria. Weighted summary of all three criteria is in \code{someCPairs}.
 #' 
-#' @note A vignette provided with this package generalCorr at CRAN
+#' @note A vignette1 provided with this package generalCorr at CRAN
 #' describes the usage of the package with examples. Type the following command:
 #' \code{vignette("generalCorr-vignette", package="generalCorr")} to read the vignette.
 #' See also additional citations in the vignette, the references here and their citations
 #' for further details.
+#' 
 #' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
@@ -54,9 +58,20 @@
 #' Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
 #' with R', Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 #' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
+#' 
 #' @references Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures 
 #'  of correlation for asymmetry, nonlinearity, and beyond,' 
 #'  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
+#' 
+#' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
+#'    Applications in Development Economics' in Communications in
+#'    Statistics -Simulation and Computation, 2015,
+#'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#'    
+#' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
+#' in {Generalcorr} Package for Air Pollution and Monetary Policy 
+#' (June 6, 2017). Available at SSRN: 
+#' \url{https://ssrn.com/abstract=2982128}#'    
 #'  
 #' @docType package  
 #' @name generalCorrInfo

@@ -16,7 +16,7 @@ Vector containing  2 lagged values of xj.
 }
 \description{
 The panel data have a set of time series for each entity (e.g. country)
-arranged such that all time series data for one entitiy is together. The
+arranged such that all time series data for one entity is together. The
 data for the second entity should be below the entire data for first entity.
 When a variable is lagged twice, special care is needed to insert NA's for
 the first two time points (e.g. weeks) for each entity (country).
@@ -24,10 +24,9 @@ the first two time points (e.g. weeks) for each entity (country).
 \note{
 This function is provided for convenient user modifications.
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \seealso{
 A more general function \code{\link{PanelLag}} has examples.
 }
-
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}

@@ -1,7 +1,7 @@
 #' Function to compute a vector of 2 lagged values of a variable from panel data.
 #'
 #' The panel data have a set of time series for each entity (e.g. country)
-#' arranged such that all time series data for one entitiy is together. The
+#' arranged such that all time series data for one entity is together. The
 #' data for the second entity should be below the entire data for first entity.
 #' When a variable is lagged twice, special care is needed to insert NA's for
 #' the first two time points (e.g. weeks) for each entity (country).
@@ -28,4 +28,4 @@ Panel2Lag <- function(ID, xj) {
             outj[i] = xj[i - 2]
     }
     return(outj)
-} 
+}

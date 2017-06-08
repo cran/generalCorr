@@ -20,7 +20,7 @@ vector of two magnitudes `dxdy' (effect when x is regressed on y) and
 }
 \description{
 Uses Vinod (2015) and runs kernel regressions: \code{x~ y + ctrl}
-and  \code{x~ ctrl} to evaluate the`incremental change' in R-squares.
+and  \code{x~ ctrl} to evaluate the `incremental change' in R-squares.
 Let (rxy;ctrl) denote the square root of that `incremental change' after its sign is made the
 same as that of the Pearson correlation coefficient from
 \code{cor(x,y)}). One can interpret (rxy;ctrl) as
@@ -52,11 +52,8 @@ options(np.messages=FALSE)
 mag_ctrl(x,y,z)#dx/dy=0.47 is approximately 0.5, but dy/dx=1.41 is not approx=2,
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with
+Vinod, H. D. `Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -69,6 +66,8 @@ North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 \seealso{
 See  \code{\link{mag}}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{derivatives}
 \keyword{partial}
-

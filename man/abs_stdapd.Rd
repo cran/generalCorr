@@ -44,4 +44,3 @@ Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 \keyword{gradients}
 \keyword{kern}
 \keyword{regression}
-

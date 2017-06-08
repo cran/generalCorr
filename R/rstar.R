@@ -15,7 +15,7 @@
 #' @note This function needs the kern function which in turn needs the np package.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See Also as \code{\link{gmcmtx0}}
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -42,4 +42,4 @@ rstar <- function(x, y) {
     corxy = sqrt(mod.1$R2) * sig
     coryx = sqrt(mod.2$R2) * sig
     list(corxy = corxy, coryx = coryx, pearson.r = pearson.r, pv = pv)
-} 
+}

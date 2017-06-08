@@ -7,7 +7,7 @@
 parcor_ridg(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3)
 }
 \arguments{
-\item{gmc0}{This must be a p by p matrix R* of generalized corr coefficients.}
+\item{gmc0}{This must be a p by p matrix R* of generalized correlation coefficients.}
 
 \item{dig}{The number of digits for reporting (=4, default)}
 
@@ -32,9 +32,10 @@ This function calls \code{parcor_ijk} function which
 uses a generalized correlation matrix R* as input to compute
 generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 where j can be any one of the remaining
-variables. Computaion removes the effect of all other variables in the matrix.
+variables. Computation removes the effect of all other variables in the matrix.
 It further adjusts the resulting partial correlation coefficients to be in the
-appropriate [-1,1] range by using an additive constant in the fashion of ridge regression.
+appropriate [-1,1] range by using an additive constant in the fashion 
+of ridge regression.
 }
 \note{
 The ridgek constant created by the function during the first round
@@ -62,9 +63,6 @@ parcor_ridg(gm1, idep=1)
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-}
 \references{
 Vinod, H. D. 'Generalized Correlations and Instantaneous
  Causality for Data Pairs Benchmark,' (March 8, 2015)
@@ -82,6 +80,8 @@ Vol. 60, February 1978, pp. 121-131.
 \seealso{
 See Also \code{\link{parcor_ijk}}.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
+}
 \keyword{correlations}
 \keyword{partial}
-

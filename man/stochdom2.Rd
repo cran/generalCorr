@@ -39,9 +39,6 @@ The input to this function is the output of the function \code{wtdpapb}.
  stochdom2(w1$dj, w1$wpa, w1$wpb) }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics 
  Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
@@ -54,8 +51,10 @@ Journal of Empirical Finance Vol. 11(3) 2004, pp. 353-377.
 \seealso{
 See Also \code{\link{wtdpapb}}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{kurtosis}
 \keyword{mean}
 \keyword{skewness}
 \keyword{variance}
-

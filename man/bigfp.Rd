@@ -16,7 +16,7 @@ Returns a result after pre-multiplication by \eqn{I_F,  I_f}
 matrices, without actually creating the large sparse matrices. This is an internal function.
 }
 \description{
-See page 220 of Vinod's ``Hands-on Interemediate Econometrics Using R,'' cited below
+See page 220 of Vinod's ``Hands-on Intermediate Econometrics Using R,'' cited below
 for the trapezoidal integration formula
 needed for stochastic dominance.  The book explains pre-multiplication by two
 large sparse matrices denoted by \eqn{I_F,  I_f}.  Here we accomplish the 
@@ -35,16 +35,15 @@ sd3b=bigfp(d=dj, p=sd2b)
 sd4b=bigfp(d=dj, p=sd3b)}.
 This produces numerical evaluation vectors for the four orders, SD1  to SD4.
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 \url{http://www.worldscibooks.com/economics/6895.html}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{SD1}
 \keyword{SD2}
 \keyword{SD3}
 \keyword{SD4}
-

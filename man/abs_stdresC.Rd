@@ -43,9 +43,6 @@ abs_stdresC(x,y,ctrl=z)
 }
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
@@ -55,7 +52,9 @@ Vinod, H. D.'Generalized Correlation and Kernel Causality with
 \seealso{
 See  \code{\link{abs_stdres}}.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{kern}
 \keyword{regression}
 \keyword{residuals}
-

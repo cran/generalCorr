@@ -40,4 +40,3 @@ Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 \keyword{kern}
 \keyword{regression}
 \keyword{residuals}
-

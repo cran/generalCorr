@@ -1,6 +1,7 @@
 #' Kernel regression with control variables and optional residuals and gradients.
 #' 
-#' Allowing matrix input of control variable, this function runs kernel regression with options for residuals and gradients.
+#' Allowing matrix input of control variables, this function runs kernel regression 
+#' with options for residuals and gradients.
 #' 
 #' @param dep.y {Data on the dependent (response) variable}
 #' @param reg.x {Data on the regressor (stimulus) variable}
@@ -21,7 +22,7 @@
 #' @note This is a work horse for causal identification.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See \code{\link{kern}}.
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
@@ -48,8 +49,10 @@ kern_ctrl=
       gr = TRUE
     if (residuals) 
       resz = TRUE
-    bw = npregbw(ydat = as.vector(dep.y), xdat = cbind(reg.x,ctrl), tol = tol, 
-                 ftol = ftol)
+    ox=naTriplet(x=dep.y,y=reg.x,ctrl=ctrl)
+        bw = npregbw(ydat = as.vector(ox$newx), 
+                xdat = ox$newy,ctrl=ox$newctrl, 
+                 tol = tol, ftol = ftol)
     mod = npreg(bws = bw, gradients = gr, residuals = resz)
     return(mod)
   }

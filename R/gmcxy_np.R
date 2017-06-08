@@ -10,7 +10,7 @@
 #' \item{coryx}{r*(y|x) from regressing y on x, where x is the cause.}
 #' @note This is provided if the user want to avoid calling \code{kern}.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -36,4 +36,4 @@ gmcxy_np <- function(x, y) {
     model2 = npreg(bws = bw2, gradients = FALSE, residuals = TRUE)
     coryx = model2$R2
     list(corxy = corxy, coryx = coryx)
-} 
+}

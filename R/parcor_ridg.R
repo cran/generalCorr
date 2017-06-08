@@ -4,12 +4,13 @@
 #' uses a generalized correlation matrix R* as input to compute
 #' generalized partial correlations between \eqn{X_i} and \eqn{X_j}
 #' where j can be any one of the remaining
-#' variables. Computaion removes the effect of all other variables in the matrix.
+#' variables. Computation removes the effect of all other variables in the matrix.
 #' It further adjusts the resulting partial correlation coefficients to be in the
-#' appropriate [-1,1] range by using an additive constant in the fashion of ridge regression.
+#' appropriate [-1,1] range by using an additive constant in the fashion 
+#' of ridge regression.
 #' 
 #'
-#' @param gmc0 This must be a p by p matrix R* of generalized corr coefficients.
+#' @param gmc0 This must be a p by p matrix R* of generalized correlation coefficients.
 #' @param dig The number of digits for reporting (=4, default)
 #' @param idep The column number of the first variable (=1, default)
 #' @param verbo Make this TRUE for detailed printing of computational steps
@@ -156,4 +157,4 @@ parcor_ridg <- function(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3) {
     if (verbo) 
         print(out)
     return(out)
-} 
+}

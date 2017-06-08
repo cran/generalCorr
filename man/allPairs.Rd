@@ -19,7 +19,7 @@ Criterion 2 (Cr2) compares kernel regression absolute values of residuals.
 Criterion 3 (Cr3) compares kernel regression based r*(x|y) with r*(y|x)}.}
 
 \item{rnam}{{Logical variable, default \code{rnam=FALSE} means the user does
-not want the row row names to be
+not want the row names to be
 (somewhat too cleverly) assigned by the function.}}
 }
 \value{
@@ -54,9 +54,6 @@ a1=allPairs(mtcars[,1:3], typ=j)
 print(a1)}
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
 Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
@@ -66,6 +63,9 @@ Vinod, H. D.'Generalized Correlation and Kernel Causality with
 \seealso{
 See Also  \code{somePairs}, \code{some0Pairs}
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{absolute}
 \keyword{amorphous}
 \keyword{derivative,}
@@ -73,4 +73,3 @@ See Also  \code{somePairs}, \code{some0Pairs}
 \keyword{partial}
 \keyword{residuals,}
 \keyword{stochastic}
-

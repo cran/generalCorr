@@ -37,11 +37,8 @@ set.seed(123);x=sample(1:10);y=1+2*x+rnorm(10)
 mag(x,y)#dxdy approx=.5 and dydx approx=2 will be nice.
 
 }
-\author{
-Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-}
 \references{
-Vinod, H. D.'Generalized Correlation and Kernel Causality with
+Vinod, H. D. `Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -54,6 +51,8 @@ North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 \seealso{
 See  \code{\link{mag_ctrl}}.
 }
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+}
 \keyword{derivatives}
 \keyword{partial}
-
