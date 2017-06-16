@@ -1,12 +1,13 @@
-#' No-print kernel causality unanimity score vector, allows control varibles
+#' No-print kernel-causality unanimity score matrix with control variables, if any
 #' 
 #' Allowing input matrix of control variables and missing data, this function produces a
-#'  3 column matrix summarizing the results where the estimated signs of
-#' stochastic dominance order values (+1, 0, -1) are weighted by 
+#' p by p matrix summarizing the results, where the estimated signs of
+#' stochastic dominance order values (+1, 0, --1) are weighted by 
 #' \code{wt=c(1.2,1.1, 1.05, 1)} to
 #' compute an overall result for all orders of stochastic dominance by a weighted sum for
-#' the criteria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, -1),
-#' always in the range [--3.175, 3.175].
+#' the criteria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, --1).
+#' Final weighted index is always in the range [--3.175, 3.175]. It is converted
+#' to the more intuitive range [--100, 100].
 #' 
 #' The reason for slightly declining weights on the signs from
 #' SD1 to SD4 is simply that the local mean comparisons 
@@ -43,7 +44,7 @@
 #' This function is a summary of \code{someCPairs} 
 #' allowing for control variables. 
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-#' @seealso See  \code{\link{bootPairs}}, \code{\link{silentMtx}}
+#' @seealso See  \code{\link{silentPairs}}.
 #' @seealso See  \code{\link{someCPairs}}, \code{\link{some0Pairs}}
 #' @references H. D. Vinod 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
@@ -61,6 +62,9 @@
 #' returns only one number: 3.175, implying the highest unanimity strength index,
 #' with the positive sign suggesting `crim' in the first column kernel causes
 #' `off' in the second column of the argument \code{mtx} to this function.
+#' @note negative index means the column name kernel-causes row name
+#' positive index means the row name kernel-causes column name
+#' abs(index) measures unanimity by three criteria, Cr1 to Cr3.
 #' 
 #' @examples
 #'
@@ -68,7 +72,7 @@
 #' \dontrun{
 #' options(np.messages=FALSE)
 #' colnames(mtcars[2:ncol(mtcars)])
-#' silentPairs(mtcars[,1:3],ctrl=mtcars[,4:5]) # mpg paired with others
+#' silentMtx(mtcars[,1:3],ctrl=mtcars[,4:5]) # mpg paired with others
 #' }
 #' 
 ### \dontrun{
@@ -79,125 +83,41 @@
 #'y=1+2*x+3*z+rnorm(10)
 #'w=runif(10)
 #'x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
-#'silentPairs(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
+#'silentMtx(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 ### }
 #' 
 #' 
 #' @export
 
-silentPairs = function(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 
-                                                      1), sumwt = 4) {
+silentMtx = function(mtx, ctrl = 0, dig = 6, 
+    wt = c(1.2, 1.1, 1.05, 1), sumwt = 4) {
   len = length(ctrl)
   n = NROW(mtx)
   p = NCOL(mtx)
   if (p < 2) 
     stop("too few columns in mtx input to silentPairs")
-  npair = p - 1
-  cr1 = rep(NA, npair)
-  cr2 = rep(NA, npair)
-  cr3 = rep(NA, npair)
-  crall = rep(NA, npair)
-  for (typ in 1:3) {
-    # outcause = matrix(NA, nrow = npair, ncol = 7) ii = 0
-    for (i in 2:p) {
-      x0 = mtx[, i]
-      y0 = mtx[, 1]
-      if (len > 1) {
-        z0 = ctrl
-        na2 = naTriplet(x0, y0, z0)
-        x = na2$newx
-        y = na2$newy
-        z = na2$newctrl
-      }
-      if (len == 1) {
-        na2 = napair(x0, y0)
-        x = na2$newx
-        y = na2$newy
-      }
-      
-      
-      # if (verbo) { if (i > 2) print(c('i=', i, 'non-missing y=',
-      # length(y)), quote = FALSE) }
-      if (length(x) < 5) {
-        print("available observations<5")
-        break
-      }
-      # ii = ii + 1
-      im1 = i - 1
-      if (len > 1) {
-        if (typ == 1) 
-          arxy = abs_stdapdC(x, y, z)
-        if (typ == 1) 
-          aryx = abs_stdapdC(y, x, z)
-        if (typ == 2) 
-          arxy = abs_stdresC(x, y, z)
-        if (typ == 2) 
-          aryx = abs_stdresC(y, x, z)
-        if (typ < 3) {
-          crit4 = comp_portfo2(arxy, aryx)
-          round.crit4 = round(crit4, dig)
-          wtdsign = wt * sign(round.crit4)
-          av.crit4 = round((sum(wtdsign, na.rm = TRUE)/sumwt), 
-                           dig)
-          if (typ == 1) {
-            cr1[im1] = av.crit4
-          }
-          if (typ == 2) {
-            cr2[im1] = av.crit4
-          }
-        }
-        if (typ == 3) {
-          gmc0 = gmcmtx0(cbind(x, y, z))
-          out2 = parcorSilent(gmc0, idep = 2)
-          rxy = as.numeric(out2[1, 3])   #third column has r*xy
-          ryx = as.numeric(out2[1, 4]) #col. 4 has r*yx
-          del = rxy^2 - ryx^2
-          #            print(c('delta',del),q=FALSE)
-          cr3[im1] = as.numeric(sign(del))
-        }
-      }
-      
-      if (len == 1) {
-        if (typ == 1) 
-          arxy = abs_stdapd(x, y)
-        if (typ == 1) 
-          aryx = abs_stdapd(y, x)
-        if (typ == 2) 
-          arxy = abs_stdres(x, y)
-        if (typ == 2) 
-          aryx = abs_stdres(y, x)
-        if (typ < 3) {
-          crit4 = comp_portfo2(arxy, aryx)
-          round.crit4 = round(crit4, dig)
-          wtdsign = wt * sign(round.crit4)
-          av.crit4 = round((sum(wtdsign, na.rm = TRUE)/sumwt), 
-                           dig)
-          if (typ == 1) {
-            cr1[im1] = av.crit4
-          }
-          if (typ == 2) {
-            cr2[im1] = av.crit4
-          }
-        }
-        if (typ == 3) {
-          gmc0 = gmcmtx0(cbind(x, y))
-          rxy = gmc0[1, 2]
-          ryx = gmc0[2, 1]
-          del = rxy^2 - ryx^2
-          #            print(c('delta',del),q=FALSE)
-          cr3[im1] = as.numeric(sign(del))
-        }
-      }
-      
-    }  #end i loop
-  }  #end typ loop
+  out=matrix(100,nrow=p,ncol=p)
   
-  
-  for (j in 1:npair) {
-    cr13 = c(cr1[j], cr2[j], cr3[j])
-    crall[j] = round(sum(cr13, na.rm = TRUE), dig)
-  }
-  return(crall)
+  for (i in 1:(p-1)){
+  ni=seq(i:p)
+  mtxx=mtx[,ni]
+  ss=silentPairs(mtxx, ctrl = ctrl, dig = dig, 
+        wt = wt, sumwt = sumwt) 
+  ssx=round(ss*100/3.175,3)
+  ii=seq( (i+1),p)
+  lenii=length(ii)
+  if (lenii>=1){
+#    print(c("i=",i,ii))
+#    print(c("ss=",ss))
+    out[i,ii]=ssx
+  out[ii,i]=-ssx
+  }}
+  print("Negative index means the column named variable kernel-causes row named")
+  print("Positive index means the row named variable kernel-causes column named")
+  print ("abs(index)=sign unanimity by weighted sum of 3 signs from Cr1 to Cr3")
+  colnames(out)=colnames(mtx)
+  rownames(out)=colnames(mtx)
+  return(out)
 }
 
 

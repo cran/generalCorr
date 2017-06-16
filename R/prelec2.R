@@ -10,7 +10,7 @@
 #' \item{p}{probabilities p= x[i]/n}
 #' \item{pdif}{consecutive differences p[i] - p[i - 1]}
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @references Vinod, H. D.', 'Hands-On Intermediate Econometrics
+#' @references Vinod, H. D. `Hands-On Intermediate Econometrics
 #' Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 #' \url{http://www.worldscibooks.com/economics/6895.html}
 #' @keywords Prelec

@@ -6,6 +6,7 @@
 #'  \code{wt=c(1.2,1.1, 1.05, 1)} to
 #' compute an overall result for all orders of stochastic dominance by a weighted sum for
 #' the crietria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, -1).
+#' The final range for the unanimity of sign index is [--100, 100].
 #' 
 #' The reason for slightly declining weights on the signs from
 #' SD1 to SD4 is simply that the local mean comparisons 
@@ -24,37 +25,50 @@
 #' @param dig {Number of digits for reporting (default \code{dig}=6).}
 #' @param wt {Allows user to choose a vector of four alternative weights for SD1 to SD4.}
 #' @param sumwt { Sum of weights can be changed here =4(default).}
-#' @return If there are p columns in the input matrix, there are p-1 possible
-#' flipped X, Y pairs leaving the control variables alone.  
-#' This function prints the results for p-1 pairs indicating which causes what
-#' it also prints strength or signed summary index in range [-100,100] 
-#' In general, a positive sign means first input variable causes the second, etc
-#' that the first variable listed as the input to this function is the `kernel cause,' 
-#' whereas negative strength index means second column variable causes the first.
-#' Also, it prints Pearson correlation and its p-value. This function also returns
-#' a matrix of p-1 rows and 5 columns providing summary of causal results.
-#' the first column names the causal variable and second names the response.
-#' the third column has absolute value of summary index in range [0,100] 
-#' summarizing preponderance of evidence from Cr1 to Cr3 
+#' @return If there are p columns in the input matrix, x1, x2, .., xp, say,
+#' and if we keep x1 as a common member of all causal direction pairs
+#' (x1, x(1+j)) for (j=1, 2, .., p-1) which can be flipped. That is, either x1 is
+#' the cause or x(1+j) is the cause in a chosen pair.
+#' The control
+#' variables are not flipped. The printed output of this function
+#' reports the results for p-1 pairs indicating which variable
+#' (by name) causes which other variable (also by name).
+#' It also prints strength or signed summary strength index in range [-100,100]. 
+#' A positive sign of the strength index means x1 kernel causes x(1+j),
+#' whereas negative strength index means x(1+j) kernel causes x1. The function 
+#' also prints Pearson correlation and its p-value. This function also returns
+#' a matrix of p-1 rows and 5 columns entitled: 
+#' ``cause", ``response", ``strength", ``corr." and ``p-value", respectively
+#' with self-explanatory titles. The first two columns have names of variables
+#' x1 or x(1+j), depending on which is the cause. The `strength' column
+#' has has absolute value of summary index in range [0,100]  
+#' providing summary of causal results
+#' based on preponderance of evidence from Cr1 to Cr3 
 #' from four orders of stochastic dominance, etc.  The order of input columns matters.
-#' the fourth column of the output matrix has Pearson correlation coefficient
+#' The fourth column `corr.' reports the Pearson correlation coefficient while
 #' the fifth column has the p-value for testing the null of zero Pearson coeff.
-#' Suggested column headings are Cause, Response, Strength, r, p-value
-#' This function calls  \code{silentPairs} allowing for control variables. 
+#' This function calls  \code{silentPairs} allowing for control variables.
+#' The output of this function can be sent to `xtable' for a nice Latex table. 
 #' @importFrom xtable xtable
 #' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See  \code{\link{bootPairs}}
 #' @seealso See  \code{\link{someCPairs}} 
 #' @seealso \code{\link{silentPairs}}
-#' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#' 
+#' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
+#' in {Generalcorr} Package for Air Pollution and Monetary Policy 
+#' (June 6, 2017). Available at SSRN: 
+#' \url{https://ssrn.com/abstract=2982128}    
 #' @keywords causal path, SD1, SD2, SD3, SD4, summary index
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
-#' Cr1 to Cr3 unanimously suggest `crim' as the cause of `off', so index is 100.
+#' Since Cr1 to Cr3 unanimously suggest `crim' as the cause of `off', 
+#' strength index 100 suggests unanimity.
 #' 
 #' @examples
 #'

@@ -11,12 +11,12 @@ naTriplet(x, y, ctrl)
 
 \item{y}{Vector of y data}
 
-\item{ctrl}{{Data matrix on the control variable(s) kept beyond causal path issues}}
+\item{ctrl}{{Data matrix on the control variable(s) kept beyond causal path determinations}}
 }
 \value{
 \item{newx}{A new vector x after removing triplet-wise missing data} 
-\item{newy}{A new vector y after removing triplet-wise missing data} 
-\item{newctrl}{A new vector ctrl after removing triplet-wise missing data}
+\item{newy}{A new vector or matrix y after removing triplet-wise missing data} 
+\item{newctrl}{A new vector or matrix ctrl after removing triplet-wise missing data}
 }
 \description{
 The aim in three-way deletions is to retain only the largest 

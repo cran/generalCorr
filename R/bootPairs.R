@@ -34,7 +34,7 @@
 #' `kernel cause' of the variable in the (j+1)-th column of \code{mtx}.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See Also \code{\link{silentPairs}}.
-#' @references Vinod, H. D.' Generalized Correlation and Kernel Causality with 
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 

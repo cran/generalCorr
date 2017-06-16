@@ -1,5 +1,12 @@
 Package: generalCorr
 ==============
+Version 1.0.5 [2017-06-08]
+o New functions added descriptions updated especially silentMtx 
+
+Version 1.0.4 [2017-06-08]
+o New functions added and descriptions updated especially causeSummary for strength
+index for unanimity of three criteria in [-100, 100] range.
+
 Version 1.0.3 [2016-06-28]
 o New functions added for bootstrap and causal path assessment without much printing.
 

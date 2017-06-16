@@ -5,11 +5,11 @@
 #' 
 #' @param x Vector of x data
 #' @param y Vector of y data
-#' @param ctrl {Data matrix on the control variable(s) kept beyond causal path issues}
+#' @param ctrl {Data matrix on the control variable(s) kept beyond causal path determinations}
 #' @return 
 #' \item{newx}{A new vector x after removing triplet-wise missing data} 
-#' \item{newy}{A new vector y after removing triplet-wise missing data} 
-#' \item{newctrl}{A new vector ctrl after removing triplet-wise missing data} 
+#' \item{newy}{A new vector or matrix y after removing triplet-wise missing data} 
+#' \item{newctrl}{A new vector or matrix ctrl after removing triplet-wise missing data} 
 ## @note %% ~~further notes~~
 #' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY

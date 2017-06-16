@@ -12,7 +12,8 @@ kern_ctrl(dep.y, reg.x, ctrl, tol = 0.1, ftol = 0.1, gradients = FALSE,
 
 \item{reg.x}{{Data on the regressor (stimulus) variable}}
 
-\item{ctrl}{{Data matrix on the control variable(s) kept outside the causal paths
+\item{ctrl}{{Data matrix on the control variable(s) kept outside the 
+causal paths.
 A constant vector is not allowed as a control variable.}}
 
 \item{tol}{{Tolerance on the position of located minima of the cross-validation 

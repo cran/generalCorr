@@ -25,7 +25,7 @@ of the version in the book without mapping to non-expected utility theory weight
 
 }
 \references{
-Vinod, H. D.', 'Hands-On Intermediate Econometrics
+Vinod, H. D. `Hands-On Intermediate Econometrics
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
 \url{http://www.worldscibooks.com/economics/6895.html}
 }
