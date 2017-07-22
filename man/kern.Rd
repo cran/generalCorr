@@ -50,6 +50,9 @@ Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Statistics -Simulation and Computation, 2015, 
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 }
+\seealso{
+See \code{\link{kern_ctrl}}.
+}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }

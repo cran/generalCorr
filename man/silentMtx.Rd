@@ -2,7 +2,7 @@
 % Please edit documentation in R/silentMtx.R
 \name{silentMtx}
 \alias{silentMtx}
-\title{No-print kernel-causality unanimity score matrix with control variables, if any}
+\title{No-print kernel-causality unanimity score matrix with optional control variables}
 \usage{
 silentMtx(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
 }
@@ -42,7 +42,7 @@ allowing for control variables.
 Allowing input matrix of control variables and missing data, this function produces a
 p by p matrix summarizing the results, where the estimated signs of
 stochastic dominance order values (+1, 0, --1) are weighted by 
-\code{wt=c(1.2,1.1, 1.05, 1)} to
+\code{wt=c(1.2, 1.1, 1.05, 1)} to
 compute an overall result for all orders of stochastic dominance by a weighted sum for
 the criteria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, --1).
 Final weighted index is always in the range [--3.175, 3.175]. It is converted
@@ -53,9 +53,10 @@ The reason for slightly declining weights on the signs from
 SD1 to SD4 is simply that the local mean comparisons 
 implicit in SD1 are known to be
 more reliable than local variance implicit in SD2, local skewness implicit in
-SD3 and local kurtosis implicit in SD4. The source of slightly declining sampling
-unreliability of higher moments is the
-higher power of the deviations from the mean needed in their computations.
+SD3 and local kurtosis implicit in SD4. Why are higher moment
+estimates less reliable? The 
+higher power of the deviations from the mean needed in their computations
+lead to greater sampling variability.
 The summary results for all
 three criteria are reported in a vector of numbers internally called \code{crall}:
 }
@@ -63,13 +64,19 @@ three criteria are reported in a vector of numbers internally called \code{crall
 The European Crime data has all three criteria correctly suggesting that
 high crime rate kernel causes the deployment of a large number of police officers.
 The command \code{attach(EuroCrime); silentPairs(cbind(crim,off))}
-returns only one number: 3.175, implying the highest unanimity strength index,
-with the positive sign suggesting `crim' in the first column kernel causes
-`off' in the second column of the argument \code{mtx} to this function.
+returns only one number: 3.175, implying a high unanimity strength.
+The index 3.175 is the highest.
+The positive sign of the index suggests that `crim' 
+variable in the first column of the matrix input to this function kernel causes
+`off' in the second column of the matrix argument \code{mtx} to this function.
 
-negative index means the column name kernel-causes row name
-positive index means the row name kernel-causes column name
-abs(index) measures unanimity by three criteria, Cr1 to Cr3.
+Interpretation of the output matrix produced by this function is as follows.
+A negative index means the variable named in the column kernel-causes 
+the variable named in the row. A
+positive index means the row name variable kernel-causes 
+the column name variable. The
+abs(index) measures unanimity by three criteria, Cr1 to Cr3 representing
+the strength of evidence for the identified causal path.
 }
 \examples{
 

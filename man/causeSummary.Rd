@@ -2,7 +2,7 @@
 % Please edit documentation in R/causeSummary.R
 \name{causeSummary}
 \alias{causeSummary}
-\title{Function for kernel causality summary of results}
+\title{Kernel causality summary of evidence for causal paths from three criteria}
 \usage{
 causeSummary(mtx, nam = colnames(mtx), ctrl = 0, dig = 6, wt = c(1.2,
   1.1, 1.05, 1), sumwt = 4)
@@ -70,8 +70,9 @@ three criteria are reported in one matrix called \code{out}:
 \note{
 The European Crime data has all three criteria correctly suggesting that
 high crime rate kernel causes the deployment of a large number of police officers.
-Since Cr1 to Cr3 unanimously suggest `crim' as the cause of `off', 
-strength index 100 suggests unanimity.
+Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
+strength index 100 suggests unanimity. 
+\code{attach(EuroCrime); causeSummary(cbind(crim,off))}
 }
 \examples{
 

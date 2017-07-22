@@ -8,7 +8,7 @@
 #' \eqn{I_f} is replaced by \code{cumsum} in this code (unlike the R code in
 #' my textbook).
 #' 
-#' @param d {A vector of distances from the smallest value from both data vectors}
+#' @param d {A vector of consecutive interval lengths, upon combining both data vectors}
 #' @param p {Vector of probabilities of the type 1/2T, 2/2T, 3/2T, etc. to 1.}
 #' @return Returns a result after pre-multiplication by \eqn{I_F,  I_f}
 #' matrices, without actually creating the large sparse matrices. This is an internal function.

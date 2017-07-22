@@ -35,7 +35,7 @@
 #'
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso The related function \code{\link{some0Pairs}} may be more useful, since it
-#' reports on all three criteria and
+#' reports on all three criteria (by choosing typ=1,2,3) and
 #' further summarizes their results by weighting to help choose causal paths. 
 #' @references H. D. Vinod 'Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in

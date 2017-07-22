@@ -23,7 +23,7 @@ The bootstrap provides an approximation to chances of correct determination of
 the causal direction.
 }
 \note{
-'pcause' is computer intensive and generally slow. It may be better to use
+'pcause' is computer intensive and generally slow. It is better to use
   it at a later stage in the investigation when a preliminary causal determination 
   is already made.  Its use may slow the exploratory phase. In my experience, if
   P(cause) is less than 0.55, there is a cause for concern.

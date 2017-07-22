@@ -7,7 +7,7 @@
 bigfp(d, p)
 }
 \arguments{
-\item{d}{{A vector of distances from the smallest value from both data vectors}}
+\item{d}{{A vector of consecutive interval lengths, upon combining both data vectors}}
 
 \item{p}{{Vector of probabilities of the type 1/2T, 2/2T, 3/2T, etc. to 1.}}
 }

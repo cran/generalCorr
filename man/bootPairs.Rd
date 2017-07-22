@@ -47,6 +47,7 @@ that the first variable listed in the argument matrix \code{mtx} is the
 }
 \examples{
 \dontrun{
+options(np.messages = FALSE)
 set.seed(34);x=sample(1:10);y=sample(2:11)
 bb=bootPairs(cbind(x,y),n999=29)
 apply(bb$out,2,summary) #gives summary stats for n999 bootstrap sum computations
@@ -60,6 +61,7 @@ bb$probSign #reports success proportion out of n999 replicates
 data('EuroCrime')
 attach(EuroCrime)
 bootPairs(cbind(crim,off),n999=29) #col.1= crim causes off hence positive signs
+#note that n999=29 is too small for real problems, chosen for quickness here.
 }
 }
 \references{

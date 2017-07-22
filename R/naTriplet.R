@@ -43,6 +43,6 @@ naTriplet = function(x, y, ctrl) {
     if (pc==1) newctrl=ctrl[ok]
     if(pc>1) newctrl=ctrl[ok,] }  
   #delete NAs from x, y, ctrl   
-  list(newx = newx, newy = newy, newctrl = newctrl)  #delete NAs
+  list(newx = newx, newy = newy, newctrl = newctrl)
 }
 

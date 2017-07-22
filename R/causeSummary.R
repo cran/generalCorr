@@ -1,4 +1,4 @@
-#' Function for kernel causality summary of results 
+#' Kernel causality summary of evidence for causal paths from three criteria 
 #' 
 #' Allowing input matrix of control variables, this function produces a 5 column matrix
 #' summarizing the results where the estimated signs of
@@ -67,8 +67,9 @@
 #' @keywords causal path, SD1, SD2, SD3, SD4, summary index
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
-#' Since Cr1 to Cr3 unanimously suggest `crim' as the cause of `off', 
-#' strength index 100 suggests unanimity.
+#' Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
+#' strength index 100 suggests unanimity. 
+#' \code{attach(EuroCrime); causeSummary(cbind(crim,off))}
 #' 
 #' @examples
 #'

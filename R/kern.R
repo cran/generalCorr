@@ -17,7 +17,7 @@
 #' The user can access all of them at will by using the dollar notation of R.
 #' @note This is a work horse for causal identification.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-## @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
+#' @seealso See \code{\link{kern_ctrl}}.
 #' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 

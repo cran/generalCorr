@@ -13,7 +13,8 @@ which is fixed and then
  paired with all other columns, say: x2, x3, .., xp, one by one for the 
  purpose of flipping with x1. p must be 2 or more}}
 
-\item{ctrl}{{data matrix for designated control variable(s) outside causal paths}}
+\item{ctrl}{{data matrix for designated control variable(s) outside causal paths
+default ctrl=0 which means that there are no control variables used.}}
 
 \item{dig}{{Number of digits for reporting (default \code{dig}=6).}}
 

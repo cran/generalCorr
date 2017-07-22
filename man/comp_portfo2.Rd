@@ -28,19 +28,27 @@ A trimmed mean may be of interest when outliers are suspected.
 require(np)
 
 Make sure that functions wtdpapb, bigfp, stochdom2 are in the memory.
+and options(np.messages=FALSE)
 }
 \examples{
 
 set.seed(30)
-xa=sample(20:30)
-xb=sample(32:40)
-gp = comp_portfo2(xa, xb)
+xa=sample(20:30)#generally lower returns
+xb=sample(32:40)# higher retruns in xb
+gp = comp_portfo2(xa, xb)#all Av(sdi) positive means xb dominates
 ##positive SD1 to SD4 means xb dominates xa as it should
 
 }
+\references{
+Vinod, H. D.", "Hands-On Intermediate Econometrics 
+Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
+\url{http://www.worldscibooks.com/economics/6895.html}
+}
+\seealso{
+\code{\link{stochdom2}}
+}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-## @references
 }
 \keyword{SD1}
 \keyword{SD2}

@@ -1,4 +1,4 @@
-#' Function for kernel causality in 7-column matrix admitting control variables 
+#' Kernel causality compuations admitting control variables reporting a 7-column matrix 
 #' 
 #' Allowing input matrix of control variables, produce 7 column matrix
 #' summarizing the results where the signs of

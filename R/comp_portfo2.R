@@ -13,23 +13,28 @@
 #' A trimmed mean may be of interest when outliers are suspected.
 #' @note require(np)
 #' @note Make sure that functions wtdpapb, bigfp, stochdom2 are in the memory.
+#' and options(np.messages=FALSE)
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-## @seealso \code{\link{help}},
-#'## @references
+#' @seealso \code{\link{stochdom2}}
+#' 
+#' @references Vinod, H. D.", "Hands-On Intermediate Econometrics 
+#' Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
+#' \url{http://www.worldscibooks.com/economics/6895.html}
+#'
 #' @keywords stochastic dominance SD1 SD2 SD3 SD4 wtdpapb bigfp
 #' @examples
 #'
 #' set.seed(30)
-#' xa=sample(20:30)
-#' xb=sample(32:40)
-#' gp = comp_portfo2(xa, xb)
+#' xa=sample(20:30)#generally lower returns
+#' xb=sample(32:40)# higher retruns in xb
+#' gp = comp_portfo2(xa, xb)#all Av(sdi) positive means xb dominates
 #' ##positive SD1 to SD4 means xb dominates xa as it should
 #'
 #' @export
 
 comp_portfo2 <- function(xa, xb) {
     # simplified:NAs already out
-    gp = wtdpapb(xa, xb)  #function above
+    gp = wtdpapb(xa, xb)  
     stdo2 = stochdom2(dj = gp$dj, wpa = gp$wpa, wpb = gp$wpb)
     outb = cbind(stdo2$sd1b, stdo2$sd2b, stdo2$sd3b, stdo2$sd4b)
     # print(outb) column sums for 4 orders of stochastic dominance

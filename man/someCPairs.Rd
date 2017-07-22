@@ -2,7 +2,7 @@
 % Please edit documentation in R/someCPairs.R
 \name{someCPairs}
 \alias{someCPairs}
-\title{Function for kernel causality in 7-column matrix admitting control variables}
+\title{Kernel causality compuations admitting control variables reporting a 7-column matrix}
 \usage{
 someCPairs(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
   1.1, 1.05, 1), sumwt = 4)

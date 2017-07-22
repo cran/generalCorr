@@ -22,7 +22,8 @@
 #' which is fixed and then 
 #'  paired with all other columns, say: x2, x3, .., xp, one by one for the 
 #'  purpose of flipping with x1. p must be 2 or more}
-#' @param ctrl {data matrix for designated control variable(s) outside causal paths}
+#' @param ctrl {data matrix for designated control variable(s) outside causal paths
+#'   default ctrl=0 which means that there are no control variables used.}
 #' @param dig {Number of digits for reporting (default \code{dig}=6).}
 #' @param wt {Allows user to choose a vector of four alternative weights for SD1 to SD4.}
 #' @param sumwt { Sum of weights can be changed here =4(default).}
