@@ -84,11 +84,11 @@ parcor_ridg <- function(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3) {
     print(c("increment=", diff.e0))
     # diff.e0=round(diff.e0,3)
     if (diff.e0 == 0) {
-        print("difference between cosecutive eigenvalues is zero")
+        print("difference between consecutive eigenvalues is zero")
         diff.e0 = incr * (sort.abse0[3] - sort.abse0[1])
     }
     if (diff.e0 == 0) {
-        print("difference between cosecutive eigenvalues still zero")
+        print("difference between consecutive eigenvalues still zero")
         diff.e0 = incr * (sort.abse0[4] - sort.abse0[1])
     }
     

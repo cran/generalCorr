@@ -1,7 +1,7 @@
-e4e4eb521320f27d5c84034c24be5ac5 *DESCRIPTION
+db474f6c5ad42c3cedcbbe979ced3588 *DESCRIPTION
 6242ce48f03c698d35337ae31e5623ed *INDEX
 912345086ce7e548e712b5d088346370 *NAMESPACE
-4def6773bdefc7f3fbbd3e5d0ac15bbd *NEWS
+7d8de76a5fa48c84b22ff4163951c319 *NEWS
 331070a33c07e8640a2580f14c759107 *R/EuroCrime.R
 c9fe0bf13e7c92bd35c4d5edf126449b *R/Panel2Lag.R
 e0397a06d7c5898e7811937a95eaa71d *R/PanelLag.R
@@ -30,8 +30,8 @@ a1b6ff3ed9800842fa8cdb1f4a7bec6b *R/minor.R
 486ba341bb6e126e23b64ad04f677dfa *R/naTriplet.R
 7978f3d86817e8aff1892afb98dd564f *R/napair.R
 c8f7a124ff045520dc69f26edd8ee891 *R/parcorSilent.R
-33efd9ce7824296e53c8a44f66be7c90 *R/parcor_ijk.R
-31f5f88a724085980c5705493b1addfc *R/parcor_ridg.R
+a537c3c8fa4290b277f53d2a0466e7f3 *R/parcor_ijk.R
+3a92efffde4b94a11793a058a0ebccc6 *R/parcor_ridg.R
 108220b3bdea266881125c05acd8799b *R/pcause.R
 a3ff35bb4467200c83a0fb154b8b30c3 *R/prelec2.R
 39308bfefef3837af46767e49e6dd0c2 *R/rstar.R
@@ -45,7 +45,7 @@ b9d7540454dd2e5a8c5843be7511109e *R/some0Pairs.R
 72db776a261cbd92eb467db1c9fc550d *R/stdz_xy.R
 9ae60f902dd5b9b8a9c2471d49676af8 *R/stochdom2.R
 7aafd7b2e59c60c57b34c61110a045e4 *R/wtdpapb.R
-48993f283a009c64cdfde3c1cf1812c0 *build/vignette.rds
+e259234e356b64dca075851e4f8121b1 *build/vignette.rds
 ff31e89bfa10f4d281c8d0852dfbd486 *data/EuroCrime.rda
 018787ca398bfc39c96f321a46496629 *data/badCol.rda
 237263c578909a0f5e22aed1a5bd0fee *data/da.rda
@@ -83,10 +83,12 @@ d5aed774a530c7bfa5f543e0d48c59f1 *data/sales2Lag.rda
 30ac346944b240fac867807c8ca7a274 *data/sgn.e0.rda
 b4f0b9ba85d66718e290db30b5cbc350 *data/sort.abse0.rda
 d7cc17b6afe919852e822fd50c090edb *data/sort.e0.rda
-54651339ddb14530bc1b00dff2bf6c41 *inst/doc/generalCorr-vignette.pdf
+da0b5bee6e5f9b7a78f8f9a45120a47c *inst/doc/generalCorr-vignette.pdf
 ce5154f4f4a9b9bed94f0faa6f9998b6 *inst/doc/generalCorr-vignette.pdf.asis
-b4e8c721dc252e291bf937d6d4150802 *inst/doc/generalCorr-vignette2.pdf
+a5e38d2c1fe51e622b15e98fb728c306 *inst/doc/generalCorr-vignette2.pdf
 9c7b4628047b193f4c5c7e05e270ae11 *inst/doc/generalCorr-vignette2.pdf.asis
+5f83664141064a1e25e3f06acb0f4e38 *inst/doc/generalCorr-vignette3.pdf
+06430e650799be0939f22e23764fbfe0 *inst/doc/generalCorr-vignette3.pdf.asis
 8d740dcb645d91faa67bc387ffd2f518 *man/EuroCrime.Rd
 dfbedf5530338314cfa10d03f4e482c6 *man/Panel2Lag.Rd
 f92775c2fca49b4aaf208470269e6512 *man/PanelLag.Rd
@@ -170,3 +172,4 @@ c03b5a4edc7836340c125e4ec325ae20 *man/stdz_xy.Rd
 53bae5cd296856cd4072fea64cc9d626 *man/wtdpapb.Rd
 ce5154f4f4a9b9bed94f0faa6f9998b6 *vignettes/generalCorr-vignette.pdf.asis
 9c7b4628047b193f4c5c7e05e270ae11 *vignettes/generalCorr-vignette2.pdf.asis
+06430e650799be0939f22e23764fbfe0 *vignettes/generalCorr-vignette3.pdf.asis

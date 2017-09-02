@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.0.7 [2017-09-02]
+o slightly revised parcor_ijk and 3 vignettes
+
 Version 1.0.6 [2017-07-21]
 o New functions added descriptions updated especially silentMtx 
 
