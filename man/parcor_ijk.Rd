@@ -2,41 +2,35 @@
 % Please edit documentation in R/parcor_ijk.R
 \name{parcor_ijk}
 \alias{parcor_ijk}
-\title{Generalized partial correlation coefficient between Xi and Xj after removing the
-effect of all others.}
+\title{Generalized partial correlation coefficients between Xi and Xj after removing the
+effect of xk.}
 \usage{
-parcor_ijk(x, i, j)
+parcor_ijk(xi, xj, xk)
 }
 \arguments{
-\item{x}{{Input a p by p matrix R* of generalized correlation coefficients.}}
+\item{xi}{{Input vector of data for variable xi}}
 
-\item{i}{{A column number identifying the first variable.}}
+\item{xj}{{Input vector of data for variable xj}}
 
-\item{j}{{A column number identifying the second variable.}}
+\item{xk}{{Input data for variables in xk, usually control variables}}
 }
 \value{
-\item{ouij}{Partial correlation Xi with Xj (=cause) after removing all other X's}
-\item{ouji}{Partial correlation Xj with Xi (=cause) after removing all other X's}
-\item{myk}{A list of column numbers whose effect has been removed}
+\item{ouij}{Generalized partial correlation Xi with Xj (=cause) after removing xk}
+\item{ouji}{Generalized partial correlation Xj with Xi (=cause) after removing xk}
 }
 \description{
-This function uses a generalized correlation matrix R* as input to compute
-generalized partial correlations between \eqn{X_i} and \eqn{X_j}
-where j can be any one of the remaining
-variables. Computation removes the effect of all other variables in the matrix.
-The user is encouraged to remove all known irrelevant rows and columns 
-from the R* matrix before submitting it to this function.
+This function uses data on two column vectors, xi, xj and 
+xk which can be a vector or a matrix usually of the remaining control
+variables.
 }
 \note{
-This function calls \code{\link{minor}}, and \code{\link{cofactor}} and is called 
-  by \code{parcor_ridge}.
+This function calls \code{\link{kern}},
 }
 \examples{
 
 \dontrun{
 set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
 colnames(x)=c('V1', 'v2', 'V3')
-gm1=gmcmtx0(x)
 parcor_ijk(gm1, 2,3)
 }#' 
 }

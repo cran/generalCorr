@@ -148,10 +148,9 @@ silentPairs = function(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05,
           }
         }
         if (typ == 3) {
-          gmc0 = gmcmtx0(cbind(x, y, z))
-          out2 = parcorSilent(gmc0, idep = 2)
-          rxy = as.numeric(out2[1, 3])   #third column has r*xy
-          ryx = as.numeric(out2[1, 4]) #col. 4 has r*yx
+          par1 = parcor_ijk(x, y, z)
+          rxy=par1$ouij
+          ryx=par1$ouji
           del = rxy^2 - ryx^2
           #            print(c('delta',del),q=FALSE)
           cr3[im1] = as.numeric(sign(del))

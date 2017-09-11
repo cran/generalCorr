@@ -52,7 +52,7 @@ kern_ctrl=
       resz = TRUE
     ox=naTriplet(x=dep.y,y=reg.x,ctrl=ctrl)
         bw = npregbw(ydat = as.vector(ox$newx), 
-                xdat = ox$newy,ctrl=ox$newctrl, 
+                xdat = cbind(ox$newy,ox$newctrl), 
                  tol = tol, ftol = ftol)
     mod = npreg(bws = bw, gradients = gr, residuals = resz)
     return(mod)

@@ -1,49 +1,31 @@
-#' Generalized partial correlation coefficient between Xi and Xj after removing the
-#' effect of all others.
+#' Generalized partial correlation coefficients between Xi and Xj after removing the
+#' effect of xk.
 #'
-#' This function uses a generalized correlation matrix R* as input to compute
-#' generalized partial correlations between \eqn{X_i} and \eqn{X_j}
-#' where j can be any one of the remaining
-#' variables. Computation removes the effect of all other variables in the matrix.
-#' The user is encouraged to remove all known irrelevant rows and columns 
-#' from the R* matrix before submitting it to this function.
+#' This function uses data on two column vectors, xi, xj and 
+#' xk which can be a vector or a matrix usually of the remaining control
+#' variables. 
 #'
-#' @param x {Input a p by p matrix R* of generalized correlation coefficients.}
-#' @param i {A column number identifying the first variable.}
-#' @param j {A column number identifying the second variable.}
+#' @param xi {Input vector of data for variable xi}
+#' @param xj {Input vector of data for variable xj}
+#' @param xk {Input data for variables in xk, usually control variables}
 #' @return 
-#' \item{ouij}{Partial correlation Xi with Xj (=cause) after removing all other X's}
-#' \item{ouji}{Partial correlation Xj with Xi (=cause) after removing all other X's}
-#' \item{myk}{A list of column numbers whose effect has been removed}
-#' @note This function calls \code{\link{minor}}, and \code{\link{cofactor}} and is called 
-#'   by \code{parcor_ridge}.
+#' \item{ouij}{Generalized partial correlation Xi with Xj (=cause) after removing xk}
+#' \item{ouji}{Generalized partial correlation Xj with Xi (=cause) after removing xk}
+#' @note This function calls \code{\link{kern}}, 
 #' @examples 
 #' 
 #' \dontrun{
 #' set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
 #' colnames(x)=c('V1', 'v2', 'V3')
-#' gm1=gmcmtx0(x)
 #' parcor_ijk(gm1, 2,3)
 #' }#' 
 #' @export
 
-parcor_ijk = function(x, i, j) {
-    n = NROW(x)
-    p = NCOL(x)
-    if (n < i) 
-        stop("n<i, parcor undefined")
-    if (p < j) 
-        stop("p<j, parcor undefined")
-    if (i <= 0 | j <= 0) 
-        stop("i OR j <=0, parcor undefined")
-    myn = 1:n
-    myp = 1:p
-    myk = myp[c(-i, -j)]
-    numij = -det(cofactor(x, i, j))
-    numji = -det(cofactor(x, j, i))
-    deni = abs(det(cofactor(x, i, i)))
-    denj = abs(det(cofactor(x, j, j)))
-    ouij = (numij)/sqrt(deni * denj)
-    ouji = (numji)/sqrt(deni * denj)
-    list(ouij = ouij, ouji = ouji, myk = myk)
+parcor_ijk = function(xi, xj, xk) {
+  uik=kern(dep.y=xi,reg.x=xk,residuals=TRUE)$resid
+  ujk=kern(dep.y=xj,reg.x=xk,residuals=TRUE)$resid
+  sgn=sign(cor(uik,ujk))
+  ouij = sgn * kern(dep.y=uik, reg.x=ujk)$R2
+  ouji = sgn * kern(dep.y=ujk, reg.x=uik)$R2
+  list(ouij = ouij, ouji = ouji)
 }

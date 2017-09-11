@@ -166,11 +166,9 @@ someCPairs=
         }
         if (typ == 3) {
           cc=cor.test(x, y)
-          gmc0 = gmcmtx0(cbind(x, y, z))
-          #                out1 = parcor_ijk(gmc0, 1, 2)
-          out2 = parcor_ridg(gmc0, idep=2)
-          rxy = as.numeric(out2[1,3])
-          ryx = as.numeric(out2[1,4])
+          par1 = parcor_ijk(x, y, z)
+          rxy=par1$ouij
+          ryx=par1$ouji
           del = rxy^2 - ryx^2
           cr3[ii] = as.numeric(sign(del))
           outcause[ii, 4] = round(rxy, dig)
