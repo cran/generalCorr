@@ -17,11 +17,13 @@ parcor_ijk(xi, xj, xk)
 \value{
 \item{ouij}{Generalized partial correlation Xi with Xj (=cause) after removing xk}
 \item{ouji}{Generalized partial correlation Xj with Xi (=cause) after removing xk}
+allowing for control variables.
 }
 \description{
 This function uses data on two column vectors, xi, xj and 
-xk which can be a vector or a matrix usually of the remaining control
-variables.
+xk which can be a vector or a matrix usually of the remaining 
+variables in the model including optional control
+variables. It removes missing data from input variables before proceeding.
 }
 \note{
 This function calls \code{\link{kern}},
@@ -33,4 +35,10 @@ set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
 colnames(x)=c('V1', 'v2', 'V3')
 parcor_ijk(gm1, 2,3)
 }#' 
+}
+\seealso{
+See  \code{\link{parcor_linear}}.
+}
+\author{
+Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }

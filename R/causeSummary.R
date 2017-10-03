@@ -1,10 +1,12 @@
 #' Kernel causality summary of evidence for causal paths from three criteria 
 #' 
-#' Allowing input matrix of control variables, this function produces a 5 column matrix
+#' Allowing input matrix of control variables, this function produces 
+#' a 5 column matrix
 #' summarizing the results where the estimated signs of
-#' stochastic dominance order values (+1, 0, -1) are weighted by 
+#' stochastic dominance order values, (+1, 0, -1), are weighted by 
 #'  \code{wt=c(1.2,1.1, 1.05, 1)} to
-#' compute an overall result for all orders of stochastic dominance by a weighted sum for
+#' compute an overall result for all orders of stochastic dominance by 
+#' a weighted sum for
 #' the crietria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, -1).
 #' The final range for the unanimity of sign index is [--100, 100].
 #' 
@@ -12,14 +14,17 @@
 #' SD1 to SD4 is simply that the local mean comparisons 
 #' implicit in SD1 are known to be
 #' more reliable than local variance implicit in SD2, local skewness implicit in
-#' SD3 and local kurtosis implicit in SD4. The reason for slightly declining sampling
+#' SD3 and local kurtosis implicit in SD4. The reason for 
+#' slightly declining sampling
 #' unreliability of higher moments is simply that SD4 involves fourth power
 #' of the deviations from the mean and SD3 involves 3rd power, etc.
 #' The summary results for all
 #' three criteria are reported in one matrix called \code{out}: 
 #'   
-#' @param mtx {The data matrix with many columns, y the first column is fixed and then 
-#'  paired with all columns, one by one, and still called x for the purpose of flipping.}
+#' @param mtx {The data matrix with many columns, y the first column 
+#' is fixed and then 
+#'  paired with all columns, one by one, and still called x for the 
+#'  purpose of flipping.}
 #' @param nam {vector of column names for \code{mtx}. Default: colnames(mtx)}
 #' @param ctrl {data matrix for designated control variable(s) outside causal paths}
 #' @param dig {Number of digits for reporting (default \code{dig}=6).}

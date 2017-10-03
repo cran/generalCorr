@@ -1,7 +1,7 @@
-a2a1103f3bbb9247e8c7361e81fb0f53 *DESCRIPTION
+23c566a7866939ce60d7f3573cf6f5dc *DESCRIPTION
 6242ce48f03c698d35337ae31e5623ed *INDEX
-7ff82b8bac6fd7ae51f9d3614eb30aa3 *NAMESPACE
-e9d0df2f0f1685bba4b3f0b3ad580862 *NEWS
+f1e0585a1c79a66c34dd2d4ed45d0bca *NAMESPACE
+f0238c3d6a790bc683905d7df5f7dc64 *NEWS
 331070a33c07e8640a2580f14c759107 *R/EuroCrime.R
 c9fe0bf13e7c92bd35c4d5edf126449b *R/Panel2Lag.R
 e0397a06d7c5898e7811937a95eaa71d *R/PanelLag.R
@@ -13,7 +13,7 @@ caa078b1ec4fe1d01434e8e09b0ec1fe *R/abs_stdresC.R
 ea2c145c14dbd27e885f51b21daba4e0 *R/allPairs.R
 e30f45b368b0d70fd6ad9eb85103f14c *R/bigfp.R
 ba2263c90298583a3a807686c8ce0375 *R/bootPairs.R
-3c5d18e9ca7344f18d1395d65d0d8ef1 *R/causeSummary.R
+b6fba4829d1b79393b0bcbe3c69d69c5 *R/causeSummary.R
 b4a280841568f2b93ce246ede263b563 *R/cofactor.R
 6e5b927b565f4e1651b13a7a5c0f04a9 *R/comp_portfo2.R
 36e98a230ba8e76b66f85f43a1a18050 *R/generalCorrInfo.R
@@ -29,7 +29,9 @@ c07134b4748af6c1f61145ce7e4495d0 *R/gmcmtxZ.R
 a1b6ff3ed9800842fa8cdb1f4a7bec6b *R/minor.R
 486ba341bb6e126e23b64ad04f677dfa *R/naTriplet.R
 7978f3d86817e8aff1892afb98dd564f *R/napair.R
-df4cdcaa16cb9bf53d0a8c60b574471d *R/parcor_ijk.R
+b5d2464928c098580cb4b533bccb9e30 *R/parcorMany.R
+6df635c6840f9ceac7928249adfc820b *R/parcor_ijk.R
+61c892a0035137a0630d789ee5c50ece *R/parcor_linear.R
 108220b3bdea266881125c05acd8799b *R/pcause.R
 a3ff35bb4467200c83a0fb154b8b30c3 *R/prelec2.R
 39308bfefef3837af46767e49e6dd0c2 *R/rstar.R
@@ -81,9 +83,9 @@ d5aed774a530c7bfa5f543e0d48c59f1 *data/sales2Lag.rda
 30ac346944b240fac867807c8ca7a274 *data/sgn.e0.rda
 b4f0b9ba85d66718e290db30b5cbc350 *data/sort.abse0.rda
 d7cc17b6afe919852e822fd50c090edb *data/sort.e0.rda
-7cf062e434f8ecc114c636a18d39a95d *inst/doc/generalCorr-vignette.pdf
+6e6e6b4cfe8c32ae180aeb93fac2218d *inst/doc/generalCorr-vignette.pdf
 ce5154f4f4a9b9bed94f0faa6f9998b6 *inst/doc/generalCorr-vignette.pdf.asis
-a159628cdd17a3c0620b0b5f6e99067c *inst/doc/generalCorr-vignette2.pdf
+f9a967da4358fcec14867c43dc57ec4b *inst/doc/generalCorr-vignette2.pdf
 9c7b4628047b193f4c5c7e05e270ae11 *inst/doc/generalCorr-vignette2.pdf.asis
 871a74a72d45f0b05254fc6998c02e46 *inst/doc/generalCorr-vignette3.pdf
 06430e650799be0939f22e23764fbfe0 *inst/doc/generalCorr-vignette3.pdf.asis
@@ -99,7 +101,7 @@ cb028a7319fb765cf0bc350615810a84 *man/abs_stdresC.Rd
 43e1da311ff6513bc5ff93f8a8f56b32 *man/badCol.Rd
 ceb5d393390a36786c3a335567549743 *man/bigfp.Rd
 4a6a29381b780443f6f7493c5b697693 *man/bootPairs.Rd
-5cabaa0e8a726082281eee4f61aa426d *man/causeSummary.Rd
+aa4f0e6556967e662ddb3a55d7ca3a58 *man/causeSummary.Rd
 65576502143d0b0aefbed9d9aa18d8e2 *man/cofactor.Rd
 6c8bc2b45a235d17e1c1ae3a033e64c4 *man/comp_portfo2.Rd
 23cf7f2528a76daab8a63be94b86c2ce *man/da.Rd
@@ -138,7 +140,9 @@ bde3898578d7d7c22958452eaa5496d1 *man/nam.badCol.Rd
 77db8d53fd824c544c3c818f268c1ff9 *man/napair.Rd
 3a925768a13d4c01ea56a9b8b0144951 *man/out1.Rd
 e1bf4366a3325cf3a095998dfbd0b1a4 *man/p1.Rd
-1f2d7517fec8d73da88054d6392371d9 *man/parcor_ijk.Rd
+911e139556c391b9d701287de04a870d *man/parcorMany.Rd
+b57b694c8e1a0ccb601574c3c0b9b482 *man/parcor_ijk.Rd
+54e7de731bb4acad01b27b9c64ca2a37 *man/parcor_linear.Rd
 7a3a214b57e2749149c0071b0ab34c71 *man/pcause.Rd
 95ed2ae6c11dfabe6dbd68369865efbd *man/prelec2.Rd
 4a230ee27cb97d4252dab3405b331211 *man/rhs.lag2.Rd
