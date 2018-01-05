@@ -2,7 +2,8 @@
 % Please edit documentation in R/parcorMany.R
 \name{parcorMany}
 \alias{parcorMany}
-\title{Report many generalized partial correlation coefficients from data matrix.}
+\title{Report many generalized partial correlation coefficients 
+allowing control variables.}
 \usage{
 parcorMany(mtx, ctrl = 0, dig = 4, idep = 1, verbo = FALSE)
 }

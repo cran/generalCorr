@@ -1,7 +1,7 @@
-#' Kernel causality computations admitting control variables 
-#' reporting a 7-column matrix (has older Cr1)
+#' Kernel causality computations admitting control variables reporting 
+#' a 7-column matrix, ver. 2 
 #' 
-#' Allowing input matrix of control variables, produce 7 column matrix
+#' Second version of \code{someCPairs} also allows input matrix of control variables, produce 7 column matrix
 #' summarizing the results where the signs of
 #' stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
 #' compute an overall result for all orders of stochastic dominance by a weighted sum for
@@ -17,12 +17,12 @@
 #' The summary results for all
 #' three criteria are reported in one matrix called \code{outVote}: 
 #'   
-#' typ=1 reports ('Y', 'X', 'Cause',
-#' 'SD1apdC', 'SD2apdC', 'SD3apdC', 'SD4apdC') naming variables identifying 'cause'
+#' (typ=1) reports ('Y', 'X', 'Cause',
+#' 'SD1.rhserr', 'SD2.rhserr', 'SD3.rhserr', 'SD4.rhserr') 
+#' naming variables identifying the 'cause'
 #' and measures of stochastic dominance using absolute values of kernel
-#' regression gradients (or amorphous partial derivatives, apd-s) being minimized by
-#' the kernel regression algorithm while
-#' comparing the kernel regression of X on Y with that of Y on X.
+#' regression abs(RHS first regressor*residual) values
+#' comparing flipped regressions X on Y versus Y on X.
 #' The letter C in the titles reminds presence of control variable(s).
 #' 
 #' 
@@ -62,7 +62,7 @@
 #' @note The output matrix last column for `mtcars' example
 #' has the sum of the scores by the three criteria
 #' combined. If `sum' is positive, then variable X (mpg) is more likely to have been
-#' engineerd to kernel cause the response variable Y, rather than vice versa.
+#' engineered to kernel cause the response variable Y, rather than vice versa.
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
 #' 
@@ -70,7 +70,7 @@
 #'
 #'
 #' \dontrun{
-#' someCPairs(mtcars[,1:3],ctrl=mtcars[4:5]) # first variable is mpg and effect on mpg is of interest
+#' someCPairs2(mtcars[,1:3],ctrl=mtcars[4:5]) # first variable is mpg and effect on mpg is of interest
 #' }
 #' 
 ### \dontrun{
@@ -80,13 +80,13 @@
 #' y=1+2*x+3*z+rnorm(10)
 #' w=runif(10)
 #' x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
-#' someCPairs(cbind(x2,y2), cbind(z,w2)) #yields x2 as correct cause
+#' someCPairs2(cbind(x2,y2), cbind(z,w2)) #yields x2 as correct cause
 ### }
 #' 
 #' 
 #' @export
 
-someCPairs=
+someCPairs2=
   function (mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2, 
                                                                    1.1, 1.05, 1), sumwt = 4) 
   {

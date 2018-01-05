@@ -42,7 +42,7 @@
 
 kern_ctrl=
   function (dep.y, reg.x, ctrl, tol = 0.1, ftol = 0.1, gradients = FALSE, 
-            residuals = FALSE)  #ctrl is a mtrix of control variables
+            residuals = FALSE)  #ctrl is a matrix of control variables
   {
     gr = FALSE
     resz = FALSE

@@ -1,4 +1,5 @@
-#' No-print kernel causality scores with control variables Hausman-Wu Criterion 1
+#' Older version, kernel causality weighted sum allowing control variables
+#' 
 #' 
 #' Allowing input matrix of control variables and missing data, this function produces a
 #'  3 column matrix summarizing the results where the estimated signs of
@@ -8,6 +9,10 @@
 #' the criteria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, -1),
 #' always in the range [--3.175, 3.175].
 #' 
+#' This uses an older version of the first criterion Cr1 based on absolute
+#' values of local gradients of kernel regressions, not absolute
+#' Hausman-Wu statistic (RHS variable times kernel residuals).
+#' It calls \code{abs_stdapd} and \code{abs_stdapdC}
 #' The reason for slightly declining weights on the signs from
 #' SD1 to SD4 is simply that the local mean comparisons 
 #' implicit in SD1 are known to be
@@ -41,10 +46,14 @@
 #'  in the i-th location of the `sum' output of this function means that
 #' that the first variable listed as the input to this function is the `effect,'
 #' while the variable in (i+1)-th column of \code{mtx} is the exogenous kernel cause.
+#' This function is a summary of \code{someCPairs} 
+#' allowing for control variables. 
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See  \code{\link{bootPairs}}, \code{\link{silentMtx}}
 #' @seealso See  \code{\link{someCPairs}}, \code{\link{some0Pairs}}
-#' @references H. D. Vinod  'Generalized Correlation and Kernel Causality with
+#' @seealso See  \code{\link{silentPairs}} for newer version using
+#' more direct Hausman-Wu exogeneity test statistic.
+#' @references H. D. Vinod 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
@@ -67,7 +76,7 @@
 #' \dontrun{
 #' options(np.messages=FALSE)
 #' colnames(mtcars[2:ncol(mtcars)])
-#' silentPairs(mtcars[,1:3],ctrl=mtcars[,4:5]) # mpg paired with others
+#' silentPairs0(mtcars[,1:3],ctrl=mtcars[,4:5]) # mpg paired with others
 #' }
 #' 
 ### \dontrun{
@@ -78,14 +87,14 @@
 #'y=1+2*x+3*z+rnorm(10)
 #'w=runif(10)
 #'x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
-#'silentPairs(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
+#'silentPairs0(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 ### }
 #' 
 #' 
 #' @export
 
-silentPairs = function(mtx, ctrl = 0, dig = 6, 
-          wt = c(1.2, 1.1, 1.05, 1), sumwt = 4) {
+silentPairs0 = function(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 
+                                                      1), sumwt = 4) {
   len = length(ctrl)
   n = NROW(mtx)
   p = NCOL(mtx)
@@ -125,9 +134,9 @@ silentPairs = function(mtx, ctrl = 0, dig = 6,
       im1 = i - 1
       if (len > 1) {
         if (typ == 1) 
-          arxy = abs_stdrhserC(x, y, z)
+          arxy = abs_stdapdC(x, y, z)
         if (typ == 1) 
-          aryx = abs_stdrhserC(y, x, z) #flipped model
+          aryx = abs_stdapdC(y, x, z)
         if (typ == 2) 
           arxy = abs_stdresC(x, y, z)
         if (typ == 2) 
@@ -157,9 +166,9 @@ silentPairs = function(mtx, ctrl = 0, dig = 6,
       
       if (len == 1) {
         if (typ == 1) 
-          arxy = abs_stdrhserr(x, y)
+          arxy = abs_stdapd(x, y)
         if (typ == 1) 
-          aryx = abs_stdrhserr(y, x)#flipped model here
+          aryx = abs_stdapd(y, x)
         if (typ == 2) 
           arxy = abs_stdres(x, y)
         if (typ == 2) 

@@ -28,7 +28,7 @@ the absolute values of gradients
 }
 \details{
 The first argument is assumed to be the dependent variable.  If
-\code{abs_stdapd(x,y)} is used, you are regressing x on y (not the usual y
+\code{abs_stdapdC(x,y)} is used, you are regressing x on y (not the usual y
 on x). The regressors can be a matrix with 2 or more columns. The missing values
 are suitably ignored by the standardization.
 }

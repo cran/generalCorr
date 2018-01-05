@@ -1,4 +1,4 @@
-#' Kernel causality summary of evidence for causal paths from three criteria 
+#' Older Kernel causality summary of evidence for causal paths from three criteria 
 #' 
 #' Allowing input matrix of control variables, this function produces 
 #' a 5 column matrix
@@ -52,13 +52,13 @@
 #' from four orders of stochastic dominance, etc.  The order of input columns matters.
 #' The fourth column `corr.' reports the Pearson correlation coefficient while
 #' the fifth column has the p-value for testing the null of zero Pearson coeff.
-#' This function calls  \code{silentPairs} allowing for control variables.
+#' This function calls  \code{silentPairs0} 
+#' (the older version) allowing for control variables.
 #' The output of this function can be sent to `xtable' for a nice Latex table. 
 #' @importFrom xtable xtable
 #' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-#' @seealso See  \code{\link{bootPairs}},  \code{\link{causeSummary0}} has
-#' an older version of this function.
+#' @seealso See  \code{\link{bootPairs}}
 #' @seealso See  \code{\link{someCPairs}} 
 #' @seealso \code{\link{silentPairs}}
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
@@ -75,7 +75,9 @@
 #' high crime rate kernel causes the deployment of a large number of police officers.
 #' Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
 #' strength index 100 suggests unanimity. 
-#' \code{attach(EuroCrime); causeSummary(cbind(crim,off))}
+#' \code{attach(EuroCrime); causeSummary0(cbind(crim,off))}. Both versions
+#' give identical result for this example. Old version of Cr1 using
+#' gradients was also motivated by the same Hausman-Wu test statistic.
 #' 
 #' @examples
 #'
@@ -83,7 +85,7 @@
 #' \dontrun{
 #' mtx=as.matrix(mtcars[,1:3])
 #' ctrl=as.matrix(mtcars[,4:5])
-#'  causeSummary(mtx,ctrl,nam=colnames(mtx))
+#'  causeSummary0(mtx,ctrl,nam=colnames(mtx))
 #' }
 #' 
 ### \dontrun{
@@ -94,13 +96,13 @@
 #'y=1+2*x+3*z+rnorm(10)
 #'w=runif(10)
 #'x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
-#'causeSummary(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
+#'causeSummary0(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 ### }
 #' 
 #' 
 #' @export
 
-causeSummary = function(mtx, nam = colnames(mtx), 
+causeSummary0 = function(mtx, nam = colnames(mtx), 
      ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
    {
     # require(generalCorr); require(PerformanceAnalytics); options(np.messages=FALSE)
@@ -118,7 +120,7 @@ causeSummary = function(mtx, nam = colnames(mtx),
    pv[i] = c1$p.value
    pearson[i] = c1$estimate
    }
-    si0 = silentPairs(mtx, ctrl = ctrl, dig = dig, wt = wt, sumwt = 4)
+    si0 = silentPairs0(mtx, ctrl = ctrl, dig = dig, wt = wt, sumwt = 4)
     si = round(100 * as.numeric(si0)/3.175, 3)
     out = matrix(NA, nrow = (p - 1), ncol = 5)
     for (i in 2:p) {

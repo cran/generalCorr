@@ -1,4 +1,5 @@
-#' Report many generalized partial correlation coefficients from data matrix.
+#' Report many generalized partial correlation coefficients 
+#' allowing control variables.
 #'
 #' This function calls \code{parcor_ijk} function which
 #' uses original data to compute

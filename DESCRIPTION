@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations and Initial Causal Path
-Version: 1.0.9
-Date: 2017-10-03
+Version: 1.1.0
+Date: 2018-01-04
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -15,13 +15,14 @@ Description: Since causal paths from data are important for all sciences, the
      that if X causes Y (path: X to Y) then non-deterministic variation in X
      is more "original or independent" than similar variation in Y.  We compare 
      two flipped kernel regressions: X=f(Y, Z) and Y=g(X,Z), where Z are control 
-     variables. Our first two criteria compare absolute gradients (Cr1) and 
-     absolute residuals (Cr2), both quantified by stochastic dominance of four 
+     variables. Our first two criteria compare absolute cross products
+     of regressor values and residuals (Cr1) and 
+     absolute residuals (Cr2), are both quantified by stochastic dominance of four 
      orders (SD1 to SD4). Our third criterion (Cr3) expects X to be better able 
      to predict Y than the other way around using generalized partial correlation 
      If |r*(x|y)|> |r*(y|x)| it suggests that y is more likely
-    the "kernel cause" of x. The usual partial correlations are generalized for 
-    the asymmetric matrix of r*'s developed here.
+    the "kernel cause" of x. The usual partial correlations are generalized with 
+    a new non-symmetric matrix developed here.
     Partial correlations help asses effect of x on y after removing the effect of a
     set of variables. 
     The package provides additional tools for causal assessment,
@@ -34,6 +35,6 @@ License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-10-03 22:33:44 UTC; hd
+Packaged: 2018-01-05 04:20:38 UTC; hd
 Repository: CRAN
-Date/Publication: 2017-10-03 22:46:21 UTC
+Date/Publication: 2018-01-05 05:17:55 UTC
