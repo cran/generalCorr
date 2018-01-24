@@ -1,5 +1,5 @@
-#' Compute matrix of n999 rows and p-1 columns of bootstrap `sum' 
-#' (strength from Cr1 to Cr3).
+#' Compute matrix of n999 rows and p-1 columns of bootstrap `sum' index
+#' (strength from older criterion Cr1, with newer Cr2 and Cr3).
 #' 
 #' Maximum entropy bootstrap (meboot) package is used for statistical inference
 #' using the sum of three signs sg1 to sg3 from the three criteria Cr1 to Cr3 to
@@ -28,7 +28,8 @@
 #' that the first variable listed in the argument matrix \code{mtx} is the 
 #' `kernel cause' of the variable in the (j+1)-th column of \code{mtx}.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @seealso See Also \code{\link{silentPairs}}.
+#' @seealso See Also \code{\link{silentPairs0}}, \code{\link{bootPairs}}
+#' has the version with later version of Cr1.
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
@@ -46,21 +47,21 @@
 #' \dontrun{
 #' options(np.messages = FALSE)
 #' set.seed(34);x=sample(1:10);y=sample(2:11)
-#' bb=bootPairs(cbind(x,y),n999=29)
+#' bb=bootPairs0(cbind(x,y),n999=29)
 #' apply(bb,2,summary) #gives summary stats for n999 bootstrap sum computations
 #' 
-#' bb=bootPairs(airquality,n999=999);options(np.messages=FALSE)
+#' bb=bootPairs0(airquality,n999=999);options(np.messages=FALSE)
 #' apply(bb,2,summary) #gives summary stats for n999 bootstrap sum computations
 #' 
 #' data('EuroCrime')
 #' attach(EuroCrime)
-#' bootPairs(cbind(crim,off),n999=29)#First col. crim causes officer deployment,
+#' bootPairs0(cbind(crim,off),n999=29)#First col. crim causes officer deployment,
 #' #hence positives signs are most sensible for such call to bootPairs
 #' #note that n999=29 is too small for real problems, chosen for quickness here.
 #' }
 #' @export
 
-bootPairs = function(mtx, ctrl = 0, n999 = 9) {
+bootPairs0 = function(mtx, ctrl = 0, n999 = 9) {
   ok= complete.cases(mtx) 
   p = NCOL(mtx[ok,])
   n = NROW(mtx[ok,])
@@ -70,7 +71,7 @@ bootPairs = function(mtx, ctrl = 0, n999 = 9) {
     Memtx[, , i] = meboot(x=mtx[ok, i], reps = n999)$ensem
   }
   for (k in 1:n999) {
-    out[k, ] = silentPairs(mtx = Memtx[, k, 1:p], ctrl = ctrl)
+    out[k, ] = silentPairs0(mtx = Memtx[, k, 1:p], ctrl = ctrl)
     if (k%%50 ==1) print(c("k=",k)) #track the progress 
   }
   colnames(out) =colnames(mtx)[2:p]

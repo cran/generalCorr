@@ -134,9 +134,9 @@ silentPairs0 = function(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05,
       im1 = i - 1
       if (len > 1) {
         if (typ == 1) 
-          arxy = abs_stdapdC(x, y, z)
+          arxy = abs_stdrhserC(x, y, z)
         if (typ == 1) 
-          aryx = abs_stdapdC(y, x, z)
+          aryx = abs_stdrhserC(y, x, z)
         if (typ == 2) 
           arxy = abs_stdresC(x, y, z)
         if (typ == 2) 
@@ -166,9 +166,9 @@ silentPairs0 = function(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05,
       
       if (len == 1) {
         if (typ == 1) 
-          arxy = abs_stdapd(x, y)
+          arxy = abs_stdrhserr(x, y)
         if (typ == 1) 
-          aryx = abs_stdapd(y, x)
+          aryx = abs_stdrhserr(y, x)
         if (typ == 2) 
           arxy = abs_stdres(x, y)
         if (typ == 2) 

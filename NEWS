@@ -1,5 +1,9 @@
 Package: generalCorr
 ==============
+Version 1.1.1 [2018-01-24]
+o improvements to vignette2, option to use older Cr1 criterion
+and some bootstrap summarizing functions added.
+
 Version 1.1.0 [2018-01-04]
 o revised first criterion Cr1 to directly reflect orthogonality 
 between regressors and errors, leading to many changes.
