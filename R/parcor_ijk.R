@@ -1,10 +1,11 @@
 #' Generalized partial correlation coefficients between Xi and Xj after removing the
-#' effect of xk.
+#' effect of xk via nonparametric regression residuals.
 #'
 #' This function uses data on two column vectors, xi, xj and 
 #' xk which can be a vector or a matrix usually of the remaining 
 #' variables in the model including optional control
-#' variables. It removes missing data from input variables before proceeding.
+#' variables. It works with kernel regression (xi on xk) and (xj on xk)  residuals,
+#' removes missing data from input variables before proceeding.
 #'
 #' @param xi {Input vector of data for variable xi}
 #' @param xj {Input vector of data for variable xj}
@@ -27,7 +28,7 @@
 
 parcor_ijk =function (xi, xj, xk) 
 {
-  na2 = naTriplet(xi, xj, ctrl=xk)
+  na2 = naTriplet(x=xi, y=xj, ctrl=xk)
   xi = na2$newx
   xj = na2$newy
   xk = na2$newctrl

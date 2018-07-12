@@ -2,7 +2,7 @@
 % Please edit documentation in R/bootSign.R
 \name{bootSign}
 \alias{bootSign}
-\title{Compute probability of positive or negative sign from bootPairs output}
+\title{Probability of unambiguously correct (+ or -) sign from bootPairs output}
 \usage{
 bootSign(out, tau = 0.476)
 }
@@ -30,14 +30,16 @@ of probabilities of correct signs assuming that the mean of n999 values
 has the correct sign and assuming that m of the 'sum' index values inside the
 range [-tau, tau] are neither positive nor negative but 
 indeterminate or ambiguous (being too close to zero). That is,
-the denominator of P(+1) or P(-1) is (n999-m) if m signs are too close to zero.
+the denominator of P(+1) or P(-1) is (n999-m) if m signs are too close to zero. 
+Thus it measures the bootstrap success rate in identifying the correct sign, when the sign
+of the average of n999 bootstraps is assumed to be correct.
 }
 \examples{
 \dontrun{
 options(np.messages = FALSE)
 set.seed(34);x=sample(1:10);y=sample(2:11)
 bb=bootPairs(cbind(x,y),n999=29)
-bootSign(bb,tau=0.476) #gives summary stats for n999 bootstrap sum computations
+bootSign(bb,tau=0.476) #gives success rate in n999 bootstrap sum computations
 
 bb=bootPairs(airquality,n999=999);options(np.messages=FALSE)
 bootSign(bb,tau=0.476)#signs for n999 bootstrap sum computations
@@ -47,7 +49,7 @@ attach(EuroCrime)
 bb=bootPairs(cbind(crim,off),n999=29) #col.1= crim causes off 
 #hence positive signs are more intuitively meaningful.
 #note that n999=29 is too small for real problems, chosen for quickness here.
-bootSign(bb,tau=0.476)#signs for n999 bootstrap sum computations
+bootSign(bb,tau=0.476)#gives success rate in n999 bootstrap sum computations
 }
 }
 \references{
@@ -65,7 +67,8 @@ in {Generalcorr} Package for Air Pollution and Monetary Policy
 (June 6, 2017). Available at SSRN: \url{https://ssrn.com/abstract=2982128}
 }
 \seealso{
-See Also \code{\link{silentPairs}}.
+See Also \code{\link{silentPairs}}, \code{\link{bootQuantile}},
+\code{\link{bootSignPcent}}.
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY

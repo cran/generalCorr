@@ -1,8 +1,8 @@
-#' Compute quantile(s) of indexes from bootPairs output
+#' Compute confidence intervals [quantile(s)] of indexes from bootPairs output
 #' 
 #' Begin with the output of bootPairs function, a (n999 by p-1) matrix when
 #' there are p columns of data, \code{bootQuantile} produces a (k by p-1) mtx
-#' of quantile of bootstrap ouput assuming that there are k quantiles needed.
+#' of quantile(s) of bootstrap ouput assuming that there are k quantiles needed.
 #' 
 #' @param out {output from bootPairs with p-1 columns and n999 rows}
 #' @param probs {quantile evaluation probabilities. The default is k=2,
@@ -39,7 +39,7 @@
 #' options(np.messages = FALSE)
 #' set.seed(34);x=sample(1:10);y=sample(2:11)
 #' bb=bootPairs(cbind(x,y),n999=29)
-#' bootQuantile(bb,tau=0.476) #gives summary stats for n999 bootstrap sum computations
+#' bootQuantile(bb) #gives summary stats for n999 bootstrap sum computations
 #' 
 #' bb=bootPairs(airquality,n999=999);options(np.messages=FALSE)
 #' bootQuantile(bb,tau=0.476)#signs for n999 bootstrap sum computations
@@ -49,7 +49,7 @@
 #' bb=bootPairs(cbind(crim,off),n999=29) #col.1= crim causes off 
 #' #hence positive signs are more intuitively meaningful.
 #' #note that n999=29 is too small for real problems, chosen for quickness here.
-#' bootQuantile(bb,tau=0.476)#signs for n999 bootstrap sum computations
+#' bootQuantile(bb)# quantile matrix for n999 bootstrap sum computations
 #' }
 #' @export
 

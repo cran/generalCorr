@@ -3,7 +3,7 @@
 \name{parcor_ijk}
 \alias{parcor_ijk}
 \title{Generalized partial correlation coefficients between Xi and Xj after removing the
-effect of xk.}
+effect of xk via nonparametric regression residuals.}
 \usage{
 parcor_ijk(xi, xj, xk)
 }
@@ -23,7 +23,8 @@ allowing for control variables.
 This function uses data on two column vectors, xi, xj and 
 xk which can be a vector or a matrix usually of the remaining 
 variables in the model including optional control
-variables. It removes missing data from input variables before proceeding.
+variables. It works with kernel regression (xi on xk) and (xj on xk)  residuals,
+removes missing data from input variables before proceeding.
 }
 \note{
 This function calls \code{\link{kern}},

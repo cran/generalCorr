@@ -1,5 +1,10 @@
 Package: generalCorr
 ==============
+Version 1.1.2 [2018-07-11]
+o Added parcorMtx function to compute partial correlation matrices 
+and some bootstrap summarizing bootSignPcent using -100 to 100 range,
+and some bug fixes.
+
 Version 1.1.1 [2018-01-24]
 o improvements to vignette2, option to use older Cr1 criterion
 and some bootstrap summarizing functions added.
