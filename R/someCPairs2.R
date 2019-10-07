@@ -1,11 +1,14 @@
 #' Kernel causality computations admitting control variables reporting 
-#' a 7-column matrix, ver. 2 
+#' a 7-column matrix, version 2.
 #' 
-#' Second version of \code{someCPairs} also allows input matrix of control variables, produce 7 column matrix
+#' Second version of \code{someCPairs} also allows input matrix of 
+#' control variables, produce 7 column matrix
 #' summarizing the results where the signs of
-#' stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
-#' compute an overall result for all orders of stochastic dominance by a weighted sum for
-#' the criteria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
+#' stochastic dominance order values (+1 or -1) are weighted by 
+#' \code{wt=c(1.2,1.1, 1.05, 1)} to
+#' compute an overall result for all orders of stochastic dominance by 
+#' a weighted sum for the criteria Cr1 and Cr2. 
+#' The weighting is obviously not needed for the third criterion Cr3.
 #' 
 #' The reason for slightly declining weights on the signs from
 #' SD1 to SD4 is simply that the local mean comparisons 
@@ -58,7 +61,9 @@
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
-#' @keywords causal criteria, SD1, SD2, SD3, SD4, generalized correlations
+#' @concept causal criteria
+#' @concept stochastic dominance
+#' @concept  generalized correlations
 #' @note The output matrix last column for `mtcars' example
 #' has the sum of the scores by the three criteria
 #' combined. If `sum' is positive, then variable X (mpg) is more likely to have been

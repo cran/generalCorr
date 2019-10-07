@@ -1,5 +1,10 @@
 Package: generalCorr
 ==============
+Version 1.1.3 [2019-10-07]
+o Added gmcmtxBlk, whcih is a new blocked version of gmcmtx0. Also
+added pillarChart3D for wireframe charts of 3D data and other
+minor changes.
+
 Version 1.1.2 [2018-07-11]
 o Added parcorMtx function to compute partial correlation matrices 
 and some bootstrap summarizing bootSignPcent using -100 to 100 range,

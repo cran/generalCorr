@@ -17,7 +17,7 @@ pcause(x, y, n999 = 999)
 P(cause) the bootstrap proportion of correct causal determinations.
 }
 \description{
-Maximum entropy bootstrap (meboot) package is used for statistical inference
+Maximum entropy bootstrap (`meboot') package is used for statistical inference
 regarding \eqn{\delta} which equals GMC(X|Y)-GMC(Y|X) defined by Zheng et al (2012).
 The bootstrap provides an approximation to chances of correct determination of
 the causal direction.
@@ -56,6 +56,5 @@ Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{asymmetric}
-\keyword{kernel}
-\keyword{regression,}
+\concept{bootstrap}
+\concept{maximum entropy bootstrap}

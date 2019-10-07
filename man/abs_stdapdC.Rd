@@ -47,7 +47,5 @@ See  \code{\link{abs_stdapd}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{apd}
-\keyword{gradients}
-\keyword{kern}
-\keyword{regression}
+\concept{apd}
+\concept{kernel regression gradients}

@@ -4,8 +4,8 @@
 \alias{causeSummary}
 \title{Kernel causality summary of evidence for causal paths from three criteria}
 \usage{
-causeSummary(mtx, nam = colnames(mtx), ctrl = 0, dig = 6, wt = c(1.2,
-  1.1, 1.05, 1), sumwt = 4)
+causeSummary(mtx, nam = colnames(mtx), ctrl = 0, dig = 6,
+  wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns, y the first column 
@@ -105,6 +105,11 @@ Vinod, H. D. `Generalized Correlation and Kernel Causality with
    Statistics -Simulation and Computation, 2015,
    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
 
+Vinod, H. D. 'New exogeneity tests and causal paths,'
+ Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
+
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
 (June 6, 2017). Available at SSRN: 
@@ -121,11 +126,6 @@ See  \code{\link{someCPairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{index}
-\keyword{path,}
-\keyword{summary}
+\concept{causal path}
+\concept{stochastic dominance orders}
+\concept{summary index}

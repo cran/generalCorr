@@ -80,3 +80,4 @@ See Also \code{\link{silentPairs}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
+\concept{maximum entropy bootstrap}

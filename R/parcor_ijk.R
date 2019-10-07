@@ -1,11 +1,12 @@
-#' Generalized partial correlation coefficients between Xi and Xj after removing the
-#' effect of xk via nonparametric regression residuals.
+#' Generalized partial correlation coefficients between Xi and Xj, after removing the
+#' effect of xk, via nonparametric regression residuals.
 #'
 #' This function uses data on two column vectors, xi, xj and 
 #' xk which can be a vector or a matrix usually of the remaining 
 #' variables in the model including optional control
 #' variables. It works with kernel regression (xi on xk) and (xj on xk)  residuals,
 #' removes missing data from input variables before proceeding.
+#' This avoids ridge type adjustment present in the older version.
 #'
 #' @param xi {Input vector of data for variable xi}
 #' @param xj {Input vector of data for variable xj}

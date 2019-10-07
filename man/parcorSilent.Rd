@@ -83,8 +83,5 @@ See Also \code{\link{parcor_ijk}} for a better version using original data as in
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{biasing}
-\keyword{correlations,}
-\keyword{factor,}
-\keyword{partial}
-\keyword{ridge}
+\concept{partial correlations}
+\concept{ridge biasing factor}

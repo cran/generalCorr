@@ -35,9 +35,9 @@ where notation C=control.
 \details{
 (typ=1) reports ('Y', 'X', 'Cause',
 'SD1.rhserr', 'SD2.rhserr', 'SD3.rhserr', 'SD4.rhserr') 
-naming variables identifying the 'cause'
-and measures of stochastic dominance using absolute values of kernel
-regression abs(RHS first regressor*residual) 
+naming variables identifying the 'cause,' using Hausman-Wu criterion.
+It measures of stochastic dominance using absolute values of kernel
+regression abs(RHS first regressor*residual),  
 comparing flipped regressions X on Y versus Y on X.
 
 {(typ=2)} 
@@ -77,11 +77,5 @@ the Hausman-Wu statistic for testing exogeneity.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}
+\concept{generalized correlations}

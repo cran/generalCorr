@@ -14,7 +14,7 @@
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 ## @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~ @references %%
 ## ~put references to the literature/web site here ~
-#' @keywords kern regression residuals
+#' @concept  kernel regression residuals
 #' @examples
 #' \dontrun{
 #' set.seed(330)

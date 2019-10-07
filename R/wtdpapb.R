@@ -31,13 +31,13 @@
 #' @seealso See Also \code{\link{stochdom2}}
 #' @references Vinod, H. D.', 'Hands-On Intermediate Econometrics 
 #' Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-#' \url{http://www.worldscibooks.com/economics/6895.html}
+#' \url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
 #'
 #' @references Vinod, H. D. 'Ranking Mutual Funds Using 
 #' Unconventional Utility Theory and Stochastic Dominance,'
 #' Journal of Empirical Finance Vol. 11(3) 2004, pp. 353-377.
 #' 
-#' @keywords stochastic dominance
+#' @concept stochastic dominance
 #' @examples
 #' 
 #'  \dontrun{

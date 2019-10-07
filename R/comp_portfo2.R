@@ -2,6 +2,7 @@
 #'
 #' Given two vectors of portfolio returns this function calls the internal function wtdpapb
 #' to report the simple means of four sophisticated measures of stochastic dominance.
+#' as explained in Vinod (2008).
 #'
 #' @param xa {Data on returns for portfolio A in the form of a T by 1 vector}
 #' @param xb {Data on returns for portfolio B in the form of a T by 1 vector}
@@ -19,9 +20,10 @@
 #' 
 #' @references Vinod, H. D.", "Hands-On Intermediate Econometrics 
 #' Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
-#' \url{http://www.worldscibooks.com/economics/6895.html}
+#' \url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
 #'
-#' @keywords stochastic dominance SD1 SD2 SD3 SD4 wtdpapb bigfp
+#' @concept stochastic dominance 
+#' @concept financial portfolio choice
 #' @examples
 #'
 #' set.seed(30)

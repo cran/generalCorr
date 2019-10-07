@@ -4,7 +4,8 @@
 \alias{silentMtx}
 \title{No-print kernel-causality unanimity score matrix with optional control variables}
 \usage{
-silentMtx(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
+silentMtx(mtx, ctrl = 0, dig = 6, wt = c(1.2, 1.1, 1.05, 1),
+  sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix with p columns. Denote x1 as the first column 
@@ -117,11 +118,6 @@ See  \code{\link{someCPairs}}, \code{\link{some0Pairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}
+\concept{fourth order stochastic dominance}
+\concept{generalized correlations}

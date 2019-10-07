@@ -11,9 +11,9 @@
 #' 
 #' (typ=1) reports ('Y', 'X', 'Cause',
 #' 'SD1.rhserr', 'SD2.rhserr', 'SD3.rhserr', 'SD4.rhserr') 
-#' naming variables identifying the 'cause'
-#' and measures of stochastic dominance using absolute values of kernel
-#' regression abs(RHS first regressor*residual) 
+#' naming variables identifying the 'cause,' using Hausman-Wu criterion.
+#' It measures of stochastic dominance using absolute values of kernel
+#' regression abs(RHS first regressor*residual),  
 #' comparing flipped regressions X on Y versus Y on X.
 #' 
 #' {(typ=2)} 
@@ -36,7 +36,8 @@
 #' is paired with (p-1) other columns  The output matrix headings are
 #' self-explanatory and distinct for each criterion Cr1 to Cr3.
 #' 
-#' @keywords  causal criteria, SD1, SD2, SD3, SD4, generalized correlations
+#' @concept causal criteria
+#' @concept generalized correlations
 #'
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso The related function \code{\link{some0Pairs}} may be more useful, since it

@@ -1,4 +1,5 @@
-#' Compute generalized (ridge-adjusted) partial correlation coefficients from matrix R*. (deprecated)
+#' Compute generalized (ridge-adjusted) partial correlation coefficients 
+#' from matrix R*. (deprecated)
 #'
 #' This function calls \code{parcor_ijkOLD} function which
 #' uses a generalized correlation matrix R* as input to compute
@@ -31,7 +32,7 @@
 #'  correlation coefficients in  the correct [-1,1] interval. 
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See Also \code{\link{parcor_ijkOLD}}.
-#' @keywords partial correlations
+#' @concept  partial correlations
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
 #'  \url{http://ssrn.com/abstract=2574891}

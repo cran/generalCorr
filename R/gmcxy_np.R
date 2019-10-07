@@ -1,4 +1,5 @@
-#' Function to compute generalized correlation coefficients r*(x|y) and r*(y|x).
+#' Function to compute generalized correlation coefficients r*(x|y) and 
+#' r*(y|x) from two vectors (not matrices)
 #'
 #' This function uses the `np' package and assumes that there are no missing data.
 #'
@@ -19,7 +20,8 @@
 #' Using R,' Chapter 4 in 'Handbook of Statistics: Computational Statistics
 #' with R,' Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 #' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
-#' @keywords kernel regression, asymmetric R*
+#' @concept  kernel regression
+#' @concept R* asymmetric correlations
 #' @examples
 #' \dontrun{
 #' set.seed(34);x=sample(1:10);y=sample(2:11)

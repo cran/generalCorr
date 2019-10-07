@@ -22,11 +22,11 @@
 #'    second column has the name of the j variable, while the third column 
 #'    has partial correlation coefficients  r*(i,j | k).
 #'
-#' @note We want to get all partial
-#'  correlation coefficients. 
+#' @note This function reports all partial
+#'  correlation coefficients, while avoiding ridge type adjustment.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See Also \code{\link{parcor_ijk}}.
-#' @keywords partial correlations, ridge biasing factor,
+#' @concept  partial correlations
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
 #'  \url{http://ssrn.com/abstract=2574891}

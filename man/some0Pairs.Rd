@@ -2,10 +2,10 @@
 % Please edit documentation in R/some0Pairs.R
 \name{some0Pairs}
 \alias{some0Pairs}
-\title{Function reporting kernel causality results as a detailed 7-column matrix}
+\title{Function reporting detailed kernel causality results in a 7-column matrix}
 \usage{
-some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2, 1.1,
-  1.05, 1), sumwt = 4)
+some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
+  1.1, 1.05, 1), sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix in the first column is paired with all others.}}
@@ -97,11 +97,5 @@ See Also \code{\link{somePairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}
+\concept{generalized correlations}

@@ -23,7 +23,8 @@
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See  \code{\link{abs_stdapd}}.
 #'
-#' @keywords kern regression gradients apd
+#' @concept  kernel regression gradients
+#' @concept apd
 #' @examples
 #' \dontrun{
 #' set.seed(330)

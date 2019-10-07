@@ -20,7 +20,8 @@
 ## @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #'
-#' @keywords kern regression gradients apd
+#' @concept kernel regression gradients 
+#' @concept apd
 #' @examples
 #' \dontrun{
 #' set.seed(330)

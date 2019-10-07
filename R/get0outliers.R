@@ -15,6 +15,7 @@
 #' \item{nLO}{count of number of data points below lower boundary} 
 #' @note The function removes the missing data before checking for outliers.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+#' @concept outlier detection
 #' @examples
 #' 
 #' set.seed(101);x=sample(1:100)[1:15];x[16]=150;x[17]=NA

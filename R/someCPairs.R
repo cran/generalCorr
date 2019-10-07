@@ -58,7 +58,7 @@
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
-#' @keywords causal criteria, SD1, SD2, SD3, SD4, generalized correlations
+#' @concept causal criteria
 #' @note The output matrix last column for `mtcars' example
 #' has the sum of the scores by the three criteria
 #' combined. If `sum' is positive, then variable X (mpg) is more likely to have been
@@ -87,8 +87,8 @@
 #' @export
 
 someCPairs=
-  function (mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2, 
-                                                                   1.1, 1.05, 1), sumwt = 4) 
+  function (mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, 
+            wt = c(1.2, 1.1, 1.05, 1), sumwt = 4) 
   {
     n = NROW(mtx)
     p = NCOL(mtx)

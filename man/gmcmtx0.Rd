@@ -2,7 +2,7 @@
 % Please edit documentation in R/gmcmtx0.R
 \name{gmcmtx0}
 \alias{gmcmtx0}
-\title{Compute the matrix R* of generalized correlation coefficients.}
+\title{Matrix R* of generalized correlation coefficients captures nonlinearities.}
 \usage{
 gmcmtx0(mym, nam = colnames(mym))
 }
@@ -19,11 +19,11 @@ This function checks for missing data for each pair individually. It then uses t
 \code{kern} function to kernel regress x on y, and conversely y on x. It
  needs the library `np' which reports R-squares of each regression. This function
 reports their square roots after assigning them the observed sign of the Pearson 
-correlation coefficient. Its advantages are (i)
+correlation coefficient. Its advantages are: (i)
 It is asymmetric yielding causal direction information,
 by relaxing the assumption of linearity implicit in usual correlation coefficients.
 (ii) The r* correlation coefficients are generally larger upon admitting 
-arbitrary nonlinearities.
+arbitrary nonlinearities.  (iii) max(|R*ij|, |R*ji|) measures (nonlinear) dependence.
 }
 \examples{
 
@@ -46,14 +46,21 @@ Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
 with R', Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 
+Vinod, H. D. 'New exogeneity tests and causal paths,'
+ Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
+
 Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures 
  of correlation for asymmetry, nonlinearity, and beyond,' 
  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
 }
+\seealso{
+See Also as \code{\link{gmcmtxBlk}} for a more general version using
+blocking.
+}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{R*}
-\keyword{asymmetric}
-\keyword{kernel}
-\keyword{regression,}
+\concept{R* asymmetric matrix of generalized correlation coefficients}
+\concept{kernel regression}

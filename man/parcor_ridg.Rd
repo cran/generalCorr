@@ -2,7 +2,8 @@
 % Please edit documentation in R/parcor_ridg.R
 \name{parcor_ridg}
 \alias{parcor_ridg}
-\title{Compute generalized (ridge-adjusted) partial correlation coefficients from matrix R*. (deprecated)}
+\title{Compute generalized (ridge-adjusted) partial correlation coefficients 
+from matrix R*. (deprecated)}
 \usage{
 parcor_ridg(gmc0, dig = 4, idep = 1, verbo = FALSE, incr = 3)
 }
@@ -83,5 +84,4 @@ See Also \code{\link{parcor_ijkOLD}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{correlations}
-\keyword{partial}
+\concept{partial correlations}

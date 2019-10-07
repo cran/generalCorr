@@ -2,7 +2,7 @@
 % Please edit documentation in R/somePairs.R
 \name{somePairs}
 \alias{somePairs}
-\title{Function reporting kernel causality results as a 7-column matrix.}
+\title{Function reporting kernel causality results as a 7-column matrix.(deprecated)}
 \usage{
 somePairs(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE)
 }
@@ -69,11 +69,5 @@ further summarizes their results by weighting to help choose causal paths.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}
+\concept{generalized correlations}

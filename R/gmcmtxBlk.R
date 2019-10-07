@@ -1,0 +1,113 @@
+#' Matrix R* of generalized correlation coefficients captures nonlinearities using blocks.
+#' 
+#' The algorithm uses
+#' two auxiliary functions, \code{getSeq} and \code{NLhat}. The latter 
+#' uses the
+#' \code{kern} function to kernel regress x on y, and conversely y on x. It
+#'  needs the package `np' which reports residuals and allows one to
+#'  to compute fitted values (xhat, yhat). Unlike `gmcmtx0,' this function
+#' considers blocks of blksiz=10 (default) pairs of data points
+#' separately with distinct bandwidths for each block, usually creating superior local fits. 
+#' 
+#' This function does pairwise checks of missing data for all pairs. 
+#' Assume that there are n rows in the input matrix `mym' with some missing rows.
+#' If the columns of mym are denoted (X1,X2, ...Xp), we are considering all
+#' pairs (Xi, Xj), treated as (x, y), with `nv' number of valid (non-missing) rows
+#' Note that each x and y is an (nv by 1) vector.  This function further
+#' splits these (x, y) vectors into as many subgroups or blocks as are needed
+#' for the nv paired valid data points for the chosen block length (blksiz)
+#' 
+#' Next, the algorithm strings together various blocks of
+#' fitted value vectors (xhat, yhat) also of dimension nv by 1. 
+#' Now for each pair of Xi Xj (column Xj= cause, row Xi=response, treated as
+#' as x and y) the algorithm reports as R*ij the simple Pearson 
+#' correlation coefficient between (x, xhat) and as R*ji the correlation coeff.
+#' between (y, yhat), after assigning them the observed sign of the Pearson 
+#' correlation coefficient between x and y. 
+#' 
+#' 
+#' Its advantages discussed in Vinod (2015, 2019) are: (i)
+#' It is asymmetric yielding causal direction information,
+#' by relaxing the assumption of linearity implicit in usual correlation coefficients.
+#' (ii) The R* correlation coefficients are generally larger upon admitting 
+#' arbitrary nonlinearities.(iii) max(|R*ij|, |R*ji|) measures (nonlinear) dependence.
+#' For example, x=1:20; y=sin(x) where y is perfectly dependent on x and yet Pearson
+#' correlation coefficient is near zero since the relation is nonlinear.
+#' 
+#' @param mym {A matrix of data on selected variables arranged in columns}
+#' @param blksiz {block size, default=10}
+#' @param nam {Column names of the variables in the data matrix}
+#' @importFrom stats cor
+#' @return A non-symmetric R* matrix of generalized correlation coefficients
+### @note %% ~~further notes~~
+#' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+## @seealso See Also \code{\link{gmcmtx0}}.
+#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#'  Applications in Development Economics' in Communications in 
+#'  Statistics -Simulation and Computation, 2015, 
+#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
+#' @references Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
+#' Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
+#' with R', Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
+#' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
+#' @references Vinod, H. D. 'New exogeneity tests and causal paths,'
+#'  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+#' Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+#' North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
+#' @references Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures 
+#'  of correlation for asymmetry, nonlinearity, and beyond,' 
+#'  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
+#' @concept  kernel regression 
+#' @concept R* asymmetric matrix of generalized correlation coefficients
+#' @examples
+#'  
+#' \dontrun{
+#' x=1:20; y=sin(x)
+#' gmcmtxBlk(cbind(x,y),blksiz=10)}
+#' 
+#' @export
+
+gmcmtxBlk=  function (mym, nam = colnames(mym), blksiz=10) 
+  {
+    p = NCOL(mym)
+    n = NROW(mym)
+    ge=getSeq(n,blksiz=blksiz)
+    out1 = matrix(1, p, p)
+    for (i in 1:p) {
+      x = mym[, i]
+      for (j in 1:p) {
+        if (j > i) {
+          y = mym[, j]
+          ok=complete.cases(x,y)
+          newx = x[ok]
+          newy = y[ok]
+    xhat=rep(NA,n)
+    yhat=rep(NA,n)
+    LO=ge$sqLO
+    UP=ge$sqUP
+ #   print(cbind(LO,UP))
+    k=length(LO)
+    
+    for (ik in 1:k){
+    L1=LO[ik]  
+    U1=UP[ik]
+ #   print(c(L1, U1))
+    N1=NLhat(x=newx[L1:U1], y=newy[L1:U1])  
+    xhat[L1:U1] =N1$xhat 
+    yhat[L1:U1] =N1$yhat 
+#  print(c(N1$xhat))
+    } #end of ik loop
+    c1 = cor(x, y)
+    sig = sign(c1)
+    out1[i, j] = sig*cor(x,xhat)
+    out1[j, i] = sig*cor(y, yhat)
+        }
+      }
+    }
+    colnames(out1) = nam
+    rownames(out1) = nam
+    return(out1)
+  }
+
+
+

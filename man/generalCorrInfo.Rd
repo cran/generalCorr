@@ -44,6 +44,8 @@ for a heuristic t-test called \code{heurist}.  Pairwise deletion of missing data
 is done in \code{napair}, while triplet-wise deletion is in \code{naTriplet}
 intended for use when control variable(s) are also present. If one has
 panel data, functions \code{PanelLag} and \code{Panel2Lag} are relevant.
+\code{pillar3D} provides 3-dimensional plots of data which look
+more like surfaces, than usual plots with vertical pins.
 
 In simultaneous equation
 models where endogeneity of regressors is feared, we suggest using Prof. Koopmans' method
@@ -75,5 +77,10 @@ Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
 (June 6, 2017). Available at SSRN: 
-\url{https://ssrn.com/abstract=2982128}#'
+\url{https://ssrn.com/abstract=2982128}
+
+Vinod, H. D. 'New exogeneity tests and causal paths,'
+ Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
 }

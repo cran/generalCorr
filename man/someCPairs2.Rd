@@ -3,10 +3,10 @@
 \name{someCPairs2}
 \alias{someCPairs2}
 \title{Kernel causality computations admitting control variables reporting 
-a 7-column matrix, ver. 2}
+a 7-column matrix, version 2.}
 \usage{
-someCPairs2(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
-  1.1, 1.05, 1), sumwt = 4)
+someCPairs2(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE,
+  wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns where the first column is fixed and then 
@@ -34,11 +34,14 @@ For example, crime `kernel causes' police officer deployment (not vice versa) is
 the positive sign of `sum' (=3.175) reported for that example included in this package.
 }
 \description{
-Second version of \code{someCPairs} also allows input matrix of control variables, produce 7 column matrix
+Second version of \code{someCPairs} also allows input matrix of 
+control variables, produce 7 column matrix
 summarizing the results where the signs of
-stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
-compute an overall result for all orders of stochastic dominance by a weighted sum for
-the criteria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
+stochastic dominance order values (+1 or -1) are weighted by 
+\code{wt=c(1.2,1.1, 1.05, 1)} to
+compute an overall result for all orders of stochastic dominance by 
+a weighted sum for the criteria Cr1 and Cr2. 
+The weighting is obviously not needed for the third criterion Cr3.
 }
 \details{
 The reason for slightly declining weights on the signs from
@@ -107,11 +110,6 @@ See Also \code{\link{somePairs}}, \code{\link{some0Pairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}
+\concept{generalized correlations}
+\concept{stochastic dominance}

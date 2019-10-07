@@ -3,7 +3,7 @@
 \name{abs_stdrhserC}
 \alias{abs_stdrhserC}
 \title{Absolute residuals kernel regressions of standardized x on y and control 
-variables, Cr1 has abs(RHS*y)}
+variables, Cr1 has abs(RHS*y) not gradients.}
 \usage{
 abs_stdrhserC(x, y, ctrl, ycolumn = 1)
 }
@@ -59,6 +59,4 @@ See  \code{\link{abs_stdres}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{kern}
-\keyword{regression}
-\keyword{residuals}
+\concept{kernel regression residuals}

@@ -1,6 +1,6 @@
 #' Compute the bootstrap probability of correct causal direction.
 #' 
-#' Maximum entropy bootstrap (meboot) package is used for statistical inference
+#' Maximum entropy bootstrap (`meboot') package is used for statistical inference
 #' regarding \eqn{\delta} which equals GMC(X|Y)-GMC(Y|X) defined by Zheng et al (2012).
 #' The bootstrap provides an approximation to chances of correct determination of
 #' the causal direction.
@@ -26,7 +26,8 @@
 #' @references Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
 #'  for time series: The meboot R package.' Journal of Statistical Software,
 #'  Vol. 29(5), pp. 1-19. 
-#' @keywords kernel regression, asymmetric
+#' @concept  bootstrap
+#' @concept  maximum entropy bootstrap
 #' @examples
 #'
 #' \dontrun{

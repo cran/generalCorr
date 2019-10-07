@@ -42,6 +42,7 @@
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: \url{https://ssrn.com/abstract=2982128}
+#' @concept maximum entropy bootstrap
 #' @examples
 #' \dontrun{
 #' options(np.messages = FALSE)

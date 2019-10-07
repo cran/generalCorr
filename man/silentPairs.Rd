@@ -105,11 +105,6 @@ See  \code{\link{someCPairs}}, \code{\link{some0Pairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{Hausman-Wu exogeneity criteria}
+\concept{generalized correlations}
+\concept{stochastic dominance}

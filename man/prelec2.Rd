@@ -17,7 +17,8 @@ prelec2(n)
 \description{
 Computes cumulative probabilities and difference between consecutive
 cumulative probabilities described in Vinod (2008) textbook.  This is a simpler version
-of the version in the book without mapping to non-expected utility theory weights.
+of the version in the book without mapping to non-expected utility theory weights
+as explained in Vinod (2008).
 }
 \examples{
 
@@ -27,9 +28,10 @@ of the version in the book without mapping to non-expected utility theory weight
 \references{
 Vinod, H. D. `Hands-On Intermediate Econometrics
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-\url{http://www.worldscibooks.com/economics/6895.html}
+\url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{Prelec}
+\concept{Prelec weights}
+\concept{non expected utility function}

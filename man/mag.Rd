@@ -54,5 +54,4 @@ See  \code{\link{mag_ctrl}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{derivatives}
-\keyword{partial}
+\concept{amorphous partial derivatives}

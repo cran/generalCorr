@@ -22,7 +22,8 @@
 ## @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #'
-#' @keywords kern regression Hausman-Wu statistic
+#' @concept  kernel regression
+#' @concept  Hausman-Wu statistic
 #' @examples
 #' \dontrun{
 #' set.seed(330)

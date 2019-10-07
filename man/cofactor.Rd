@@ -37,3 +37,4 @@ function (x, r, c)
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
+\concept{cofactor of a matrix}

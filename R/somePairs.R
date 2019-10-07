@@ -1,4 +1,4 @@
-#' Function reporting kernel causality results as a 7-column matrix.
+#' Function reporting kernel causality results as a 7-column matrix.(deprecated)
 #'
 #' This function lets the user choose one of three criteria to determine causal direction
 #' by setting \code{typ} as 1, 2 or 3.  This function reports results for 
@@ -31,7 +31,8 @@
 #' is paired with (p-1) other columns  The output matrix headings are
 #' self-explanatory and distinct for each criterion Cr1 to Cr3.
 #' 
-#' @keywords  causal criteria, SD1, SD2, SD3, SD4, generalized correlations
+#' @concept causal criteria
+#' @concept generalized correlations
 #'
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso The related function \code{\link{some0Pairs}} may be more useful, since it

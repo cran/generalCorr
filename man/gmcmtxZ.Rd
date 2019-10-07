@@ -19,8 +19,8 @@ This function checks for missing data separately for each pair using
 \code{kern} function to kernel regress x on y, and conversely y on x. It
  needs the library `np' which reports R-squares of each regression. This function
 reports their square roots with the sign of the Pearson correlation coefficients.
-Its appeal is that it is asymmetric yielding causal direction information,
-by relaxing the assumption of linearity implicit in usual correlation 
+Its appeal is that it is asymmetric yielding causal direction information.
+It avoids the assumption of linearity implicit in the usual correlation 
 coefficients.
 }
 \note{
@@ -44,6 +44,5 @@ Vinod, H. D. `Generalized Correlation and Kernel Causality with
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{asymmetric}
-\keyword{kernel}
-\keyword{regression,}
+\concept{R* asymmetric correlations}
+\concept{kernel regression}

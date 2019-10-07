@@ -2,7 +2,8 @@
 % Please edit documentation in R/allPairs.R
 \name{allPairs}
 \alias{allPairs}
-\title{Report causal identification for all pairs of variables in a matrix.}
+\title{Report causal identification for all pairs of variables in a matrix 
+(somewhat deprecated).}
 \usage{
 allPairs(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE)
 }
@@ -32,7 +33,8 @@ A 7-column matrix called 'outcause' with names of variables
 This is a convenient way to study all possible (perhaps too many)
 causal directions in a matrix. It calls
 \code{abs_stdapd}, \code{abs_stdres}, \code{comp_portfo2}, etc. and returns
-a matrix with 7 columns with detailed output.
+a matrix with 7 columns having detailed output. Criterion 1 has been revised
+in Vinod (2019).
 }
 \note{
 The cause reported in the third column
@@ -45,6 +47,7 @@ The cause reported in the third column
   called \code{some0Pairs}, incorporates all SD1 to SD4 and all
  three criteria Cr1 rto Cr3 to report a `sum' of indexes representing the signed 
  number whose sign can more comprehensively help determine the causal direction(s).
+ Since the Cr1 here is revised in later work, this is deprecated.
 }
 \examples{
 
@@ -59,17 +62,18 @@ Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+
+Vinod, H. D. 'New exogeneity tests and causal paths,'
+ Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
 }
 \seealso{
-See Also  \code{somePairs}, \code{some0Pairs}
+See Also  \code{somePairs}, \code{some0Pairs} \code{causeSummary}
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{absolute}
-\keyword{amorphous}
-\keyword{derivative,}
-\keyword{dominance}
-\keyword{partial}
-\keyword{residuals,}
-\keyword{stochastic}
+\concept{absolute residual values}
+\concept{amorphous partial derivative apd}
+\concept{stochastic dominance}

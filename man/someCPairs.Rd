@@ -5,8 +5,8 @@
 \title{Kernel causality computations admitting control variables 
 reporting a 7-column matrix (has older Cr1)}
 \usage{
-someCPairs(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
-  1.1, 1.05, 1), sumwt = 4)
+someCPairs(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE,
+  wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns where the first column is fixed and then 
@@ -107,11 +107,4 @@ See Also \code{\link{somePairs}}, \code{\link{some0Pairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{correlations}
-\keyword{criteria,}
-\keyword{generalized}
+\concept{causal criteria}

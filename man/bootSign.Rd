@@ -73,9 +73,7 @@ See Also \code{\link{silentPairs}}, \code{\link{bootQuantile}},
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{bootstrap,}
-\keyword{comparisons}
-\keyword{kernel}
-\keyword{meboot,}
-\keyword{pairwise}
-\keyword{regression,}
+\concept{bootstrap}
+\concept{kernel regression}
+\concept{meboot}
+\concept{pairwise comparisons}

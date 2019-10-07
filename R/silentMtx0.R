@@ -57,7 +57,8 @@
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: 
 #' \url{https://ssrn.com/abstract=2982128}  
-#' @keywords causal criteria, SD1, SD2, SD3, SD4, generalized correlations
+#' @concept  causal criteria
+#' @concept generalized correlations
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
 #' The command \code{attach(EuroCrime); silentPairs(cbind(crim,off))}

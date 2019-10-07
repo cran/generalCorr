@@ -12,6 +12,7 @@
 #'   the null hypothesis of zero difference between the two generalized 
 #'   correlation coefficients.)
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+#' @concept paired t test
 #' @examples
 #' 
 #' set.seed(34);x=sample(1:10);y=sample(2:11)

@@ -56,11 +56,6 @@ See \code{\link{kern_ctrl}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{amorphous}
-\keyword{apd}
-\keyword{derivative,}
-\keyword{gradients}
-\keyword{kernel}
-\keyword{partial}
-\keyword{regression}
-\keyword{residuals}
+\concept{apd  amorphous partial derivative}
+\concept{kernel regression gradients}
+\concept{kernel regression residuals}

@@ -4,8 +4,8 @@
 \alias{causeSummary0}
 \title{Older Kernel causality summary of evidence for causal paths from three criteria}
 \usage{
-causeSummary0(mtx, nam = colnames(mtx), ctrl = 0, dig = 6, wt = c(1.2,
-  1.1, 1.05, 1), sumwt = 4)
+causeSummary0(mtx, nam = colnames(mtx), ctrl = 0, dig = 6,
+  wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns, y the first column 
@@ -123,11 +123,5 @@ See  \code{\link{someCPairs}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{SD1,}
-\keyword{SD2,}
-\keyword{SD3,}
-\keyword{SD4,}
-\keyword{causal}
-\keyword{index}
-\keyword{path,}
-\keyword{summary}
+\concept{causal path}
+\concept{summary index}

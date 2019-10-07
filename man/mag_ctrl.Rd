@@ -69,5 +69,4 @@ See  \code{\link{mag}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{derivatives}
-\keyword{partial}
+\concept{apd amorphous partial derivatives}

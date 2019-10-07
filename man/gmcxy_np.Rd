@@ -2,7 +2,8 @@
 % Please edit documentation in R/gmcxy_np.R
 \name{gmcxy_np}
 \alias{gmcxy_np}
-\title{Function to compute generalized correlation coefficients r*(x|y) and r*(y|x).}
+\title{Function to compute generalized correlation coefficients r*(x|y) and 
+r*(y|x) from two vectors (not matrices)}
 \usage{
 gmcxy_np(x, y)
 }
@@ -41,7 +42,5 @@ North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{R*}
-\keyword{asymmetric}
-\keyword{kernel}
-\keyword{regression,}
+\concept{R* asymmetric correlations}
+\concept{kernel regression}

@@ -1,9 +1,11 @@
-#' Report causal identification for all pairs of variables in a matrix.
+#' Report causal identification for all pairs of variables in a matrix 
+#' (somewhat deprecated).
 #'
 #' This is a convenient way to study all possible (perhaps too many)
 #' causal directions in a matrix. It calls
 #' \code{abs_stdapd}, \code{abs_stdres}, \code{comp_portfo2}, etc. and returns
-#' a matrix with 7 columns with detailed output.
+#' a matrix with 7 columns having detailed output. Criterion 1 has been revised
+#' in Vinod (2019).
 #'
 #' @param mtx {Input matrix with variable names}
 #' @param dig {Digits of accuracy in reporting (=6, default)}
@@ -29,14 +31,21 @@
 #'   called \code{some0Pairs}, incorporates all SD1 to SD4 and all
 #'  three criteria Cr1 rto Cr3 to report a `sum' of indexes representing the signed 
 #'  number whose sign can more comprehensively help determine the causal direction(s).
+#'  Since the Cr1 here is revised in later work, this is deprecated.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @seealso See Also  \code{somePairs}, \code{some0Pairs}
+#' @seealso See Also  \code{somePairs}, \code{some0Pairs} \code{causeSummary}
 #' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
-#' @keywords amorphous partial derivative, stochastic dominance
-#' @keywords absolute residuals,
+#' @references Vinod, H. D. 'New exogeneity tests and causal paths,'
+#'  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+#' Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+#' North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
+#'  
+#' @concept  amorphous partial derivative apd
+#' @concept stochastic dominance
+#' @concept  absolute residual values
 #' @examples
 #' 
 #' data(mtcars)

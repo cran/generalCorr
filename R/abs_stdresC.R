@@ -8,7 +8,7 @@
 #'
 #' The first argument is assumed to be the dependent variable.  If
 #' \code{abs_stdres(x,y)} is used, you are regressing x on y (not the usual y
-#' on x). The regressors can be a matrix with 2 or more columns. The missing values
+#' on x). The regressors can be a matrix with two or more columns. The missing values
 #' are suitably ignored by the standardization.
 #'
 #' @param x {vector of data on the dependent variable}
@@ -26,7 +26,7 @@
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
-#' @keywords kern regression residuals
+#' @concept  kernel regression residuals
 #' @examples
 #'
 #' \dontrun{

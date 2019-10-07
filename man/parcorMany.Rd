@@ -36,8 +36,8 @@ allows for the presence of control variable(s) (if any) to remain always outside
 the input matrix and whose effect is also removed in computing partial correlations.
 }
 \note{
-We want to get all partial
- correlation coefficients.
+This function reports all partial
+ correlation coefficients, while avoiding ridge type adjustment.
 }
 \examples{
 set.seed(234)
@@ -71,8 +71,4 @@ See Also \code{\link{parcor_ijk}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{biasing}
-\keyword{correlations,}
-\keyword{factor,}
-\keyword{partial}
-\keyword{ridge}
+\concept{partial correlations}

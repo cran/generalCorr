@@ -42,7 +42,5 @@ abs_stdrhserr(x,y)
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{Hausman-Wu}
-\keyword{kern}
-\keyword{regression}
-\keyword{statistic}
+\concept{Hausman-Wu statistic}
+\concept{kernel regression}

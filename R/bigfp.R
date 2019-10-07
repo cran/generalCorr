@@ -1,6 +1,6 @@
 #'  Compute the numerical integration by the trapezoidal rule.
 #' 
-#' See page 220 of Vinod's ``Hands-on Intermediate Econometrics Using R,'' cited below
+#' See page 220 of Vinod (2008) ``Hands-on Intermediate Econometrics Using R,'' 
 #' for the trapezoidal integration formula
 #' needed for stochastic dominance.  The book explains pre-multiplication by two
 #' large sparse matrices denoted by \eqn{I_F,  I_f}.  Here we accomplish the 
@@ -24,8 +24,8 @@
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @references Vinod, H. D.', 'Hands-On Intermediate Econometrics
 #' Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-#' \url{http://www.worldscibooks.com/economics/6895.html}
-#' @keywords SD1 SD2 SD3 SD4
+#' \url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
+#' @concept fourth order stochastic dominance
 #' 
 #' @export
 

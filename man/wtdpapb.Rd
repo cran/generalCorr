@@ -49,7 +49,7 @@ theory' weights using Prelec's (1998, Econometrica, p. 497) method.  These
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics 
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-\url{http://www.worldscibooks.com/economics/6895.html}
+\url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
 
 Vinod, H. D. 'Ranking Mutual Funds Using 
 Unconventional Utility Theory and Stochastic Dominance,'
@@ -61,5 +61,4 @@ See Also \code{\link{stochdom2}}
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{dominance}
-\keyword{stochastic}
+\concept{stochastic dominance}

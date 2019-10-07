@@ -72,8 +72,4 @@ See Also \code{\link{parcor_ijk}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 }
-\keyword{biasing}
-\keyword{correlations,}
-\keyword{factor,}
-\keyword{partial}
-\keyword{ridge}
+\concept{partial correlations}

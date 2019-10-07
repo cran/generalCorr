@@ -70,7 +70,8 @@
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: 
 #' \url{https://ssrn.com/abstract=2982128}    
-#' @keywords causal path, SD1, SD2, SD3, SD4, summary index
+#' @concept  causal path
+#' @concept  summary index
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
 #' Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 

@@ -38,3 +38,4 @@ print(h1$p) #p-value
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
+\concept{paired t test}

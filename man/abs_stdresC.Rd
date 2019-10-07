@@ -29,7 +29,7 @@ the absolute values of residuals.
 \details{
 The first argument is assumed to be the dependent variable.  If
 \code{abs_stdres(x,y)} is used, you are regressing x on y (not the usual y
-on x). The regressors can be a matrix with 2 or more columns. The missing values
+on x). The regressors can be a matrix with two or more columns. The missing values
 are suitably ignored by the standardization.
 }
 \examples{
@@ -55,6 +55,4 @@ See  \code{\link{abs_stdres}}.
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{kern}
-\keyword{regression}
-\keyword{residuals}
+\concept{kernel regression residuals}

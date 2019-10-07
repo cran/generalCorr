@@ -40,3 +40,4 @@ get0outliers(x)#correctly identifies outlier=150
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
+\concept{outlier detection}

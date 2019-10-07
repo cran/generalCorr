@@ -7,15 +7,15 @@
 rstar(x, y)
 }
 \arguments{
-\item{x}{Vector of data on the dependent variable}
+\item{x}{{Vector of data on the dependent variable}}
 
-\item{y}{Vector of data on the regressor}
+\item{y}{{Vector of data on the regressor}}
 }
 \value{
 Four objects created by this function are:
 \item{corxy}{r*x|y or regressing x on y}
 \item{coryx}{r*y|x or regressing y on x}
-\item{pearson.r }{Pearson's product moment correlation coefficient}
+\item{pearson.r}{Pearson's product moment correlation coefficient}
 \item{pv}{The p-value for testing the Pearson r}
 }
 \description{
@@ -28,7 +28,6 @@ the null hypothesis that (population r)=0.
 This function needs the kern function which in turn needs the np package.
 }
 \examples{
-
 x=sample(1:30);y=sample(1:30); rstar(x,y)
 
 }
@@ -44,10 +43,9 @@ with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 }
 \seealso{
-See Also as \code{\link{gmcmtx0}}
+See Also \code{\link{gmcmtx0}} and  \code{\link{gmcmtxBlk}}.
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{asymmetric}
-\keyword{p-values}
+\concept{asymmetric  p-values}

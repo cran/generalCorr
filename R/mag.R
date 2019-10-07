@@ -31,7 +31,7 @@
 #' with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 #' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
 #'
-#' @keywords partial derivatives
+#' @concept amorphous partial derivatives
 #' @examples
 #'
 #' set.seed(123);x=sample(1:10);y=1+2*x+rnorm(10)

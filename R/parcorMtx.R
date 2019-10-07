@@ -24,7 +24,7 @@
 #'  shows why one needs more than one criterion to decide the causal paths or exogeneity.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See Also \code{\link{parcor_ijk}}.
-#' @keywords partial correlations, ridge biasing factor,
+#' @concept  partial correlations
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
 #'  \url{http://ssrn.com/abstract=2574891}

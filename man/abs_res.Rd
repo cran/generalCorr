@@ -37,6 +37,4 @@ abs_res(x,y)
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{kern}
-\keyword{regression}
-\keyword{residuals}
+\concept{kernel regression residuals}

@@ -22,8 +22,9 @@
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
-#' @keywords amorphous partial derivative, apd
-#' @keywords kernel regression residuals gradients
+#' @concept apd  amorphous partial derivative
+#' @concept  kernel regression residuals
+#' @concept  kernel regression gradients
 #' @examples
 #' 
 #' \dontrun{

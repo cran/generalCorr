@@ -4,17 +4,17 @@
 #' coefficients.  It requires kernel regression of x on y obtained by using the `np' package.
 #' It also reports usual Pearson correlation coefficient r and p-value for testing
 #' the null hypothesis that (population r)=0.
-#' @param x Vector of data on the dependent variable
-#' @param y Vector of data on the regressor
+#' @param x {Vector of data on the dependent variable}
+#' @param y {Vector of data on the regressor}
 #' @importFrom stats cor.test
 #' @return Four objects created by this function are:
 #' \item{corxy}{r*x|y or regressing x on y}
 #' \item{coryx}{r*y|x or regressing y on x}
-#' \item{pearson.r }{Pearson's product moment correlation coefficient}
+#' \item{pearson.r}{Pearson's product moment correlation coefficient}
 #' \item{pv}{The p-value for testing the Pearson r}
 #' @note This function needs the kern function which in turn needs the np package.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-#' @seealso See Also as \code{\link{gmcmtx0}}
+#' @seealso See Also \code{\link{gmcmtx0}} and  \code{\link{gmcmtxBlk}}.
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
@@ -24,10 +24,8 @@
 #' Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
 #' with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 #' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
-#'
-#' @keywords asymmetric  p-values
+#' @concept asymmetric  p-values
 #' @examples
-#'
 #' x=sample(1:30);y=sample(1:30); rstar(x,y)
 #'
 #' @export

@@ -7,6 +7,7 @@
 #' 
 #' @note This function is needed by the cofactor function.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+#' @concept minor of a matrix
 #' @examples
 #' 
 #' \dontrun{

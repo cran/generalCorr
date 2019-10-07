@@ -4,8 +4,8 @@
 #' \code{kern} function to kernel regress x on y, and conversely y on x. It
 #'  needs the library `np' which reports R-squares of each regression. This function
 #' reports their square roots with the sign of the Pearson correlation coefficients.
-#' Its appeal is that it is asymmetric yielding causal direction information,
-#' by relaxing the assumption of linearity implicit in usual correlation 
+#' Its appeal is that it is asymmetric yielding causal direction information.
+#' It avoids the assumption of linearity implicit in the usual correlation 
 #' coefficients.
 #' 
 #' @param mym {A matrix of data on variables in columns}
@@ -20,7 +20,8 @@
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
 #'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
-#' @keywords kernel regression, asymmetric
+#' @concept  kernel regression
+#' @concept R* asymmetric correlations
 #' @examples
 #' 
 #' \dontrun{

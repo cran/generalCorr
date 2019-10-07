@@ -18,6 +18,7 @@ dominance measurements called SD1 to SD4.
 \description{
 Given two vectors of portfolio returns this function calls the internal function wtdpapb
 to report the simple means of four sophisticated measures of stochastic dominance.
+as explained in Vinod (2008).
 }
 \note{
 It is possible to modify this function to report the median or standard
@@ -42,7 +43,7 @@ gp = comp_portfo2(xa, xb)#all Av(sdi) positive means xb dominates
 \references{
 Vinod, H. D.", "Hands-On Intermediate Econometrics 
 Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
-\url{http://www.worldscibooks.com/economics/6895.html}
+\url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
 }
 \seealso{
 \code{\link{stochdom2}}
@@ -50,11 +51,5 @@ Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 }
-\keyword{SD1}
-\keyword{SD2}
-\keyword{SD3}
-\keyword{SD4}
-\keyword{bigfp}
-\keyword{dominance}
-\keyword{stochastic}
-\keyword{wtdpapb}
+\concept{financial portfolio choice}
+\concept{stochastic dominance}

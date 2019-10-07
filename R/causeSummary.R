@@ -65,12 +65,18 @@
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
 #'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
-#' 
+#' @references Vinod, H. D. 'New exogeneity tests and causal paths,'
+#'  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
+#' Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
+#' North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
+#'  
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: 
 #' \url{https://ssrn.com/abstract=2982128}    
-#' @keywords causal path, SD1, SD2, SD3, SD4, summary index
+#' @concept  causal path 
+#' @concept stochastic dominance orders
+#' @concept summary index
 #' @note The European Crime data has all three criteria correctly suggesting that
 #' high crime rate kernel causes the deployment of a large number of police officers.
 #' Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
