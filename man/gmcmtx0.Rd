@@ -23,7 +23,14 @@ correlation coefficient. Its advantages are: (i)
 It is asymmetric yielding causal direction information,
 by relaxing the assumption of linearity implicit in usual correlation coefficients.
 (ii) The r* correlation coefficients are generally larger upon admitting 
-arbitrary nonlinearities.  (iii) max(|R*ij|, |R*ji|) measures (nonlinear) dependence.
+arbitrary nonlinearities.  (iii) max(|R*ij|, |R*ji|) measures (nonlinear) 
+dependence.
+For example, let x=1:20 and y=sin(x). This y has a perfect (100 percent)
+nonlinear dependence on x and yet Pearson correlation coefficient r(xy)
+-0.0948372 is near zero and usual confidence interval (-0.516, 0.363)
+includes zero, implying that it is not different from zero.  
+This shows a miserable failure of traditional r(x,y) to measure dependence
+ when nonlinearities are present.
 }
 \examples{
 

@@ -1,5 +1,10 @@
 Package: generalCorr
 ==============
+Version 1.1.5 [2019-10-30]
+o some bugs fixed, block versions of generalized partial correlation
+`parcorBijk' and a new measure of dependence `depMeas' added.
+vignette 4 is added to describe practical use of block versions.
+
 Version 1.1.3 [2019-10-07]
 o Added gmcmtxBlk, whcih is a new blocked version of gmcmtx0. Also
 added pillarChart3D for wireframe charts of 3D data and other

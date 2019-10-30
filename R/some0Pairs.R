@@ -1,4 +1,6 @@
 #' Function reporting detailed kernel causality results in a 7-column matrix 
+#' (uses deprecated criterion 1, no longer recommended but may be useful for
+#' second and third criterion typ=2,3)
 #' 
 #' The seven columns produced by this function summarize the results where the signs of
 #' stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to

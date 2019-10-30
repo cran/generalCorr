@@ -2,7 +2,9 @@
 % Please edit documentation in R/some0Pairs.R
 \name{some0Pairs}
 \alias{some0Pairs}
-\title{Function reporting detailed kernel causality results in a 7-column matrix}
+\title{Function reporting detailed kernel causality results in a 7-column matrix 
+(uses deprecated criterion 1, no longer recommended but may be useful for
+second and third criterion typ=2,3)}
 \usage{
 some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
   1.1, 1.05, 1), sumwt = 4)

@@ -1,12 +1,12 @@
-#' Report many generalized partial correlation coefficients 
+#' Block version reports many generalized partial correlation coefficients 
 #' allowing control variables.
 #'
-#' This function calls \code{parcor_ijk} function which
+#' This function calls a block version \code{parcorBijk} of the function which
 #' uses original data to compute
 #' generalized partial correlations between \eqn{X_{idep}} and \eqn{X_j}
 #' where j can be any one of the remaining
 #' variables in the input matrix \code{mtx}. Partial correlations remove the effect of
-#' variables \eqn{x_k} other than \eqn{X_i} and \eqn{X_j}. Calculation further 
+#' variables \eqn{X_k} other than \eqn{X_i} and \eqn{X_j}. Calculation further 
 #' allows for the presence of control variable(s) (if any) to remain always outside
 #' the input matrix and whose effect is also removed in computing partial correlations.
 #' 
@@ -17,17 +17,18 @@
 #' @param dig The number of digits for reporting (=4, default)
 #' @param idep The column number of the first variable (=1, default)
 #' @param verbo Make this TRUE for detailed printing of computational steps
+#' @param blksiz {block size, default=10, if chosen blksiz >n, where n=rows in matrix
+#'      then blksiz=n. That is, no blocking is done}
 #' @return A five column `out' matrix containing partials. The first column
 #'   has the name of the \code{idep} variable. The
 #'    second column has the name of the j variable, while the third column 
-#'    has partial correlation coefficients  r*(i,j | k). The last column
+#'    has partial correlation coefficients  r*(i,j | k).The last column
 #'    reports the absolute difference between two partial correlations.
-#'    
 #'
 #' @note This function reports all partial
 #'  correlation coefficients, while avoiding ridge type adjustment.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-#' @seealso See Also \code{\link{parcor_ijk}}.
+#' @seealso See Also \code{\link{parcor_ijk}}, \code{\link{parcorMany}}.
 #' @concept  partial correlations
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
@@ -43,21 +44,22 @@
 #' x=sample(1:10)+z/10  #x is partly indep and partly affected by z
 #' y=1+2*x+3*z+rnorm(10)# y depends on x and z not vice versa
 #' mtx=cbind(x,y,z)
-#' parcorMany(mtx)
+#' parcorBMany(mtx, blksiz=10)
 #'  
 #'    
 #' \dontrun{
 #' set.seed(34);x=matrix(sample(1:600)[1:99],ncol=3)
 #' colnames(x)=c('V1', 'v2', 'V3')
-#' parcorMany(x, idep=1)
+#' parcorBMany(x, idep=1)
 #' }
 #'
 #' @export
 
-parcorMany <- function(mtx, ctrl=0, dig = 4, idep = 1, verbo = FALSE) {
+parcorBMany <- function(mtx, ctrl=0, dig = 4, idep = 1, 
+                       blksiz=10, verbo = FALSE) {
     n = NROW(mtx)
     p = NCOL(mtx)
-    if (p<3) stop("input matrix to parcorMany must have 3 or more columns")
+    if (p<3) stop("input matrix to parcorBMany must have 3 or more columns")
    nam = colnames(mtx)  #R makes nam=NULL of lenghth 0 if mtx column names Missing
     if (length(nam) == 0) 
         nam = paste("V", 1:p, sep = "")
@@ -74,9 +76,9 @@ parcorMany <- function(mtx, ctrl=0, dig = 4, idep = 1, verbo = FALSE) {
            myi=j.other[i]
             xk=mtx[,c(-idep,-myi)]
             if (length(ctrl)>1){
-            p1 = parcor_ijk(xi=mtx[,idep], xj=mtx[,myi], xk=cbind(xk,ctrl))}
+  p1 = parcorBijk(xi=mtx[,idep], xj=mtx[,myi], xk=cbind(xk,ctrl, blksiz=blksiz))}
             if (length(ctrl)==1){
-              p1 = parcor_ijk(xi=mtx[,idep], xj=mtx[,myi], xk=xk)}
+  p1 = parcorBijk(xi=mtx[,idep], xj=mtx[,myi], xk=xk, blksiz=blksiz)}
             ii = ii + 1
             partij[ii] = p1$ouij
             partji[ii] = p1$ouji

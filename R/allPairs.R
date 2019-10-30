@@ -1,11 +1,13 @@
 #' Report causal identification for all pairs of variables in a matrix 
-#' (somewhat deprecated).
+#' (deprecated function). It is better to choose a target variable and pair
+#' it with all others, instead of considering all possible targets.
 #'
-#' This is a convenient way to study all possible (perhaps too many)
-#' causal directions in a matrix. It calls
-#' \code{abs_stdapd}, \code{abs_stdres}, \code{comp_portfo2}, etc. and returns
+#' This studies all possible (perhaps too many) causal directions in a matrix.
+#' It is deprecated because it uses older criterion 1 by caling \code{abs_stdapd}
+#' I recommend using \code{causeSummary} or its block version \code{cuseSummBlk}.
+#' This uses \code{abs_stdres}, \code{comp_portfo2}, etc. and returns
 #' a matrix with 7 columns having detailed output. Criterion 1 has been revised
-#' in Vinod (2019).
+#' as described in Vinod (2019) and is known to work better.
 #'
 #' @param mtx {Input matrix with variable names}
 #' @param dig {Digits of accuracy in reporting (=6, default)}
@@ -27,7 +29,7 @@
 #'  a good idea to loop a call to this function with typ=1:3. One can print
 #'  the resulting 'outcause' matrix with the 
 #'  \code{xtable(outcause)} for the Latex output.
-#'  A similar (perhaps better) function included in this package,
+#'  A similar deprecated function included in this package,
 #'   called \code{some0Pairs}, incorporates all SD1 to SD4 and all
 #'  three criteria Cr1 rto Cr3 to report a `sum' of indexes representing the signed 
 #'  number whose sign can more comprehensively help determine the causal direction(s).
@@ -49,6 +51,7 @@
 #' @examples
 #' 
 #' data(mtcars)
+#' options(np.messages=FALSE)
 #' for(j in 1:3){
 #' a1=allPairs(mtcars[,1:3], typ=j)
 #' print(a1)}

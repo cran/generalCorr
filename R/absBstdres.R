@@ -1,0 +1,69 @@
+#' Block version of abs-stdres Absolute values of residuals of kernel regressions 
+#' of  standardized x on  standardized y, no control variables.
+#'
+#' 1) Standardize the data to force mean zero and variance unity, 2) kernel
+#' regress x on y, with the option `residuals = TRUE' and finally 3) compute
+#' the absolute values of residuals.
+#'
+#' The first argument is assumed to be the dependent variable.  If
+#' \code{abs_stdres(x,y)} is used, you are regressing x on y (not the usual y
+#' on x). The regressors can be a matrix with 2 or more columns. The missing values
+#' are suitably ignored by the standardization.
+#'
+#' @param x {vector of data on the dependent variable}
+#' @param y {data on the regressors which can be a matrix}
+#' @param blksiz {block size, default=10, if chosen blksiz >n, where n=rows in matrix
+#'      then blksiz=n. That is, no blocking is done}
+#' 
+#' @importFrom stats sd
+#' @return Absolute values of kernel regression residuals are returned after
+#' standardizing the data on both sides so that the magnitudes of residuals are
+#' comparable between regression of x on y on the one hand and regression of y
+#' on x on the other.
+### @note %% ~~further notes~~
+#' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+### @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
+#' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
+#'  Applications in Development Economics' in Communications in
+#'  Statistics -Simulation and Computation, 2015,
+#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#' @concept  kernel regression residuals
+#' @examples
+#'
+#' \dontrun{
+#' set.seed(330)
+#' x=sample(20:50)
+#' y=sample(20:50)
+#' abs_stdres(x,y)
+#' }
+#'
+#' @export
+
+
+absBstdres <- function(x, y, blksiz=10) {
+    stdx = function(x) (x - mean(x, na.rm = TRUE))/sd(x, na.rm = TRUE)
+    # allows y to be a matrix, but not x
+    stx = (x - mean(x, na.rm = TRUE))/sd(x, na.rm = TRUE)
+    p = NCOL(y)
+    n = NROW(y)
+    if (blksiz>n) blksiz=n
+    ge=getSeq(n,blksiz=blksiz)
+    ares=rep(NA,n) #absolute residuals vector
+    LO=ge$sqLO
+    UP=ge$sqUP
+    k=length(LO)
+    for (ik in 1:k){
+        L1=LO[ik]  
+        U1=UP[ik]
+        stxx=stdx(x[L1:U1])
+        if (p == 1) {
+        yy=y[L1:U1]
+        sty = (yy - mean(yy, na.rm = TRUE))/sd(yy, na.rm = TRUE)}
+    if (p > 1) {
+        yy=y[L1:U1,]
+        sty = apply(yy, 2, stdx)}
+    kk1 = kern(dep.y = stxx, reg.x = sty, residuals = TRUE)
+    ares[L1:U1] = abs(kk1$resid)
+    } # end ik loop
+    return(ares)
+}

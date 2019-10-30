@@ -4,14 +4,14 @@
 #' two auxiliary functions, \code{getSeq} and \code{NLhat}. The latter 
 #' uses the
 #' \code{kern} function to kernel regress x on y, and conversely y on x. It
-#'  needs the package `np' which reports residuals and allows one to
-#'  to compute fitted values (xhat, yhat). Unlike `gmcmtx0,' this function
+#'  needs the package `np,' which reports residuals and allows one to
+#'  compute fitted values (xhat, yhat). Unlike \code{gmcmtx0}, this function
 #' considers blocks of blksiz=10 (default) pairs of data points
 #' separately with distinct bandwidths for each block, usually creating superior local fits. 
 #' 
 #' This function does pairwise checks of missing data for all pairs. 
 #' Assume that there are n rows in the input matrix `mym' with some missing rows.
-#' If the columns of mym are denoted (X1,X2, ...Xp), we are considering all
+#' If the columns of mym are denoted (X1, X2, ...Xp), we are considering all
 #' pairs (Xi, Xj), treated as (x, y), with `nv' number of valid (non-missing) rows
 #' Note that each x and y is an (nv by 1) vector.  This function further
 #' splits these (x, y) vectors into as many subgroups or blocks as are needed
@@ -19,24 +19,37 @@
 #' 
 #' Next, the algorithm strings together various blocks of
 #' fitted value vectors (xhat, yhat) also of dimension nv by 1. 
-#' Now for each pair of Xi Xj (column Xj= cause, row Xi=response, treated as
-#' as x and y) the algorithm reports as R*ij the simple Pearson 
+#' Now for each pair of Xi Xj (column Xj= cause, row Xi=response, treated 
+#' as x and y), the algorithm computes R*ij the simple Pearson 
 #' correlation coefficient between (x, xhat) and as R*ji the correlation coeff.
-#' between (y, yhat), after assigning them the observed sign of the Pearson 
-#' correlation coefficient between x and y. 
+#' between (y, yhat). Next, it assigns |R*ij| and |R*ji| the observed sign 
+#' of the Pearson correlation coefficient between x and y. 
 #' 
 #' 
 #' Its advantages discussed in Vinod (2015, 2019) are: (i)
 #' It is asymmetric yielding causal direction information,
 #' by relaxing the assumption of linearity implicit in usual correlation coefficients.
 #' (ii) The R* correlation coefficients are generally larger upon admitting 
-#' arbitrary nonlinearities.(iii) max(|R*ij|, |R*ji|) measures (nonlinear) dependence.
-#' For example, x=1:20; y=sin(x) where y is perfectly dependent on x and yet Pearson
-#' correlation coefficient is near zero since the relation is nonlinear.
+#' arbitrary nonlinearities. (iii) max(|R*ij|, |R*ji|) measures (nonlinear) dependence.
+#' For example, let x=1:20 and y=sin(x). This y has a perfect (100 percent)
+#' nonlinear dependence on x and yet Pearson correlation coefficient r(x y)=
+#' -0.0948372 is near zero, and its 95\% confidence interval (-0.516, 0.363)
+#' includes zero, implying that the population r(x,y) is not significantly
+#' different from zero.  This example highlights a serious
+#' failure of the traditional r(x,y) in measuring dependence between x and y
+#' when nonlinearities are present.
+#' \code{gmcmtx0} without blocking does work if x=1:n, and y=f(x)=sin(x) is used
+#' with n<20.  But for larger n, the fixed bandwidth used by the \code{kern} function
+#' becomes a problem. The block version has additional bandwidths for each block, and 
+#' hence it correctly quantifies the presence of high dependence even when 
+#' x=1:n, and y=f(x) are defined for large n and
+#' complicated nonlinear functional forms for f(x).
 #' 
 #' @param mym {A matrix of data on selected variables arranged in columns}
-#' @param blksiz {block size, default=10}
+#' @param blksiz {block size, default=10, if chosen blksiz >n, where n=rows in matrix
+#'      then blksiz=n. That is, no blocking is done}
 #' @param nam {Column names of the variables in the data matrix}
+#' @importFrom stats cov
 #' @importFrom stats cor
 #' @return A non-symmetric R* matrix of generalized correlation coefficients
 ### @note %% ~~further notes~~
@@ -58,6 +71,7 @@
 #'  of correlation for asymmetry, nonlinearity, and beyond,' 
 #'  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
 #' @concept  kernel regression 
+#' @concept blocking observations
 #' @concept R* asymmetric matrix of generalized correlation coefficients
 #' @examples
 #'  
@@ -70,8 +84,6 @@
 gmcmtxBlk=  function (mym, nam = colnames(mym), blksiz=10) 
   {
     p = NCOL(mym)
-    n = NROW(mym)
-    ge=getSeq(n,blksiz=blksiz)
     out1 = matrix(1, p, p)
     for (i in 1:p) {
       x = mym[, i]
@@ -81,6 +93,12 @@ gmcmtxBlk=  function (mym, nam = colnames(mym), blksiz=10)
           ok=complete.cases(x,y)
           newx = x[ok]
           newy = y[ok]
+          
+    sig = sign(cov(newx, newy))
+    n = NROW(newx)
+    if (blksiz>n) blksiz=n
+    ge=getSeq(n,blksiz=blksiz)
+          
     xhat=rep(NA,n)
     yhat=rep(NA,n)
     LO=ge$sqLO
@@ -97,10 +115,8 @@ gmcmtxBlk=  function (mym, nam = colnames(mym), blksiz=10)
     yhat[L1:U1] =N1$yhat 
 #  print(c(N1$xhat))
     } #end of ik loop
-    c1 = cor(x, y)
-    sig = sign(c1)
-    out1[i, j] = sig*cor(x,xhat)
-    out1[j, i] = sig*cor(y, yhat)
+    out1[i, j] = sig*abs(cor(newx,xhat))
+    out1[j, i] = sig*abs(cor(newy, yhat))
         }
       }
     }
