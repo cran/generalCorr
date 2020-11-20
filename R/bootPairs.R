@@ -32,7 +32,7 @@
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
-#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
+#'  \url{https://doi.org/gffn86} 
 #' @references Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). Generalized measures 
 #'  of correlation for asymmetry, nonlinearity, and beyond. 
 #'  Journal of the American Statistical Association, vol. 107, pp. 1239-1252.
@@ -41,7 +41,7 @@
 #'  Vol. 29(5), pp. 1-19. 
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
-#' (June 6, 2017). Available at SSRN: \url{https://ssrn.com/abstract=2982128}
+#' (June 6, 2017). Available at SSRN: \url{https://www.ssrn.com/abstract=2982128}
 #' @concept maximum entropy bootstrap
 #' @examples
 #' \dontrun{

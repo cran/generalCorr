@@ -20,7 +20,7 @@
 #' \item{ouji}{Generalized partial correlation Xj with Xi (=cause) after removing xk}
 #' allowing for control variables. 
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
-#' @seealso See  \code{\link{parcor_linear}}.
+#' @seealso See  \code{\link{parcor_ijk}}.
 #' @note This function calls \code{\link{kern}}, 
 #' @examples 
 #' 

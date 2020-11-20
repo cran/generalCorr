@@ -5,8 +5,7 @@
 \title{Block version reports many generalized partial correlation coefficients 
 allowing control variables.}
 \usage{
-parcorBMany(mtx, ctrl = 0, dig = 4, idep = 1, blksiz = 10,
-  verbo = FALSE)
+parcorBMany(mtx, ctrl = 0, dig = 4, idep = 1, blksiz = 10, verbo = FALSE)
 }
 \arguments{
 \item{mtx}{{Input data matrix with at least 3 columns.}}
@@ -63,7 +62,7 @@ parcorBMany(x, idep=1)
 \references{
 Vinod, H. D. 'Generalized Correlations and Instantaneous
  Causality for Data Pairs Benchmark,' (March 8, 2015)
- \url{http://ssrn.com/abstract=2574891}
+ \url{https://www.ssrn.com/abstract=2574891}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
  Using R', Chapter 4 in Handbook of Statistics: Computational Statistics

@@ -3,7 +3,6 @@
 \docType{package}
 \name{generalCorrInfo}
 \alias{generalCorrInfo}
-\alias{generalCorrInfo-package}
 \title{generalCorr package description:}
 \description{
 This package provides convenient software tools for causal path determinations
@@ -48,9 +47,17 @@ panel data, functions \code{PanelLag} and \code{Panel2Lag} are relevant.
 more like surfaces, than usual plots with vertical pins.
 
 In simultaneous equation
-models where endogeneity of regressors is feared, we suggest using Prof. Koopmans' method
-which suggests ignoring endogeneity issues for all variables ``causing'' the dependent variable
-assessed by our three criteria. Weighted summary of all three criteria is in \code{someCPairs}.
+models where endogeneity of regressors is feared, we suggest using 
+Prof. Koopmans' method
+which suggests ignoring endogeneity issues for all variables ``causing'' 
+the dependent variable
+assessed by our three criteria. Weighted summary of all three criteria is 
+in \code{someCPairs}.
+
+Recent 2020 additions include \code{canonRho} for generalized canonical 
+correlations, \code{depMeas} to measure nonlinear dependence, and many 
+functions for Granger causality between lagged time series including
+\code{GcRsqX12}, \code{bootGcRsq} and \code{GcRsqYXc}.
 }
 \note{
 A vignette1 provided with this package generalCorr at CRAN
@@ -63,7 +70,7 @@ for further details.
 Vinod, H. D.'Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
- \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+ \url{https://doi.org/gffn86}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics
@@ -77,7 +84,7 @@ Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). 'Generalized measures
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
 (June 6, 2017). Available at SSRN: 
-\url{https://ssrn.com/abstract=2982128}
+\url{https://www.ssrn.com/abstract=2982128}
 
 Vinod, H. D. 'New exogeneity tests and causal paths,'
  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 

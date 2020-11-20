@@ -10,8 +10,8 @@
 #' `gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths.
 #' @param x {Vector of data on first variable}
 #' @param y {Vector of data on second variable}
-#' @param blksiz {block size, default=10, if chosen blksiz >n, where n=rows in matrix
-#'      then blksiz=n. That is, no blocking is done}
+#' @param blksiz {block size, default blksiz =n, where n=rows in matrix
+#'      or no blocking is done}
 #' 
 #' @return A measure of dependence.
 #' @note This function needs the gmcmtxBlk function which in turn needs the np package.
@@ -20,7 +20,7 @@
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'  Applications in Development Economics' in Communications in
 #'  Statistics -Simulation and Computation, 2015,
-#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#'  \url{https://doi.org/gffn86}
 #'
 #' @references Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 #' Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
@@ -38,6 +38,11 @@
 
 
 depMeas = function(x, y, blksiz=length(x)) {
+  n=length(x)
+  if (blksiz<=1){ blksiz=n
+  print("bad blksiz reset to n in depMeas")}
+  if (blksiz>n) {blksiz=n
+  print("bad blksiz reset to n in depMeas")}
   g1 = gmcmtxBlk(cbind(x, y),blksiz=blksiz)
   sgn = sign(g1[1, 2])
   dep = sgn*max(abs(g1[1, 2]), abs(g1[2, 1]))

@@ -4,8 +4,7 @@
 \alias{kern}
 \title{Kernel regression with options for residuals and gradients.}
 \usage{
-kern(dep.y, reg.x, tol = 0.1, ftol = 0.1, gradients = FALSE,
-  residuals = FALSE)
+kern(dep.y, reg.x, tol = 0.1, ftol = 0.1, gradients = FALSE, residuals = FALSE)
 }
 \arguments{
 \item{dep.y}{{Data on the dependent (response) variable}}

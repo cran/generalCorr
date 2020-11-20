@@ -62,7 +62,7 @@ Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
 
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
-(June 6, 2017). Available at SSRN: \url{https://ssrn.com/abstract=2982128}
+(June 6, 2017). Available at SSRN: \url{https://www.ssrn.com/abstract=2982128}
 }
 \seealso{
 See Also \code{\link{silentPairs}}.

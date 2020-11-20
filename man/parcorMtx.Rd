@@ -55,7 +55,7 @@ parcorMtx(x)
 \references{
 Vinod, H. D. 'Generalized Correlations and Instantaneous
  Causality for Data Pairs Benchmark,' (March 8, 2015)
- \url{http://ssrn.com/abstract=2574891}
+ \url{https://www.ssrn.com/abstract=2574891}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
  Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
@@ -64,7 +64,7 @@ Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 
 Vinod, H. D. 'New Exogeneity Tests and Causal Paths,' 
 (June 30, 2018). Available at SSRN: 
-\url{https://ssrn.com/abstract=3206096}
+\url{https://www.ssrn.com/abstract=3206096}
 }
 \seealso{
 See Also \code{\link{parcor_ijk}}.

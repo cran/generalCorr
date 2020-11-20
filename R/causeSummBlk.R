@@ -66,7 +66,7 @@
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
-#'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#'    \url{https://doi.org/gffn86}
 #' @references Vinod, H. D. 'New exogeneity tests and causal paths,'
 #'  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
 #' Using R', Vol.32, co-editors: H. D. Vinod and C.R. Rao. New York:
@@ -75,7 +75,7 @@
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: 
-#' \url{https://ssrn.com/abstract=2982128}    
+#' \url{https://www.ssrn.com/abstract=2982128}    
 #' @concept  causal path 
 #' @concept stochastic dominance orders
 #' @concept summary index

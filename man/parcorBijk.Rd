@@ -43,7 +43,7 @@ parcorBijk(x[,1], x[,2], x[,3], blksi=10)
 }#' 
 }
 \seealso{
-See  \code{\link{parcor_linear}}.
+See  \code{\link{parcor_ijk}}.
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY.

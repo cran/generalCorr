@@ -61,7 +61,7 @@
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
 #' (June 6, 2017). Available at SSRN: 
-#' \url{https://ssrn.com/abstract=2982128}  
+#' \url{https://www.ssrn.com/abstract=2982128}  
 #' @concept causal criteria
 #' @concept generalized correlations
 #' @note The European Crime data has all three criteria correctly suggesting that

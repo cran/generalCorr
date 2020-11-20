@@ -4,8 +4,15 @@
 \alias{kern_ctrl}
 \title{Kernel regression with control variables and optional residuals and gradients.}
 \usage{
-kern_ctrl(dep.y, reg.x, ctrl, tol = 0.1, ftol = 0.1,
-  gradients = FALSE, residuals = FALSE)
+kern_ctrl(
+  dep.y,
+  reg.x,
+  ctrl,
+  tol = 0.1,
+  ftol = 0.1,
+  gradients = FALSE,
+  residuals = FALSE
+)
 }
 \arguments{
 \item{dep.y}{{Data on the dependent (response) variable}}

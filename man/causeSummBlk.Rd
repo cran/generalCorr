@@ -4,8 +4,15 @@
 \alias{causeSummBlk}
 \title{Block Version Kernel causality summary causal paths from three criteria}
 \usage{
-causeSummBlk(mtx, nam = colnames(mtx), blksiz = 10, ctrl = 0,
-  dig = 6, wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
+causeSummBlk(
+  mtx,
+  nam = colnames(mtx),
+  blksiz = 10,
+  ctrl = 0,
+  dig = 6,
+  wt = c(1.2, 1.1, 1.05, 1),
+  sumwt = 4
+)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns, y the first column 
@@ -106,7 +113,7 @@ causeSummBlk(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 Vinod, H. D. `Generalized Correlation and Kernel Causality with
    Applications in Development Economics' in Communications in
    Statistics -Simulation and Computation, 2015,
-   \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+   \url{https://doi.org/gffn86}
 
 Vinod, H. D. 'New exogeneity tests and causal paths,'
  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
@@ -116,7 +123,7 @@ North Holland, Elsevier Science Publishers, 2019, pp. 33-64.
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
 (June 6, 2017). Available at SSRN: 
-\url{https://ssrn.com/abstract=2982128}
+\url{https://www.ssrn.com/abstract=2982128}
 }
 \seealso{
 See  \code{\link{bootPairs}},  \code{\link{causeSummary0}} has

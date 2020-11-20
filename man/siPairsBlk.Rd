@@ -4,8 +4,14 @@
 \alias{siPairsBlk}
 \title{Block Version of silentPairs for causality scores with control variables}
 \usage{
-siPairsBlk(mtx, ctrl = 0, dig = 6, blksiz = 10, wt = c(1.2, 1.1,
-  1.05, 1), sumwt = 4)
+siPairsBlk(
+  mtx,
+  ctrl = 0,
+  dig = 6,
+  blksiz = 10,
+  wt = c(1.2, 1.1, 1.05, 1),
+  sumwt = 4
+)
 }
 \arguments{
 \item{mtx}{{The data matrix with p columns. Denote x1 as the first column 
@@ -98,7 +104,7 @@ H. D. Vinod  'Generalized Correlation and Kernel Causality with
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 
 (June 6, 2017). Available at SSRN: 
-\url{https://ssrn.com/abstract=2982128}
+\url{https://www.ssrn.com/abstract=2982128}
 }
 \seealso{
 See  \code{\link{bootPairs}}, \code{\link{silentMtx}}

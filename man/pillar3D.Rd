@@ -4,9 +4,16 @@
 \alias{pillar3D}
 \title{Create a 3D pillar chart to display (x, y, z) data coordinate surface.}
 \usage{
-pillar3D(z = c(657, 936, 1111, 1201), x = c(280, 542, 722, 1168),
-  y = c(162, 214, 186, 246), drape = TRUE, xlab = "y", ylab = "x",
-  zlab = "z", mymain = "Pillar Chart")
+pillar3D(
+  z = c(657, 936, 1111, 1201),
+  x = c(280, 542, 722, 1168),
+  y = c(162, 214, 186, 246),
+  drape = TRUE,
+  xlab = "y",
+  ylab = "x",
+  zlab = "z",
+  mymain = "Pillar Chart"
+)
 }
 \arguments{
 \item{z}{{z-coordinate values}}

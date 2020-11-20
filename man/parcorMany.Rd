@@ -59,7 +59,7 @@ parcorMany(x, idep=1)
 \references{
 Vinod, H. D. 'Generalized Correlations and Instantaneous
  Causality for Data Pairs Benchmark,' (March 8, 2015)
- \url{http://ssrn.com/abstract=2574891}
+ \url{https://www.ssrn.com/abstract=2574891}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
  Using R', Chapter 4 in Handbook of Statistics: Computational Statistics

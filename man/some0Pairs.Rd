@@ -6,8 +6,14 @@
 (uses deprecated criterion 1, no longer recommended but may be useful for
 second and third criterion typ=2,3)}
 \usage{
-some0Pairs(mtx, dig = 6, verbo = TRUE, rnam = FALSE, wt = c(1.2,
-  1.1, 1.05, 1), sumwt = 4)
+some0Pairs(
+  mtx,
+  dig = 6,
+  verbo = TRUE,
+  rnam = FALSE,
+  wt = c(1.2, 1.1, 1.05, 1),
+  sumwt = 4
+)
 }
 \arguments{
 \item{mtx}{{The data matrix in the first column is paired with all others.}}
@@ -54,9 +60,11 @@ regression gradients (or amorphous partial derivatives, apd-s) being minimized b
 the kernel regression algorithm while
 comparing the kernel regression of X on Y with that of Y on X.
 
+
 typ=2 reports ('Y', 'X', 'Cause', 'SD1res', 'SD2res', 'SD3res', 'SD4res')
 and measures of stochastic dominance using absolute values of kernel
 regression residuals comparing regression of X on Y with that of Y on X.
+
 
 typ=3 reports ('Y', 'X', 'Cause', 'r*x|y', 'r*y|x', 'r', 'p-val')
 containing generalized correlation coefficients r*, 'r' refers to.

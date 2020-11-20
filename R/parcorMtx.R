@@ -27,7 +27,7 @@
 #' @concept  partial correlations
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
-#'  \url{http://ssrn.com/abstract=2574891}
+#'  \url{https://www.ssrn.com/abstract=2574891}
 #'
 #' @references Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 #'  Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
@@ -36,7 +36,7 @@
 #'  
 #' @references Vinod, H. D. 'New Exogeneity Tests and Causal Paths,' 
 #' (June 30, 2018). Available at SSRN: 
-#' \url{https://ssrn.com/abstract=3206096}     
+#' \url{https://www.ssrn.com/abstract=3206096}     
 #' @examples
 #' set.seed(234)
 #' z=runif(10,2,11)# z is independently created

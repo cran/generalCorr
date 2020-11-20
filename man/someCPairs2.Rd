@@ -5,8 +5,15 @@
 \title{Kernel causality computations admitting control variables reporting 
 a 7-column matrix, version 2.}
 \usage{
-someCPairs2(mtx, ctrl, dig = 6, verbo = TRUE, rnam = FALSE,
-  wt = c(1.2, 1.1, 1.05, 1), sumwt = 4)
+someCPairs2(
+  mtx,
+  ctrl,
+  dig = 6,
+  verbo = TRUE,
+  rnam = FALSE,
+  wt = c(1.2, 1.1, 1.05, 1),
+  sumwt = 4
+)
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns where the first column is fixed and then 
@@ -62,9 +69,11 @@ regression abs(RHS first regressor*residual) values
 comparing flipped regressions X on Y versus Y on X.
 The letter C in the titles reminds presence of control variable(s).
 
+
 typ=2 reports ('Y', 'X', 'Cause', 'SD1resC', 'SD2resC', 'SD3resC', 'SD4resC')
 and measures of stochastic dominance using absolute values of kernel
 regression residuals comparing regression of X on Y with that of Y on X.
+
 
 typ=3 reports ('Y', 'X', 'Cause', 'r*x|yC', 'r*y|xC', 'r', 'p-val')
 containing generalized correlation coefficients r*, 'r' refers to.

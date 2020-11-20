@@ -1,0 +1,50 @@
+#' Kernel regression version 2 with optional residuals and gradients
+#' with regtype="ll" for local linear, bwmethod="cv.aic" for AIC-based
+#' bandwidth selection.
+#' 
+#' @param dep.y {Data on the dependent (response) variable}
+#' @param reg.x {Data on the regressor (stimulus) variables}
+#' @param tol {Tolerance on the position of located minima of the cross-validation 
+#' function (default =0.1)}
+#' @param ftol {Fractional tolerance on the value of cross validation function
+#'  evaluated at local minima (default =0.1)}
+#' @param gradients {Make this TRUE if gradients computations are desired}
+#' @param residuals {Make this TRUE if residuals are desired}
+#' @importFrom np npreg npregbw
+#' @return Creates a model object `mod' containing the entire kernel regression output.
+#' Type \code{names(mod)} to reveal the variety of outputs produced by `npreg' of the `np' package.
+#' The user can access all of them at will by using the dollar notation of R.
+#' @note This is version 2 ("ll","cv.aic") of a work horse for causal identification.
+#' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
+#' @seealso See \code{\link{kern_ctrl}}.
+#' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 
+#'  Applications in Development Economics' in Communications in 
+#'  Statistics -Simulation and Computation, 2015, 
+#'  \url{http://dx.doi.org/10.1080/03610918.2015.1122048} 
+#' @concept apd  amorphous partial derivative
+#' @concept  kernel regression residuals
+#' @concept  kernel regression gradients
+#' @examples
+#' 
+#' \dontrun{
+#' set.seed(34);x=matrix(sample(1:600)[1:50],ncol=2)
+#' require(np); options(np.messages=FALSE)
+#' k1=kern(x[,1],x[,2])
+#' print(k1$R2) #prints the R square of the kernel regression
+#' }
+#' 
+#' @export
+
+kern2 <- function(dep.y, reg.x, tol = 0.1, ftol = 0.1, gradients = FALSE, residuals = FALSE) {
+    gr = FALSE
+    resz = FALSE
+    if (gradients) 
+        gr = TRUE
+    if (residuals) 
+        resz = TRUE
+    # bandwidths for nonparametric regressions
+    bw = npregbw(ydat = as.vector(dep.y), xdat = reg.x, 
+        tol = tol, ftol = ftol,regtype="ll", bwmethod="cv.aic" )
+    mod = npreg(bws = bw, gradients = gr, residuals = resz)
+    return(mod)
+} 

@@ -42,7 +42,8 @@ Now for each pair of Xi Xj (column Xj= cause, row Xi=response, treated
 as x and y), the algorithm computes R*ij the simple Pearson 
 correlation coefficient between (x, xhat) and as R*ji the correlation coeff.
 between (y, yhat). Next, it assigns |R*ij| and |R*ji| the observed sign 
-of the Pearson correlation coefficient between x and y.
+of the Pearson correlation coefficient between x and y. 
+
 
 Its advantages discussed in Vinod (2015, 2019) are: (i)
 It is asymmetric yielding causal direction information,
@@ -74,7 +75,7 @@ gmcmtxBlk(cbind(x,y),blksiz=10)}
 Vinod, H. D.'Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
- \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+ \url{https://doi.org/gffn86}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 Using R', Chapter 4 in 'Handbook of Statistics: Computational Statistics

@@ -11,8 +11,8 @@ depMeas(x, y, blksiz = length(x))
 
 \item{y}{{Vector of data on second variable}}
 
-\item{blksiz}{{block size, default=10, if chosen blksiz >n, where n=rows in matrix
-then blksiz=n. That is, no blocking is done}}
+\item{blksiz}{{block size, default blksiz =n, where n=rows in matrix
+or no blocking is done}}
 }
 \value{
 A measure of dependence.
@@ -41,7 +41,7 @@ depMeas(x,y,blksiz=20)
 Vinod, H. D. `Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
- \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+ \url{https://doi.org/gffn86}
 
 Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
