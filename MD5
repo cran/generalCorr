@@ -1,6 +1,6 @@
-c42c22a0430193d744cea12f5b63b4ce *DESCRIPTION
+893a3c2b4ff786f73d6b6f97ad43d1cc *DESCRIPTION
 8d9e0f4c447586b1135cb92487e57f53 *NAMESPACE
-1ede1e65d43037dd57a04b964737c015 *NEWS
+3ba974237e19d4d5ae2a57c51f18c1e3 *NEWS
 331070a33c07e8640a2580f14c759107 *R/EuroCrime.R
 445341b53255995c4e9e9097b7cc182a *R/GcRsqX12.R
 cc0225bfbeac30553b9d7921ceedb1bc *R/GcRsqX12c.R
@@ -22,7 +22,7 @@ d6571270f95b6eb5cae0f495a83452f6 *R/abs_stdrhserr.R
 c9acb8b9e326a239aade5c2edd9eb304 *R/allPairs.R
 3c8e649dc638327d88ba1530c8a4c2af *R/bigfp.R
 d3a71b0c4e7ceeef2f977f2211447659 *R/bootGcLC.R
-3272e71f2f4f0297caf4fd86c2bbf201 *R/bootGcRsq.R
+c88235b12b2a5fc7d4fd9fc4362282e7 *R/bootGcRsq.R
 9585dd0c79dff684359b6f534b106553 *R/bootPairs.R
 f7c2fdf369256af230471ccb14ff6ad1 *R/bootPairs0.R
 a548f79edeb75b59b1aefcbc2cd4dac1 *R/bootQuantile.R
@@ -84,7 +84,7 @@ e85c906edae4d3b4a705e9e06a86070b *R/somePairs.R
 2d8e9c3a23ae4b03bcc53c34a6cf8f95 *R/stochdom2.R
 c58aede758352d547098961373b284c4 *R/symmze.R
 2ef6bbdaa6fcbf3d80aba893cff73beb *R/wtdpapb.R
-eb1ffde75201a1b15738afe5330e4a01 *build/vignette.rds
+cc297a6b4998e25848cd87ebb6a7ccb1 *build/vignette.rds
 ff31e89bfa10f4d281c8d0852dfbd486 *data/EuroCrime.rda
 018787ca398bfc39c96f321a46496629 *data/badCol.rda
 237263c578909a0f5e22aed1a5bd0fee *data/da.rda
@@ -122,14 +122,16 @@ d5aed774a530c7bfa5f543e0d48c59f1 *data/sales2Lag.rda
 30ac346944b240fac867807c8ca7a274 *data/sgn.e0.rda
 b4f0b9ba85d66718e290db30b5cbc350 *data/sort.abse0.rda
 d7cc17b6afe919852e822fd50c090edb *data/sort.e0.rda
-6fb8250abbc5bd1ad48484d9b40e7eaf *inst/doc/generalCorr-vignette.pdf
+5ebe3a805bec08630340d13ca1281a6d *inst/doc/generalCorr-vignette.pdf
 ce5154f4f4a9b9bed94f0faa6f9998b6 *inst/doc/generalCorr-vignette.pdf.asis
-8d9a1a72d43e2066f44527e30287e91e *inst/doc/generalCorr-vignette2.pdf
+929717cd4ddeea66cd35d13fe7ce629a *inst/doc/generalCorr-vignette2.pdf
 9c7b4628047b193f4c5c7e05e270ae11 *inst/doc/generalCorr-vignette2.pdf.asis
-bd94a5ef04c25f0eb992b6a404693b70 *inst/doc/generalCorr-vignette3.pdf
+68c6941d0027c9b9af49a101be9b831f *inst/doc/generalCorr-vignette3.pdf
 06430e650799be0939f22e23764fbfe0 *inst/doc/generalCorr-vignette3.pdf.asis
 f115d5136de1e5eb2ef8787dfeaf7a33 *inst/doc/generalCorr-vignette4.pdf
 2ec2e93038f602a0105399646ce92edb *inst/doc/generalCorr-vignette4.pdf.asis
+14d88ef029a9515640429edd59ba0d38 *inst/doc/generalCorr-vignette5.pdf
+3ac0a39ca10cf988004f0d8448d89847 *inst/doc/generalCorr-vignette5.pdf.asis
 f778f639d1f0c44f199feb7df0318471 *man/EuroCrime.Rd
 4ff28261e5817fdb677878d7c93d59d6 *man/GcRsqX12.Rd
 224ec42117439d73fb4b41cf78e831a7 *man/GcRsqX12c.Rd
@@ -152,7 +154,7 @@ a8694c31857aca5500219058582944a6 *man/abs_stdrhserC.Rd
 43e1da311ff6513bc5ff93f8a8f56b32 *man/badCol.Rd
 727a6fd4e05e163c16ebfa57f1fa819f *man/bigfp.Rd
 d4b51f8712447b3e7140d87be6a8e363 *man/bootGcLC.Rd
-b140aeda1b66c0273490c6d52c670d14 *man/bootGcRsq.Rd
+06441e830922a97a385538ea76234b39 *man/bootGcRsq.Rd
 a545da27a75f5aa4e600db9a6d120b5a *man/bootPairs.Rd
 0a424a38cabbab699b63ae6812e03ca3 *man/bootPairs0.Rd
 04bc08375fc944aca4451c29f32a3fb9 *man/bootQuantile.Rd
@@ -255,3 +257,4 @@ ce5154f4f4a9b9bed94f0faa6f9998b6 *vignettes/generalCorr-vignette.pdf.asis
 9c7b4628047b193f4c5c7e05e270ae11 *vignettes/generalCorr-vignette2.pdf.asis
 06430e650799be0939f22e23764fbfe0 *vignettes/generalCorr-vignette3.pdf.asis
 2ec2e93038f602a0105399646ce92edb *vignettes/generalCorr-vignette4.pdf.asis
+3ac0a39ca10cf988004f0d8448d89847 *vignettes/generalCorr-vignette5.pdf.asis

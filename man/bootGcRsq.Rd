@@ -37,7 +37,7 @@ This computation is computer intensive and generally very slow.
   It may be better to use this function
   it at a later stage in the investigation, after a preliminary 
   causal determination is already made. The 3 outputs of GauseX12 are
-  two Rsquares and the difference between after subtracting the second
+  two Rsquares and the difference between them after subtracting the second
   from the first.  Col. 1 has RsqX1onX2
   Col.2 has RsqX2onX1, and Col.3 has dif=(RsqX1onX2 -RsqX2onX1)
   If both col.1 and Col.2 are positive, we have bi-directional 
@@ -52,7 +52,10 @@ bootGcRsq(y,m,n999=9)
 }
 \dontrun{
 library(lmtest); data(ChickEgg);attach(data.frame(ChickEgg))
+options(np.messages=FALSE)
 b2=bootGcLC(x1=chicken,x2=egg,pwanted=3,px1=3,px2=3,n999=99)
+Fn=function(x)quantile(x,prob=c(0.025, 0.975))#confInt
+apply(b1,2,Fn)#reports 95 percent confidence interval
 }
 }
 \references{

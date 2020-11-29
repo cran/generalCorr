@@ -1,5 +1,9 @@
 Package: generalCorr
 ==============
+Version 1.1.7 [2020-11-29]
+o Added vignette 5 to help users understand and implement new tools of version
+1.1.6
+
 Version 1.1.6 [2020-11-17]
 o Added functions for bootstrapping Granger causality when relations are nonlinear
 for canonical correlations based on generalized matrix of correlations.

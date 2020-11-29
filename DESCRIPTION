@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations and Various Causal Paths
-Version: 1.1.6
-Date: 2020-11-17
+Version: 1.1.7
+Date: 2020-11-29
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -32,6 +32,6 @@ License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-11-20 22:13:19 UTC; vinod
+Packaged: 2020-11-29 21:21:11 UTC; vinod
 Repository: CRAN
-Date/Publication: 2020-11-20 23:30:02 UTC
+Date/Publication: 2020-11-29 21:50:02 UTC
