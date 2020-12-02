@@ -24,12 +24,17 @@
 #'   it at a later stage in the investigation, after a preliminary 
 #'   causal determination is already made. The 3 outputs of GauseX12 are
 #'   two Rsquares and the difference between after subtracting the second
-#'   from the first.  Col. 1 has RsqX1onX2
-#'   Col.2 has RsqX2onX1, and Col.3 has dif=(RsqX1onX2 -RsqX2onX1)
-#'   If both col.1 and Col.2 are positive, we have bi-directional 
-#'   feedback causal path x1 <--> x2. If RsqX1onX2>0 and RsqX2onX1<0
-#'   then causal path x2 --> x1.  If RsqX1onX2<0 and RsqX2onX1>0
-#'   then causal path x1 --> x2 holds.
+#'   from the first.  Col. 1 has (RsqX1onX2)
+#'   Col.2 has (RsqX2onX1), and Col.3 has dif=(RsqX1onX2 -RsqX2onX1)
+#'   Note that R-squares are always positive. 
+#'   If dif>0, RsqX1onX2>RsqX2onX1, implying that x2 on RHS performs better
+#'   that is, x2 --> x1 is the path, or x2 Granger-causes x1.
+#'   If dif<0, x1 --> x2 holds. If dif is too close to zero,
+#'   we may have bidirectional causality  x1 <--> x2. The proportion of
+#'   resamples (out of n999) having dif<0 suggests level of confidence in
+#'   the conclusion x1 --> x2.  The proportion of
+#'   resamples (out of n999) having dif>0 suggests level of confidence in
+#'   the conclusion x2 --> x1.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See Also \code{\link{GcRsqX12c}}.
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
@@ -84,7 +89,10 @@ bootGcLC = function(x1, x2, px2=4, px1=4, pwanted=4,
   print("95 percent confidence intervals for each column")
   print(apply(out,2,Fn))
   print(apply(out,2,summary))
-  if(n999<99) print(dim(out))
-  if(n999<99) print(out)
+  bb=out[,3]
+  px2to1=round(length(bb[bb>0])/n999,5)
+  px1to2=round(length(bb[bb<0])/n999,5)
+  print(c("boot prop. supporting x1-->x2",px1to2))
+  print(c("boot prop. supporting x2-->x1",px2to1))
   return(out)
 }

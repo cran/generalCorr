@@ -39,12 +39,17 @@ This computation is computer intensive and generally very slow.
   it at a later stage in the investigation, after a preliminary 
   causal determination is already made. The 3 outputs of GauseX12 are
   two Rsquares and the difference between after subtracting the second
-  from the first.  Col. 1 has RsqX1onX2
-  Col.2 has RsqX2onX1, and Col.3 has dif=(RsqX1onX2 -RsqX2onX1)
-  If both col.1 and Col.2 are positive, we have bi-directional 
-  feedback causal path x1 <--> x2. If RsqX1onX2>0 and RsqX2onX1<0
-  then causal path x2 --> x1.  If RsqX1onX2<0 and RsqX2onX1>0
-  then causal path x1 --> x2 holds.
+  from the first.  Col. 1 has (RsqX1onX2)
+  Col.2 has (RsqX2onX1), and Col.3 has dif=(RsqX1onX2 -RsqX2onX1)
+  Note that R-squares are always positive. 
+  If dif>0, RsqX1onX2>RsqX2onX1, implying that x2 on RHS performs better
+  that is, x2 --> x1 is the path, or x2 Granger-causes x1.
+  If dif<0, x1 --> x2 holds. If dif is too close to zero,
+  we may have bidirectional causality  x1 <--> x2. The proportion of
+  resamples (out of n999) having dif<0 suggests level of confidence in
+  the conclusion x1 --> x2.  The proportion of
+  resamples (out of n999) having dif>0 suggests level of confidence in
+  the conclusion x2 --> x1.
 }
 \examples{
 \dontrun{

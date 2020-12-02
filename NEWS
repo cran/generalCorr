@@ -1,5 +1,9 @@
 Package: generalCorr
 ==============
+Version 1.1.8 [2020-12-02]
+o Description of bootGcRsq and bootGcLC corrected and easy-to-interpret
+output added.
+
 Version 1.1.7 [2020-11-29]
 o Added vignette 5 to help users understand and implement new tools of version
 1.1.6
