@@ -1,4 +1,4 @@
-#' depMeas Measure dependence between two vectors.
+#' depMeas Signed measure of nonlinear nonparametric dependence between two vectors.
 #'
 #' An infant may depend on the mother for survival, but not vice versa.
 #' Dependence relations need not be symmetric, yet correlation coefficients
@@ -8,13 +8,14 @@
 #' coefficients.  It requires a kernel regression of x on y obtained by using 
 #' the `np' package and its flipped version.  We use a block version of
 #' `gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths.
-#' @param x {Vector of data on first variable}
-#' @param y {Vector of data on second variable}
-#' @param blksiz {block size, default blksiz =n, where n=rows in matrix
+#' @param x {Vector of data on the first variable}
+#' @param y {Vector of data on the second variable}
+#' @param blksiz {block size, default blksiz =n, where n=rows in the matrix
 #'      or no blocking is done}
 #' 
-#' @return A measure of dependence.
-#' @note This function needs the gmcmtxBlk function which in turn needs the np package.
+#' @return A measure of dependence having the same sign as Pearson correlation. Its
+#' magnitude equals the larger of the two generalized correlation coefficients
+#' @note This function needs the gmcmtxBlk function, which in turn needs the np package.
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso See Also \code{\link{gmcmtx0}} and \code{\link{gmcmtxBlk}}
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with
@@ -26,6 +27,10 @@
 #' Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
 #' with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 #' North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
+#' 
+#' @references Vinod, H. D. (2021) 'Generalized, Partial and Canonical Correlation
+#' Coefficients' Computational Economics, 59(1), 1--28.
+#' 
 #' @concept asymmetric  p-values
 #' @examples
 #' library(generalCorr)

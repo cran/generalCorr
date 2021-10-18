@@ -57,7 +57,7 @@
 #' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
-#'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#'    \doi{10.1080/03610918.2015.1122048}
 #' @concept causal criteria
 #' @note The output matrix last column for `mtcars' example
 #' has the sum of the scores by the three criteria
@@ -73,7 +73,7 @@
 #' someCPairs(mtcars[,1:3],ctrl=mtcars[4:5]) # first variable is mpg and effect on mpg is of interest
 #' }
 #' 
-### \dontrun{
+#' \dontrun{
 #' set.seed(234)
 #' z=runif(10,2,11)# z is independently created
 #' x=sample(1:10)+z/10  #x is somewhat indep and affected by z
@@ -81,7 +81,7 @@
 #' w=runif(10)
 #' x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
 #' someCPairs(cbind(x2,y2), cbind(z,w2)) #yields x2 as correct cause
-### }
+#' }
 #' 
 #' 
 #' @export

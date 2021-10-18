@@ -51,7 +51,7 @@
 #' @references H. D. Vinod 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
-#'    \url{https://doi.org/gffn86}
+#'    \doi{gffn86}
 #' 
 #' @references Vinod, H. D. Causal Paths and Exogeneity Tests 
 #' in {Generalcorr} Package for Air Pollution and Monetary Policy 
@@ -84,7 +84,7 @@
 #' silentMtx0(mtcars[,1:3],ctrl=mtcars[,4:5]) # mpg paired with others
 #' }
 #' 
-### \dontrun{
+#' \dontrun{
 #'options(np.messages=FALSE)
 #'set.seed(234)
 #'z=runif(10,2,11)# z is independently created
@@ -93,7 +93,7 @@
 #'w=runif(10)
 #'x2=x;x2[4]=NA;y2=y;y2[8]=NA;w2=w;w2[4]=NA
 #'silentMtx0(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
-### }
+#' }
 #' 
 #' 
 #' @export

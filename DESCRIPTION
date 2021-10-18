@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations and Various Causal Paths
-Version: 1.1.8
-Date: 2020-12-02
+Version: 1.1.9
+Date: 2021-10-15
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -19,7 +19,7 @@ Description: Since causal paths from data are important for all sciences, the
     inequalities between many absolute values are quantified by four orders of 
     stochastic dominance. Our third criterion Cr3 for the causal path X to Y
     requires new generalized partial correlations to satisfy |r*(x|y,z)|< |r*(y|x,z)|.
-    The function parcorBMany() reports generalized partials between the first
+    The function parcorVec() reports generalized partials between the first
     variable and all others.  The package provides several R functions including
     get0outliers() for outlier detection, bigfp() for numerical integration by the
     trapezoidal rule, stochdom2() for stochastic dominance, pillar3D() for 3D charts,
@@ -27,11 +27,12 @@ Description: Since causal paths from data are important for all sciences, the
     dependence, and causeSummary(mtx) reports summary of causal paths among matrix columns
     is easiest to use. Several functions whose names begin with 'boot' provide bootstrap
     statistical inference including a new bootGcRsq() test for "Granger-causality" 
-    allowing nonlinear relations. See Vinod (2019) <doi:10.1080/03610918.2015.1122048>.
+    allowing nonlinear relations. See five vignettes of the package for theory
+    and usage tips. See Vinod (2019) \doi{10.1080/03610918.2015.1122048}.
 License: GPL (>= 2)
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2020-12-02 03:46:10 UTC; vinod
+Packaged: 2021-10-18 02:58:16 UTC; vinod
 Repository: CRAN
-Date/Publication: 2020-12-02 07:40:14 UTC
+Date/Publication: 2021-10-18 04:30:02 UTC

@@ -15,7 +15,7 @@
 #' @param ctrl {Input vector or matrix of data for control variable(s), 
 #'     default is ctrl=0 when control variables are absent}
 #' @param dig The number of digits for reporting (=4, default)
-#' @param idep The column number of the first variable (=1, default)
+#' @param idep The column number of the dependent variable (=1, default)
 #' @param verbo Make this TRUE for detailed printing of computational steps
 #' @param blksiz {block size, default=10, if chosen blksiz >n, where n=rows in matrix
 #'      then blksiz=n. That is, no blocking is done}
@@ -33,6 +33,9 @@
 #' @references Vinod, H. D. 'Generalized Correlations and Instantaneous
 #'  Causality for Data Pairs Benchmark,' (March 8, 2015)
 #'  \url{https://www.ssrn.com/abstract=2574891}
+#'  
+#' @references Vinod, H. D. (2021) 'Generalized, Partial and Canonical Correlation
+#' Coefficients' Computational Economics, 59(1), 1--28.
 #'
 #' @references Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 #'  Using R', Chapter 4 in Handbook of Statistics: Computational Statistics

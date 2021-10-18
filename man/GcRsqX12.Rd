@@ -5,16 +5,16 @@
 \title{Granger nonlinear causality R^2 for x1=f(x1,x2), R^2 for flipped x1 and x2 and the
 difference between the two R^2 values}
 \usage{
-GcRsqX12(x1, x2, px2 = 4, px1 = 4, pwanted = 4, ctrl = 0)
+GcRsqX12(x1, x2, px1 = 4, px2 = 4, pwanted = 4, ctrl = 0)
 }
 \arguments{
 \item{x1}{{The data vector x1}}
 
 \item{x2}{{The data vector x2}}
 
-\item{px2}{{number of lags of x2 in the data, default px2=4}}
-
 \item{px1}{{number of lags of x1 in the data default px1=4}}
+
+\item{px2}{{number of lags of x2 in the data, default px2=4}}
 
 \item{pwanted}{{number of lags of both x2 and x1 wanted for Granger causal analysis, default =4}}
 

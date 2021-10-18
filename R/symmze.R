@@ -20,7 +20,7 @@ symmze=function(mtx){
   nr=NROW(mtx)  
   nc=NCOL(mtx)
   mtx2=mtx
-  if(nc!=nr) stop("symmze(mtx) error: must input a square matrix")
+  if(nc!=nr) stop("stop: symmze(mtx) error: must input a square matrix")
   for (i in 1:nr) {
     for (j in 1:nc){
       if(i!=j) {

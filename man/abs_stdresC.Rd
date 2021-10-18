@@ -3,7 +3,7 @@
 \name{abs_stdresC}
 \alias{abs_stdresC}
 \title{Absolute values of residuals of kernel regressions of x on y when both x and
-y are standardized and control variables are present.}
+y are standardized and control variables are present (C for control presence).}
 \usage{
 abs_stdresC(x, y, ctrl)
 }
@@ -47,7 +47,7 @@ abs_stdresC(x,y,ctrl=z)
 Vinod, H. D.'Generalized Correlation and Kernel Causality with
  Applications in Development Economics' in Communications in
  Statistics -Simulation and Computation, 2015,
- \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+ \doi{10.1080/03610918.2015.1122048}
 }
 \seealso{
 See  \code{\link{abs_stdres}}.

@@ -2,20 +2,21 @@
 % Please edit documentation in R/depMeas.R
 \name{depMeas}
 \alias{depMeas}
-\title{depMeas Measure dependence between two vectors.}
+\title{depMeas Signed measure of nonlinear nonparametric dependence between two vectors.}
 \usage{
 depMeas(x, y, blksiz = length(x))
 }
 \arguments{
-\item{x}{{Vector of data on first variable}}
+\item{x}{{Vector of data on the first variable}}
 
-\item{y}{{Vector of data on second variable}}
+\item{y}{{Vector of data on the second variable}}
 
-\item{blksiz}{{block size, default blksiz =n, where n=rows in matrix
+\item{blksiz}{{block size, default blksiz =n, where n=rows in the matrix
 or no blocking is done}}
 }
 \value{
-A measure of dependence.
+A measure of dependence having the same sign as Pearson correlation. Its
+magnitude equals the larger of the two generalized correlation coefficients
 }
 \description{
 An infant may depend on the mother for survival, but not vice versa.
@@ -28,7 +29,7 @@ the `np' package and its flipped version.  We use a block version of
 `gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths.
 }
 \note{
-This function needs the gmcmtxBlk function which in turn needs the np package.
+This function needs the gmcmtxBlk function, which in turn needs the np package.
 }
 \examples{
 library(generalCorr)
@@ -47,6 +48,9 @@ Vinod, H. D. 'Matrix Algebra Topics in Statistics and Economics
 Using R', Chapter 4 in Handbook of Statistics: Computational Statistics
 with R, Vol.32, co-editors: M. B. Rao and C.R. Rao. New York:
 North Holland, Elsevier Science Publishers, 2014, pp. 143-176.
+
+Vinod, H. D. (2021) 'Generalized, Partial and Canonical Correlation
+Coefficients' Computational Economics, 59(1), 1--28.
 }
 \seealso{
 See Also \code{\link{gmcmtx0}} and \code{\link{gmcmtxBlk}}

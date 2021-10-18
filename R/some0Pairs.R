@@ -52,7 +52,7 @@
 #' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
 #'    Applications in Development Economics' in Communications in
 #'    Statistics -Simulation and Computation, 2015,
-#'    \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+#'    \doi{10.1080/03610918.2015.1122048}
 #' @concept  causal criteria
 #' @concept  generalized correlations
 #' @note The output matrix last column for `mtcars' example

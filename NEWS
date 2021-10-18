@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.1.9 [2021-10-15]
+o Added functions for generalized partial correlations and hybrid version.
+
 Version 1.1.8 [2020-12-02]
 o Description of bootGcRsq and bootGcLC corrected and easy-to-interpret
 output added.

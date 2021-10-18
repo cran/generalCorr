@@ -59,10 +59,10 @@
 #' 
 #' @export
 
-GcRsqX12c = function(x1, x2, px2=4, px1=4, pwanted=4, ctrl = 0){
+GcRsqX12c = function(x1, x2, px1=4, px2=4, pwanted=4, ctrl = 0){
 #print(head(x1,2))
 #print(head(x2,2))
-RsqX2onX1 =GcRsqYXc(x1, x2, px=px2, py=px1, pwanted=pwanted, ctrl = ctrl)
+RsqX2onX1 =GcRsqYXc(x1, x2, px=px1, py=px2, pwanted=pwanted, ctrl = ctrl)
 R21=RsqX2onX1[1]
 RsqX1onX2=GcRsqYXc(x2, x1, px=px2, py=px1, pwanted=pwanted, ctrl = ctrl)     
 R12=RsqX1onX2[1]

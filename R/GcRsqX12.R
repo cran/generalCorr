@@ -61,12 +61,12 @@
 #' 
 #' @export
 
-GcRsqX12 = function(x1, x2, px2=4, px1=4, pwanted=4, ctrl = 0){
+GcRsqX12 = function(x1, x2, px1=4, px2=4, pwanted=4, ctrl = 0){
 #print(head(x1,2))
 #print(head(x2,2))
 RsqX2onX1 =GcRsqYX(x1, x2, px=px2, py=px1, pwanted=pwanted, ctrl = ctrl)
 R21=RsqX2onX1[1]
-RsqX1onX2=GcRsqYX(x2, x1, px=px2, py=px1, pwanted=pwanted, ctrl = ctrl)     
+RsqX1onX2=GcRsqYX(x2, x1, px=px1, py=px2, pwanted=pwanted, ctrl = ctrl)     
 R12=RsqX1onX2[1]
 dif=R12-R21
 list(RsqX1onX2=R12, RsqX2onX1=R21, dif=dif)

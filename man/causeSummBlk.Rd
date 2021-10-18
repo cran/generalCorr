@@ -60,27 +60,26 @@ This function calls  \code{siPairsBlk} allowing for control variables.
 The output of this function can be sent to `xtable' for a nice Latex table.
 }
 \description{
-Allowing input matrix of control variables, this function produces 
-a 5 column matrix
-summarizing the results where the estimated signs of
-stochastic dominance order values, (+1, 0, -1), are weighted by 
- \code{wt=c(1.2,1.1, 1.05, 1)} to
-compute an overall result for all orders of stochastic dominance by 
-a weighted sum for
-the criteria Cr1 and Cr2 and added to the Cr3 estimate as: (+1, 0, -1).
-The final range for the unanimity of sign index is [--100, 100].
+A block version of \code{causeSummary()}.
+While allowing the researcher to keep some variables as controls,
+or outside the scope of causal path determination 
+(e.g., age or latitude)  this function produces detailed causal path information 
+in a 5 column matrix identifying the names of variables,
+causal path directions, path strengths re-scaled to be in the 
+range [--100, 100], (table reports absolute values of the strength)
+plus Pearson correlation and its p-value.
 }
 \details{
-The reason for slightly declining weights on the signs from
-SD1 to SD4 is simply that the local mean comparisons 
-implicit in SD1 are known to be
-more reliable than local variance implicit in SD2, local skewness implicit in
-SD3 and local kurtosis implicit in SD4. The reason for 
-slightly declining sampling
-unreliability of higher moments is simply that SD4 involves fourth power
-of the deviations from the mean and SD3 involves 3rd power, etc.
-The summary results for all
-three criteria are reported in one matrix called \code{out}:
+The algorithm determines causal path directions from the sign
+of the strength index and strength index values by comparing 
+three aspects of flipped kernel regressions: 
+[x1 on (x2, x3, .. xp)] and its flipped version [x2 on (x1, x3, .. xp)]
+We compare (i) formal exogeneity test criterion, (ii) absolute residuals, and
+(iii) R-squares of the flipped regressions implying three criteria Cr1, to Cr3.
+The criteria are quantified by sophisticated methods using four orders
+of stochastic dominance, SD1 to SD4. We assume slightly declining weights on 
+causal path signs because known reliability ranking. SD1 is better than SD2,
+better than SD3, better than SD4. The user can optionally change our weights.
 }
 \note{
 The European Crime data has all three criteria correctly suggesting that
@@ -113,7 +112,7 @@ causeSummBlk(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 Vinod, H. D. `Generalized Correlation and Kernel Causality with
    Applications in Development Economics' in Communications in
    Statistics -Simulation and Computation, 2015,
-   \url{https://doi.org/gffn86}
+   \doi{gffn86}
 
 Vinod, H. D. 'New exogeneity tests and causal paths,'
  Chapter 2 in 'Handbook of Statistics: Conceptual Econometrics 
@@ -126,7 +125,7 @@ in {Generalcorr} Package for Air Pollution and Monetary Policy
 \url{https://www.ssrn.com/abstract=2982128}
 }
 \seealso{
-See  \code{\link{bootPairs}},  \code{\link{causeSummary0}} has
+See  \code{\link{bootPairs}},  \code{\link{causeSummary}} has
 an older version of this function.
 
 See  \code{\link{someCPairs}}

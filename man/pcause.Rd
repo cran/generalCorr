@@ -43,7 +43,7 @@ pcause(crim,off,n999=29)
 Vinod, H. D. `Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
- \url{http://dx.doi.org/10.1080/03610918.2015.1122048}
+ \doi{10.1080/03610918.2015.1122048}
 
 Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). Generalized measures 
  of correlation for asymmetry, nonlinearity, and beyond. 
