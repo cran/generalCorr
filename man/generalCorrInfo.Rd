@@ -52,6 +52,12 @@ Recent 2020 additions include \code{canonRho()} for generalized canonical
 correlations, and many 
 functions for Granger causality between lagged time series including
 \code{GcRsqX12()}, \code{bootGcRsq()} and \code{GcRsqYXc()}.
+
+Recent 2021 additions include several functions for portfolio choice.
+\code{sudoCoefParcor()} for pseudo regression coefficients for kernel regressions.
+\code{decileVote()}, \code{momentVote()}, \code{exactSdMtx()} for exact
+computation of stochastic dominance from ECDF areas. \code{dif4mtx()}
+computes growth, change in growth etc. up-to order 4 differencing of time series.
 }
 \note{
 Five vignettes provided with this package at CRAN

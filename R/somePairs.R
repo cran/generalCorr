@@ -135,7 +135,6 @@ somePairs <- function(mtx, dig = 6, verbo = FALSE, typ = 1, rnam = FALSE) {
         rownames(outcause) = rna[2:p]  #first row name slot=NA
     if (verbo) 
         print(outcause)
-    if (verbo) 
-        print(xtable(outcause))
+
     return(outcause)
 } 

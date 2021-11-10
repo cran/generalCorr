@@ -54,7 +54,6 @@
 #' This function is an extension of \code{some0Pairs} to allow for control variables. 
 #' For example, crime `kernel causes' police officer deployment (not vice versa) is indicated by 
 #' the positive sign of `sum' (=3.175) reported for that example included in this package.
-#' @importFrom xtable xtable
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See Also \code{\link{somePairs}}, \code{\link{some0Pairs}}
 #' @references Vinod, H. D. 'Generalized Correlation and Kernel Causality with
@@ -205,8 +204,6 @@ someCPairs2=
         rownames(outcause) = rna[2:p]
       if (verbo) 
         print(outcause)
-      if (verbo) 
-        print(xtable(outcause))
       if (typ == 1) 
         outCr1 = outcause
       if (typ == 2) 
@@ -230,7 +227,5 @@ someCPairs2=
     }
     if (verbo) 
       print(outVote)
-    if (verbo) 
-      print(xtable(outVote))
     list(outCr1 = outCr1, outCr2 = outCr2, outCr3 = outCr3, outVote = outVote)
   }

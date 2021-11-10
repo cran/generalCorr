@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
-Title: Generalized Correlations and Various Causal Paths
-Version: 1.1.9
-Date: 2021-10-15
+Title: Generalized Correlations, Causal Paths and Portfolio Selection
+Version: 1.2.0
+Date: 2021-11-09
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -25,7 +25,8 @@ Description: Since causal paths from data are important for all sciences, the
     trapezoidal rule, stochdom2() for stochastic dominance, pillar3D() for 3D charts,
     canonRho() for generalized canonical correlations, depMeas() measures nonlinear
     dependence, and causeSummary(mtx) reports summary of causal paths among matrix columns
-    is easiest to use. Several functions whose names begin with 'boot' provide bootstrap
+    is easiest to use. Portfolio selection: decileVote(), momentVote(), dif4mtx(), 
+    exactSdMtx() can rank several stocks. Several functions whose names begin with 'boot' provide bootstrap
     statistical inference including a new bootGcRsq() test for "Granger-causality" 
     allowing nonlinear relations. See five vignettes of the package for theory
     and usage tips. See Vinod (2019) \doi{10.1080/03610918.2015.1122048}.
@@ -33,6 +34,6 @@ License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2021-10-18 02:58:16 UTC; vinod
+Packaged: 2021-11-09 23:53:37 UTC; vinod
 Repository: CRAN
-Date/Publication: 2021-10-18 04:30:02 UTC
+Date/Publication: 2021-11-10 05:20:02 UTC

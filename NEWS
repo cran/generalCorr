@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.2.0 [2021-11-09]
+o Added functions for portfolio selection using exact stochastic dominance.
+
 Version 1.1.9 [2021-10-15]
 o Added functions for generalized partial correlations and hybrid version.
 

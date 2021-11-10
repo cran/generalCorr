@@ -44,7 +44,6 @@
 #' This function merely calls \code{causeSumNoP} repeatedly to include all pairs.
 #' The background function \code{siPairsBlk} allows for control variables.
 #' The output of this function can be sent to `xtable' for a nice Latex table. 
-#' @importFrom xtable xtable
 #' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See  \code{\link{bootPairs}},  \code{\link{causeSummBlk}} 

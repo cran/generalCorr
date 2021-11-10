@@ -55,7 +55,6 @@
 #' the fifth column has the p-value for testing the null of zero Pearson coeff.
 #' This function calls  \code{siPairsBlk} allowing for control variables.
 #' The output of this function can be sent to `xtable' for a nice Latex table. 
-#' @importFrom xtable xtable
 #' @importFrom stats complete.cases
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY.
 #' @seealso See  \code{\link{bootPairs}},  \code{\link{causeSummary}} has

@@ -107,8 +107,6 @@ someMagPairs=
       out[ii,4] = mg1[2]
     }
     print(out)
-    if (verbo) 
-      print(xtable(out))
     return(out)
   }
 
