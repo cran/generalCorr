@@ -25,9 +25,7 @@ Uppx2mx1  means upper confidence limit for (x2-x1).
 
 For strong stochastic dominance of x2 over x1
 dominance beyond sampling variability, zero should not be inside
-the confidence interval in the last two columns. 
-
-### @note %% ~~further notes~~
+the confidence interval in the last two columns.
 }
 \description{
 This calls the meboot package to create J=999 replications of portfolio return

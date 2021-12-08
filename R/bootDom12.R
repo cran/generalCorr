@@ -21,7 +21,6 @@
 #' dominance beyond sampling variability, zero should not be inside
 #' the confidence interval in the last two columns. 
 #' 
-#' ### @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
 #' @seealso see \code{\link{exactSdMtx}}
 #' @importFrom meboot meboot
