@@ -2,14 +2,12 @@
 % Please edit documentation in R/parcorVecH.R
 \name{parcorVecH}
 \alias{parcorVecH}
-\title{Vector of hybrid generalized partial correlation coefficients, 
-hybrid version of parcorVec subtracting only linear effects but using
-generlized correlation between OLS residuals}
+\title{Vector of hybrid generalized partial correlation coefficients.}
 \usage{
 parcorVecH(mtx, ctrl = 0, dig = 4, verbo = FALSE, idep = 1)
 }
 \arguments{
-\item{mtx}{{Input data matrix with p (> or = 3) columns, first column
+\item{mtx}{{Input data matrix with p (> or = 3) columns, the first column
 must have the dependent variable}}
 
 \item{ctrl}{{Input vector or matrix of data for control variable(s), 
@@ -25,10 +23,16 @@ default is ctrl=0 when control variables are absent}}
 A p by 1 `out' vector containing hybrid partials  r*(i,j | k).
 }
 \description{
-This function calls  \code{parcor_ijk} function which
+This is a hybrid version of parcorVec subtracting only the linear effects
+(OLS residuals instead of kernel regression residuals), but using the
+generalized correlation between the OLS residuals for the last stage
+of the generalized partial correlation.
+}
+\details{
+This function calls  \code{parcor_ijk} function, which
 uses original data to compute
 generalized partial correlations between \eqn{X_i}, the dependent variable,
-and \eqn{X_j} which is the current regressor of interest. Note that
+and \eqn{X_j}, which is the current regressor of interest. Note that
 j can be any one of the remaining
 variables in the input matrix \code{mtx}. Partial correlations remove the effect of
 variables \eqn{X_k} other than \eqn{X_i} and \eqn{X_j}. 
@@ -43,7 +47,7 @@ between  u(i,k) and u(j,k).
 Hybrid Generalized Partial Correlation Coefficients 
 (HGPCC) allow comparison of
 the relative contribution of each \eqn{X_j} to the explanation of \eqn{X_i},
-because HGPCC are scale-free pure numbers.
+because HGPCC has scale-free pure numbers.
 
 We want to get all partial
  correlation coefficient pairs removing other column effects. Vinod (2018) 

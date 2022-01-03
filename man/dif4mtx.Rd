@@ -2,7 +2,7 @@
 % Please edit documentation in R/dif4mtx.R
 \name{dif4mtx}
 \alias{dif4mtx}
-\title{order 4 differencing of a matrix of time series}
+\title{order four differencing of a matrix of time series}
 \usage{
 dif4mtx(mtx)
 }
@@ -15,9 +15,10 @@ and ranks of D1 to D4
 The column names of out are those of input matrix mtx.
 }
 \description{
-This is for momentum traders who focus on growth, acceleration, its gorwth
+This is for momentum traders who focus on growth, acceleration, its growth
 and further acceleration. The diff function of R seems to do 
-recycling of available numbers, not wanted for our purposes.
+recycling of available numbers, not wanted for our purposes. Hence, this
+function is needed in portfolio studies based on time series.
 }
 \examples{
 x=c(2,8,3,5,1,8,19,22,23)

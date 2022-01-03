@@ -1,5 +1,7 @@
-#' Replace asymmetric matrix by max of abs values of [ij] or [ji] elements
-#' useful in symmetrizing gmcmtx0 general correlation matrix
+#' Replace asymmetric matrix by max of abs values of [i,j] or [j,i] elements.
+#' 
+#' It is useful in symmetrizing the gmcmtx0 matrix containing a non-symmetric
+#' generalized correlation matrix.
 #'
 #'
 #' @param mtx {non-symmetric matrix}

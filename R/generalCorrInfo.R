@@ -1,10 +1,10 @@
 #' generalCorr package description: 
 #' 
 #' This package provides convenient software tools for causal path determinations
-#' using Vinod (2014, 2015, 2018, 2021) and is explained in many vignettes of the package.
-#' \code{causeSummary(mtx)} and similar
-#' \code{causeSummBlk} for its blocked version report pair-wise causal 
-#' path directions and the absolute causal strength [0, 100]. We fit
+#' using Vinod (2014, 2015, 2018, 2021) and is explained in many package vignettes.
+#' \code{causeSummary(mtx)}, \code{causeSummary2(mtx)},\code{causeSum2Blk(mtx)},
+#' \code{causeSummBlk} are various versions reporting pair-wise causal 
+#' path directions and causal strengths. We fit
 #' a kernel regression of X1 on (X2, X3,..Xk) and another flipped regression
 #' of X2 on (X1, x3, ..Xk).  We compare the two fits using three sophisticated criteria
 #' called Cr1 to Cr3. We rescale the
@@ -26,10 +26,10 @@
 #' The criterion Cr1 uses observable values of standard exogeneity test criterion,
 #' namely, (kernel regression residual) times (regressor values)
 #' Cr2 computes absolute values kernel regression residuals.
-#' The quantification of Cr1 an Cr2 further uses four orders of stochastic 
+#' The quantification of Cr1 and Cr2 further uses four orders of stochastic 
 #' dominance measures.
 #' Cr3 compares the R-square of the two fits.
-#' The package provides additional tools for  for matrix algebra, such as 
+#' The package provides additional tools for matrix algebra, such as 
 #' \code{cofactor()}, for outlier detection \code{get0outlier()}, 
 #' for numerical integration by the trapezoidal rule, stochastic dominance
 #' \code{stochdom2()} and \code{comp_portfo2()}, etc.
@@ -39,7 +39,7 @@
 #' is done in \code{napair()}, while triplet-wise deletion is in \code{naTriplet()}
 #' intended for use when control variable(s) are also present. If one has
 #' panel data, functions \code{PanelLag()} and \code{Panel2Lag()} are relevant.
-#' \code{pillar3D} provides 3-dimensional plots of data which look
+#' \code{pillar3D} provides 3-dimensional plots of data that look
 #' more like surfaces, than usual plots with vertical pins.
 #' 
 #' Recent 2020 additions include \code{canonRho()} for generalized canonical 
@@ -50,16 +50,18 @@
 #' Recent 2021 additions include several functions for portfolio choice.
 #' \code{sudoCoefParcor()} for pseudo regression coefficients for kernel regressions.
 #' \code{decileVote()}, \code{momentVote()}, \code{exactSdMtx()} for exact
-#' computation of stochastic dominance from ECDF areas. \code{dif4mtx()}
+#' computation of stochastic dominance from ECDF areas. The newer stochastic
+#' dominance tools are used in \code{causeSummary2(mtx)},\code{causeSum2Blk(mtx)}
+#' \code{dif4mtx()}
 #' computes growth, change in growth etc. up-to order 4 differencing of time series.
 #'   
-#' @note Five vignettes provided with this package at CRAN
+#' @note Six vignettes provided with this package at CRAN
 #' describe the theory and usage of the package with examples. Read them using
 #' the command: 
 #' \code{vignette("generalCorr-vignette")} to read the first vignette. 
-#' vignettes 2 to 5 can be read by including the vignette number. For 
+#' vignettes 2 to 6 can be read by including the vignette number. For 
 #' example, 
-#' \code{vignette("generalCorr-vignette5")} to read the fifth vignette.
+#' \code{vignette("generalCorr-vignette6")} to read the sixth vignette.
 #'
 #' 
 #' @references Vinod, H. D.'Generalized Correlation and Kernel Causality with 

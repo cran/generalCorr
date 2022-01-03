@@ -7,8 +7,9 @@
 momentVote(mtx, weight = c(1, -1, 0.5, -0.5, 1))
 }
 \arguments{
-\item{mtx}{{n by p matrix of data, For example, p stock returns, mtx columns
-should have names}}
+\item{mtx}{{n by p matrix of data, For example, n stock returns
+for p stocks. The mtx columns
+should have some names (ticker symbols)}}
 
 \item{weight}{{vector of reliability weights. default: mean=1, sd=1,
 skew=0.5,kurt=0.5,sharpe=1}}
@@ -42,9 +43,10 @@ is 0.5. Our ranking gives the smallest number 1 to the most desirable outcome.
 The 11-th line of the
 output matrix has weighted sum of ranks and we suggest higher portfolio weight
 be given to the column having smallest value (in the bottom line).
-The 12-th row of output matrix has choice, where input weights give
+The 12-th row of output matrix has `choice,' where input weights give
 the number 1 is for the top choice column of data and all other choice numbers.
-A second column of the output matrix has the chosen weights.
+The (p+1)-th column of the output matrix has the chosen weights.  The argument
+weight to the `momentVote' function allows one to change these weights.
 }
 \examples{
 x1=c(1,4,7,2,6)

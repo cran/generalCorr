@@ -25,6 +25,7 @@ xk which can be a vector or a matrix, usually of the remaining
 variables in the model, including control variables, if any.
 It first removes missing data from all input variables. Then,
 it computes residuals of kernel regression (xi on xk) and (xj on xk). 
+The function reports the generalized correlation between two kernel residuals.
 This version avoids ridge type adjustment present in an older version.
 }
 \note{

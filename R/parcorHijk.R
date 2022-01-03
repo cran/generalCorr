@@ -1,17 +1,19 @@
 #' Generalized partial correlation coefficients between Xi and Xj, after removing the
 #' effect of Xk, via OLS regression residuals.
 #'
-#' This function uses data on two column vectors, xi, xj, and a third
-#' xk, which can be a vector or a matrix, usually of the remaining 
-#' variables in the model, including control variables, if any.
-#' It first removes missing data from all input variables. Then,
-#' it computes residuals of OLS regression (xi on xk) and (xj on xk). 
+#' This function uses data on two column vectors, xi, xj, and a third set
+#' xk, which can be a vector or a matrix. xk usually has the remaining 
+#' variables in the model, including control variables, if any. This function
+#' first removes missing data from all input variables. Then,
+#' it computes residuals of OLS (no kernel) regression (xi on xk) and (xj on xk). 
 #' This hybrid version uses both OLS and then generalized correlation among
-#' OLS residuals.
+#' OLS residuals. This solves the potential problem of having too little
+#' information content in kernel regression residuals, since kernel fits are
+#' sometimes too close, especially when there are many variables in xk.
 #'
 #' @param xi {Input vector of data for variable xi}
 #' @param xj {Input vector of data for variable xj}
-#' @param xk {Input data for variables in xk, usually control variables}
+#' @param xk {Input data for all variables in xk, usually control variables}
 #' @importFrom stats cov lm resid
 #' @return 
 #' \item{ouij}{Generalized partial correlation Xi with Xj (=cause) after removing xk}

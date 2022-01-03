@@ -2,8 +2,7 @@
 % Please edit documentation in R/someCPairs.R
 \name{someCPairs}
 \alias{someCPairs}
-\title{Kernel causality computations admitting control variables 
-reporting a 7-column matrix (has older Cr1)}
+\title{Kernel causality computations admitting control variables.}
 \usage{
 someCPairs(
   mtx,
@@ -41,20 +40,20 @@ For example, crime `kernel causes' police officer deployment (not vice versa) is
 the positive sign of `sum' (=3.175) reported for that example included in this package.
 }
 \description{
-Allowing input matrix of control variables, produce 7 column matrix
-summarizing the results where the signs of
-stochastic dominance order values (+1 or -1) are weighted by \code{wt=c(1.2,1.1, 1.05, 1)} to
-compute an overall result for all orders of stochastic dominance by a weighted sum for
-the criteria Cr1 and Cr2. The weighting is obviously not needed for the third criterion Cr3.
+This function reports a 7-column matrix (has the older version of criterion Cr1).
+It allows an additional input matrix having control variables. It
+produces a 7-column matrix
+summarizing the results, where the signs of
+stochastic dominance order values (+1 or -1) are weighted 
+by \code{wt=c(1.2,1.1, 1.05, 1)} to
+compute an overall result for all orders of stochastic dominance 
+by a weighted sum for
+the criteria Cr1 and Cr2. The weighting is obviously not needed for 
+the third criterion Cr3 which compares asymmetric correlation coefficients.
 }
 \details{
 The reason for slightly declining weights on the signs from
-SD1 to SD4 is simply that the local mean comparisons 
-implicit in SD1 are known to be
-more reliable than local variance implicit in SD2, local skewness implicit in
-SD3 and local kurtosis implicit in SD4. The source of slightly declining sampling
-unreliability of higher moments is the
-higher power of the deviations from the mean needed in their computations.
+SD1 to SD4 is somewhat arbitrary.
 The summary results for all
 three criteria are reported in one matrix called \code{outVote}: 
   

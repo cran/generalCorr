@@ -1,12 +1,16 @@
-#' Granger nonlinear causality R^2 for x1=f(x1,x2) minus R^2 for flipped 1 and 2
+#' Generalized Granger-Causality. If dif>0, x2 Granger-causes x1.
 #' 
-#'  Calls GcRsqYXc for R square from kernel regression (local constant version)
-#'  R^2[x1=f(x1,x2)] choosing GcRsqYXc(y=x1, x=x2). It predicts x1 from 
+#' The usual Granger-causality assumes linear regressions. This allows
+#' nonlinear nonparametric kernel regressions using a local constat (lc) option.
+#'  Calls GcRsqYXc for R square from kernel regression.
+#'  R^2[x1=f(x1,x2)] choosing GcRsqYXc(y=x1, x=x2). The name `c' in the function
+#'  refers to local constant option of kernel regressions.`
+#'  It predicts x1 from 
 #'  both x1 and x2 using all information till time (t-1).
 #'  It also calls GcRsqYXc again after flipping x1 and x2.
 #'  It returns RsqX1onX2, RsqX2onX1 and the difference dif=(RsqX1onX2-RsqX2onX1)
 #'  If (dif>0) the regression x1=f(x1,x2) is better than the flipped
-#'  version implying that x1 is more predictable or x2 Granger causes x1
+#'  version implying that x1 is more predictable or x2 Granger-causes x1
 #'  x2 --> x1, rather than vice versa. The kernel regressions use
 #'  regtype="lc" for local constant, bwmethod="cv.ls" for least squares-based
 #'  bandwidth selection.

@@ -26,7 +26,8 @@ stock market returns.  The dominating distribution is superior in terms of local
 mean, variance, skewness and kurtosis respectively, representing dominance
 orders 1 to 4, without simply computing the four moment summary measures for the entire
 data.  Vinod (2008, sec. 4.3)
-explains the details.  This function uses the output of `wtdpapb'.
+explains the details.  This function uses the output of `wtdpapb' and Anderson's
+algorithm subject to trapwzoidal approximation.
 }
 \note{
 The input to this function is the output of the function \code{wtdpapb}.

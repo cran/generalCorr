@@ -2,7 +2,7 @@
 % Please edit documentation in R/causeSummBlk.R
 \name{causeSummBlk}
 \alias{causeSummBlk}
-\title{Block Version Kernel causality summary causal paths from three criteria}
+\title{Block Version 2: Kernel causality summary of causal paths from three criteria}
 \usage{
 causeSummBlk(
   mtx,
@@ -16,18 +16,18 @@ causeSummBlk(
 }
 \arguments{
 \item{mtx}{{The data matrix with many columns, y the first column 
-is a fixed target and then it is
+is a fixed target, and then it is
  paired with all other columns, one by one, and still called x for the 
  purpose of flipping.}}
 
 \item{nam}{{vector of column names for \code{mtx}. Default: colnames(mtx)}}
 
-\item{blksiz}{{block size, default=10, if chosen blksiz >n, where n=rows in matrix
+\item{blksiz}{{block size, default=10, if chosen blksiz >n, where n=rows in the matrix
 then blksiz=n. That is, no blocking is done}}
 
 \item{ctrl}{{data matrix for designated control variable(s) outside causal paths}}
 
-\item{dig}{{Number of digits for reporting (default \code{dig}=6).}}
+\item{dig}{{The number of digits for reporting (default \code{dig}=6).}}
 
 \item{wt}{{Allows user to choose a vector of four alternative weights for SD1 to SD4.}}
 
@@ -42,7 +42,8 @@ The control
 variables are not flipped. The printed output of this function
 reports the results for p-1 pairs indicating which variable
 (by name) causes which other variable (also by name).
-It also prints strength or signed summary strength index in range [-100,100]. 
+It also prints a strength, or signed summary strength 
+index forced to be in the range [-100,100] for easy interpretation. 
 A positive sign of the strength index means x1 kernel causes x(1+j),
 whereas negative strength index means x(1+j) kernel causes x1. The function 
 also prints Pearson correlation and its p-value. This function also returns
@@ -50,43 +51,49 @@ a matrix of p-1 rows and 5 columns entitled:
 ``cause", ``response", ``strength", ``corr." and ``p-value", respectively
 with self-explanatory titles. The first two columns have names of variables
 x1 or x(1+j), depending on which is the cause. The `strength' column
-has absolute value of summary index in range [0,100]  
-providing summary of causal results
-based on preponderance of evidence from Cr1 to Cr3 
+has the absolute value of a summary index in the range [0,100],  
+providing a summary of causal results
+based on the preponderance of evidence from Cr1 to Cr3 
 from four orders of stochastic dominance, etc.  The order of input columns matters.
-The fourth column `corr.' reports the Pearson correlation coefficient while
-the fifth column has the p-value for testing the null of zero Pearson coeff.
-This function calls  \code{siPairsBlk} allowing for control variables.
+The fourth column of the output matrix entitled `corr.' reports the Pearson 
+correlation coefficient, while
+the fifth column of the output matrix has the p-value for testing the 
+null hypothesis of a zero Pearson coefficient.
+This function calls  \code{siPairsBlk}, allowing for control variables.
 The output of this function can be sent to `xtable' for a nice Latex table.
 }
 \description{
-A block version of \code{causeSummary()}.
+A block version of \code{causeSummary()} chooses new bandwidth for every
+ten (blksiz=10) observations chosen by the `np' package injecting flexibility.
 While allowing the researcher to keep some variables as controls,
 or outside the scope of causal path determination 
-(e.g., age or latitude)  this function produces detailed causal path information 
-in a 5 column matrix identifying the names of variables,
+(e.g., age or latitude), this function produces detailed causal path information. 
+The output table is a 5 column matrix identifying the names of variables,
 causal path directions, path strengths re-scaled to be in the 
 range [--100, 100], (table reports absolute values of the strength)
-plus Pearson correlation and its p-value.
+plus Pearson correlation coefficient and its p-value.
 }
 \details{
 The algorithm determines causal path directions from the sign
-of the strength index and strength index values by comparing 
+of the strength index. The strength index magnitudes are computed by comparing 
 three aspects of flipped kernel regressions: 
-[x1 on (x2, x3, .. xp)] and its flipped version [x2 on (x1, x3, .. xp)]
-We compare (i) formal exogeneity test criterion, (ii) absolute residuals, and
-(iii) R-squares of the flipped regressions implying three criteria Cr1, to Cr3.
+[x1 on (x2, x3, .. xp)] and its flipped version [x2 on (x1, x3, .. xp)].
+The cause should be on the right-hand side of regression equation. The properties
+of regression fit determine which flip is superior.
+We compare (Cr1) formal exogeneity test criterion, (residuals times RHS
+regressor, where smaller in absolute value is better) 
+(Cr2) absolute residuals, where smaller in absolute value is better, and
+(Cr3) R-squares of the flipped regressions implying three criteria Cr1, to Cr3.
 The criteria are quantified by sophisticated methods using four orders
 of stochastic dominance, SD1 to SD4. We assume slightly declining weights on 
-causal path signs because known reliability ranking. SD1 is better than SD2,
-better than SD3, better than SD4. The user can optionally change our weights.
+the sign observed by Cr1 to Cr3. The user can change default weights.
 }
 \note{
 The European Crime data has all three criteria correctly suggesting that
-high crime rate kernel causes the deployment of a large number of police officers.
-Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
-strength index 100 suggests unanimity. 
-\code{attach(EuroCrime); causeSummary(cbind(crim,off))}
+a high crime rate kernel causes the deployment of a large number of police officers.
+Since Cr1 to Cr3 near-unanimously suggest `crim' as the cause of `off', 
+a strength index of 100 suggests unanimity. 
+\code{attach(EuroCrime); causeSummBlk(cbind(crim,off))}
 }
 \examples{
 

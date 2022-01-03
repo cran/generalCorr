@@ -1,19 +1,27 @@
 #' Compute ranks of rows of matrix and summarize them into a choice suggestion.
 #' 
-#' This function allows getting out the choice (of column stock) from four
+#' This function allows getting out the choice (of a column representing a stock) from four
 #' rows of numbers quantifying the four orders of exact stochastic dominance comparisons.
-#' If the choice row has 1 then that column is to be chosen with the largest
-#' (portfolio) weight. If the original matrix row names exist, same are repeated
-#' for the extra rows representing the ranks.  The row name for sum of ranks is
-#' sumRanks and the ranking of the sumRanks providing the choice is named choice
-#' along the bottom row of the output matrix called "out." 
+#' If the last or 10-th row for ``choice" has 1 then the stock representing
+#' that column is to be chosen. That is it should get the largest
+#' (portfolio) weight. If the original matrix row names are SD1 to SD4, 
+#' the same names are repeated for the extra rows representing their ranks.  
+#' The row name for ``sum of ranks" is
+#' sumRanks. Finally, the ranks associated with sumRanks provide the row named choice
+#' along the bottom (10-th) row of the output matrix called "out." 
 #' 
 #' @param mtx {matrix to be ranked by row and summarized}
-#' @return a matrix appending 4 more rows of ranks and a couple of rows
-#' summarizing ranks and also choice priority number for each stock (asset)
+#' @return a matrix called `out' having 10 rows and p columns (p=No.of stocks). 
+#' Row Numbers 1 to 4 have SD1 to SD4 evaluation of areas over ECDFs. 
+#' There are 6 more rows. Row No.5= SD1 ranks,
+#' Row No.6= SD2 ranks, Row No.7= SD3 ranks, Row No.8= SD4 ranks
+#' Row No.9= sum of the ranks in earlier four rows for ranks of SD1 to SD4
+#' Row No.10= choice rank based on all four (SD1 to SD4) added together
+#' Thus, the tenth row yields choice priority number for each stock (asset)
+#' after combining the all four criteria.
 ### @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
-### @seealso \code{\link{}}
+#' @seealso \code{\link{exactSdMtx}}
 #' 
 #' @export
 

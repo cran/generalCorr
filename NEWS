@@ -1,7 +1,11 @@
 Package: generalCorr
 ==============
+Version 1.2.2 [2021-12-24]
+o Added causeSum2Blk() for causality using exact stochastic dominance and 
+outOFsamp() for new out-of-sample evaluation of portfolios
+
 Version 1.2.1 [2021-12-08]
-o Added parcorVecH2 ect to fix a bug in implementing parcorVecH 
+o Added parcorVecH2 etc. to fix a bug in implementing parcorVecH 
 
 Version 1.2.0 [2021-11-09]
 o Added functions for portfolio selection using exact stochastic dominance.

@@ -1,8 +1,9 @@
-#' bootstrap confidence intervals for exact stochastic dominance SD1 to SD4.
+#' bootstrap confidence intervals for (x2-x1) exact SD1 to SD4 stochastic dominance 
+#'.
 #' 
 #' This calls the meboot package to create J=999 replications of portfolio return
 #' matrices and compute 95\% confidence intervals on x1, x2 and their
-#' difference (x2-x1).  If the interval on (x2-x1) contains zero the choice
+#' difference (x2-x1).  If the interval on (x2-x1) conta.ins zero the choice
 #' between the two can reverse due to sampling variation
 #' 
 #' @param x1 {a vector of n portfolio returns}
@@ -10,7 +11,7 @@
 #' @param confLevel {confidene level confLevel=95 is default}
 #' @param reps {number of bootstrap resamples, default is reps=999}
 ## @importFrom stats seq
-#' @return a matrix with six columns. First two Low1 and Upp1
+#' @return A matrix with six columns. First two Low1 and Upp1
 #' are confidence interval limits for x1. Next two columns
 #' have analogous limits for x2. The last but first columns entitled
 #' Lowx2mx1 means lower confidence limit for (x2-x1), where m=minus.

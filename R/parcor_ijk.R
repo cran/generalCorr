@@ -6,6 +6,7 @@
 #' variables in the model, including control variables, if any.
 #' It first removes missing data from all input variables. Then,
 #' it computes residuals of kernel regression (xi on xk) and (xj on xk). 
+#' The function reports the generalized correlation between two kernel residuals.
 #' This version avoids ridge type adjustment present in an older version.
 #'
 #' @param xi {Input vector of data for variable xi}

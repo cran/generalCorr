@@ -2,7 +2,8 @@
 % Please edit documentation in R/bootDom12.R
 \name{bootDom12}
 \alias{bootDom12}
-\title{bootstrap confidence intervals for exact stochastic dominance SD1 to SD4.}
+\title{bootstrap confidence intervals for (x2-x1) exact SD1 to SD4 stochastic dominance 
+.}
 \usage{
 bootDom12(x1, x2, confLevel = 95, reps = 999)
 }
@@ -16,7 +17,7 @@ bootDom12(x1, x2, confLevel = 95, reps = 999)
 \item{reps}{{number of bootstrap resamples, default is reps=999}}
 }
 \value{
-a matrix with six columns. First two Low1 and Upp1
+A matrix with six columns. First two Low1 and Upp1
 are confidence interval limits for x1. Next two columns
 have analogous limits for x2. The last but first columns entitled
 Lowx2mx1 means lower confidence limit for (x2-x1), where m=minus.
@@ -30,7 +31,7 @@ the confidence interval in the last two columns.
 \description{
 This calls the meboot package to create J=999 replications of portfolio return
 matrices and compute 95\% confidence intervals on x1, x2 and their
-difference (x2-x1).  If the interval on (x2-x1) contains zero the choice
+difference (x2-x1).  If the interval on (x2-x1) conta.ins zero the choice
 between the two can reverse due to sampling variation
 }
 \seealso{

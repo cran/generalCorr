@@ -16,7 +16,7 @@ or no blocking is done}}
 }
 \value{
 A measure of dependence having the same sign as Pearson correlation. Its
-magnitude equals the larger of the two generalized correlation coefficients
+magnitude equals the larger of the two generalized correlation coefficients.
 }
 \description{
 An infant may depend on the mother for survival, but not vice versa.
@@ -25,8 +25,10 @@ are symmetric. One way to measure the extent of dependence is to find
 the max of the absolute values of the two asymmetric correlations
 using Vinod (2015) definition of generalized (asymmetric) correlation
 coefficients.  It requires a kernel regression of x on y obtained by using 
-the `np' package and its flipped version.  We use a block version of
-`gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths.
+the `np' package and its flipped version
+(regress y on x).  We use a block version of
+`gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths for every ten
+observations (say) blksiz=10 seems to be a good choice.
 }
 \note{
 This function needs the gmcmtxBlk function, which in turn needs the np package.

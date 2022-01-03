@@ -2,8 +2,7 @@
 % Please edit documentation in R/symmze.R
 \name{symmze}
 \alias{symmze}
-\title{Replace asymmetric matrix by max of abs values of [ij] or [ji] elements
-useful in symmetrizing gmcmtx0 general correlation matrix}
+\title{Replace asymmetric matrix by max of abs values of [i,j] or [j,i] elements.}
 \usage{
 symmze(mtx)
 }
@@ -15,8 +14,8 @@ symmze(mtx)
 with common sign}
 }
 \description{
-Replace asymmetric matrix by max of abs values of [ij] or [ji] elements
-useful in symmetrizing gmcmtx0 general correlation matrix
+It is useful in symmetrizing the gmcmtx0 matrix containing a non-symmetric
+generalized correlation matrix.
 }
 \examples{
 

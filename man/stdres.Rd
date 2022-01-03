@@ -15,13 +15,14 @@ stdres(x, y)
 \value{
 kernel regression residuals are returned after
 standardizing the data on both sides so that the magnitudes of residuals are
-comparable between regression of x on y on the one hand and regression of y
+comparable between regression of x on y on the one hand, and 
+the flipped regression of y
 on x on the other.
 }
 \description{
 1) Standardize the data to force mean zero and variance unity, 2) kernel
-regress x on y, with the option `residuals = TRUE' and finally 3) compute
-the residuals.
+regress x on y, with the option `residuals = TRUE', and finally 3) compute
+the residuals. The standardization yields comparable residuals.
 }
 \details{
 The first argument is assumed to be the dependent variable.  If

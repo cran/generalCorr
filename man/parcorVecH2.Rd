@@ -2,9 +2,7 @@
 % Please edit documentation in R/parcorVecH2.R
 \name{parcorVecH2}
 \alias{parcorVecH2}
-\title{Vector of hybrid generalized partial correlation coefficients, 
-hybrid version of parcorVec subtracting only linear effects but using
-generlized correlation between OLS residuals}
+\title{Vector of hybrid generalized partial correlation coefficients.}
 \usage{
 parcorVecH2(mtx, dig = 4, verbo = FALSE, idep = 1)
 }
@@ -22,7 +20,12 @@ must have the dependent variable}}
 A p by 1 `out' vector containing hybrid partials  r*(i,j | k).
 }
 \description{
-This function calls  \code{parcor_ijk} function which
+This is a second version to be used when `parcorVecH' fails. (H=hybrid). 
+This hybrid version of parcorVec subtracting only linear effects but using
+generlized correlation between OLS residuals
+}
+\details{
+This function calls  \code{parcorHijk2} function which
 uses original data to compute
 generalized partial correlations between \eqn{X_i}, the dependent variable,
 and \eqn{X_j} which is the current regressor of interest. Note that

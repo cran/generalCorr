@@ -1,8 +1,10 @@
-#' Vector of hybrid generalized partial correlation coefficients, 
-#' hybrid version of parcorVec subtracting only linear effects but using
+#' Vector of hybrid generalized partial correlation coefficients.
+#' 
+#' This is a second version to be used when `parcorVecH' fails. (H=hybrid). 
+#' This hybrid version of parcorVec subtracting only linear effects but using
 #' generlized correlation between OLS residuals
 #'
-#' This function calls  \code{parcor_ijk} function which
+#' This function calls  \code{parcorHijk2} function which
 #' uses original data to compute
 #' generalized partial correlations between \eqn{X_i}, the dependent variable,
 #' and \eqn{X_j} which is the current regressor of interest. Note that
@@ -96,7 +98,7 @@ function (mtx, dig = 4, verbo = FALSE, idep=1)
       myj=j.other[j]
       xj = mtx[,myj]
       xk = mtx[, c(-idep, -myj)]
-      p1 = parcorHijk(xi = xi, xj = xj, xk = xk)
+      p1 = parcorHijk2(xi = xi, xj = xj, xk = xk)
       out[1, j] = p1$ouij
     }
   colnames(out) = namj

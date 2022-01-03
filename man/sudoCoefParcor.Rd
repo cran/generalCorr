@@ -2,7 +2,7 @@
 % Please edit documentation in R/sudoCoefParcor.R
 \name{sudoCoefParcor}
 \alias{sudoCoefParcor}
-\title{Peudo regression coefficients from generalized partial correlation coefficients, 
+\title{Pseudo regression coefficients from generalized partial correlation coefficients, 
 (GPCC).}
 \usage{
 sudoCoefParcor(mtx, ctrl = 0, verbo = FALSE, idep = 1)
@@ -11,27 +11,28 @@ sudoCoefParcor(mtx, ctrl = 0, verbo = FALSE, idep = 1)
 \item{mtx}{{Input data matrix with p (> or = 3) columns},}
 
 \item{ctrl}{{Input vector or matrix of data for control variable(s), 
-default is ctrl=0 when control variables are absent}}
+default is ctrl=0, when control variables are absent}}
 
 \item{verbo}{Make this TRUE for detailed printing of computational steps}
 
 \item{idep}{The column number of the dependent variable (=1, default)}
 }
 \value{
-A p by 1 `out' vector pseudo partial derivatives
+A p by 1 `out' vector pseudo partial derivatives.
 }
 \description{
-This function gets GPCCs by calling  \code{parcorVec} function.
-Pseudo regression coefficient of a kernel regression is obtained by
-GPCC*(sd dep.var)/(sd regressor), that is
+This function gets the GPCCs by calling  the \code{parcorVec} function. The
+pseudo regression coefficient of a kernel regression is then obtained by
+[GPCC*(sd dep.var)/(sd regressor)], that is, by
 multiplying the GPCC by
-the standard deviation (sd) of the dependent variable and dividing by the
+the standard deviation (sd) of the dependent variable, and dividing by the
 sd of the regressor.
 }
 \note{
 Generalized Partial Correlation Coefficients (GPCC) allow comparison of
 the relative contribution of each \eqn{X_j} to the explanation of \eqn{X_i},
-because GPCC are scale-free pseudo regr coeff are GPCC*(sd dep.var)/(sd regressor)
+because GPCC are scale-free. The pseudo regression
+coefficient are not scale-free since they equal GPCC*(sd dep.var)/(sd regressor)
 
 We want to get all partial
  correlation coefficient pairs removing other column effects. Vinod (2018) 

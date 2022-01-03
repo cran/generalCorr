@@ -2,8 +2,8 @@
 #' y are standardized.
 #'
 #' 1) Standardize the data to force mean zero and variance unity, 2) kernel
-#' regress x on y, with the option `residuals = TRUE' and finally 3) compute
-#' the residuals.
+#' regress x on y, with the option `residuals = TRUE', and finally 3) compute
+#' the residuals. The standardization yields comparable residuals.
 #'
 #' The first argument is assumed to be the dependent variable.  If
 #' \code{stdres(x,y)} is used, you are regressing x on y (not the usual y
@@ -15,7 +15,8 @@
 #' @importFrom stats sd
 #' @return kernel regression residuals are returned after
 #' standardizing the data on both sides so that the magnitudes of residuals are
-#' comparable between regression of x on y on the one hand and regression of y
+#' comparable between regression of x on y on the one hand, and 
+#' the flipped regression of y
 #' on x on the other.
 ### @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY

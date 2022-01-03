@@ -1,35 +1,45 @@
-#' Function compares nine deciles of a matrix to reference minimum (eg p stock returns) 
+#' Function compares nine deciles of stock return distributions. 
 #' 
 #' The first step computes a minimum reference return and  nine deciles.
-#' The input x must be a matrix having p columns (col.names recommended).
+#' The input x must be a matrix having p columns (with a name for each column)
 #' and n rows as in the data.  If data are missing for some columns, insert NA's.
-#' Thus x has p column of data matrix ready for comparison and ranking. 
+#' Thus x has p column of the data matrix ready for comparison and ranking. 
 #' For example, x has a matrix of stock returns.
 #' The output matrix produced by this function also has p columns for each 
-#' column (i.e. for each stock being compared). The output matrix has
-#' nineteen rows. Top nine rows have the magnitudes of deciles.
-#' rows 10 to 18 have respective ranks of the decile magnitudes. 
-#' The output final row  reports a weighted sum
-#' of ranks.  Ranking always gives the smallest number 1 to the most desirable outcome.  
-#' The 19th line of the
-#' output matrix has weighted sum of ranks and we suggest higher portfolio weight
-#' be given to the column having smallest value (in the 19th line)
-#' or chooing in the order of numbers in the last (20th) line of out matrix.
+#' column (i.e., for each stock being compared). The output matrix has
+#' nineteen rows. The top nine rows have the magnitudes of deciles.
+#' Rows 10 to 18 have respective ranks of the decile magnitudes. 
+#' The next (19-th) row  of the output reports a weighted sum
+#' of ranks.  
+#' Ranking always gives the smallest number 1 to the most desirable outcome.  
+#' We suggest that a higher portfolio weight
+#' be given to the column having smallest rank value (along the 19th line).
+#' The 20-th row further ranks the weighted sums of ranks in row 19. Investor
+#' should choose the stock (column) representing the smallest rank 
+#' value along the last (20th) row of the `out' matrix.
 #' 
 #' @param mtx { (n X p) matrix of data. For example, returns on p stocks n months}
-#' @param howManySd {used to define fixmin= imaginary lowest return defined by going
-#'   howManySd=default=0.1 maximum standard deviations of all stockss below 
+#' @param howManySd {used to define `fixmin'= imaginary lowest return defined by going
+#'   howManySd=default=0.1 maximum of standard deviations of all stocks below 
 #'  the minimum return for all stocks in the data}
 ### @importFrom moments skewness kurtosis
-#' @return out is a matrix with p columns (same as in the input matrix x) and
-#' twenty rows. Top nine rows have deciels quantities, next nine are their ranks.
-#' The 19-th row of out has weighted sum of ranks. All compared to the minimum rank
-#' portfolio manager can give largest weight to the column with smalles bottom line.
-#' The bottom line (20-th) labelled choice of output matrix suggests 
-#' portfolio manager give the highest weight to the investment option in
-#' the column having number 1 and the lowest weight (=0?) to the column 
-#' having number p as the choice number. 
-#' Another output of the function is fixmin calculated in this function.
+#' @return out is a matrix with p columns (same as in the input matrix) and
+#' twenty rows. Top nine rows have 9 deciles, next nine rows have their ranks.
+#' The 19-th row of `out' has a weighted sum of 9 ranks. All columns refer to
+#' one stock. The weighted sum for each stock is then ranked. A
+#' portfolio manager is assumed to prefer higher return represented by
+#' high decile values represented by the column with the largest weighted sum. 
+#' can give largest weight to the column with the smallest bottom line.
+#' The bottom line (20-th) labeled ``choice" of the `out' matrix is
+#' defined so that choice =1 suggests the stock deserving 
+#' the highest weight in the portfolio. The portfolio manager will
+#' generally give the lowest weight (=0?) to the stock representing column 
+#' having number p as the choice number. The manager may want to sell this stock. 
+#' Another output of the `decileVote' function is `fixmin' representing the
+#' smallest possible return of all the stocks in the input `mtx' of returns.
+#' It is useful as a reference stock. We compute stochastic dominance numbers
+#' for each stock with this imaginary stock yielding fixmin return for all time
+#' periods.
 #' 
 ### @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY
