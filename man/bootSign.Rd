@@ -56,7 +56,7 @@ bootSign(bb,tau=0.476)#gives success rate in n999 bootstrap sum computations
 Vinod, H. D. `Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
- \url{https://doi.org/gffn86}
+ \doi{10.1080/03610918.2015.1122048}
 
 Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
  for time series: The meboot R package.' Journal of Statistical Software,

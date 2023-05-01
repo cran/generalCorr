@@ -26,7 +26,7 @@
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
-#'  \url{https://doi.org/gffn86} 
+#'  \doi{10.1080/03610918.2015.1122048} 
 #' @references Vinod, H. D. and Lopez-de-Lacalle, J. (2009). 'Maximum entropy bootstrap
 #'  for time series: The meboot R package.' Journal of Statistical Software,
 #'  Vol. 29(5), pp. 1-19. 

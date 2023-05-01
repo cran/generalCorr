@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.2.3 [2023-04-30]
+o Added causeSum2Panel() for causality study using Panel data 
+
 Version 1.2.2 [2021-12-24]
 o Added causeSum2Blk() for causality using exact stochastic dominance and 
 outOFsamp() for new out-of-sample evaluation of portfolios
@@ -18,12 +21,10 @@ o Description of bootGcRsq and bootGcLC corrected and easy-to-interpret
 output added.
 
 Version 1.1.7 [2020-11-29]
-o Added vignette 5 to help users understand and implement new tools of version
-1.1.6
+o Added vignette 5 to help users understand and implement new tools of version 1.1.6
 
 Version 1.1.6 [2020-11-17]
-o Added functions for bootstrapping Granger causality when relations are nonlinear
-for canonical correlations based on generalized matrix of correlations.
+o Added functions for bootstrapping Granger causality when relations are nonlinear for canonical correlations based on generalized matrix of correlations.
 
 
 Version 1.1.5 [2019-10-30]

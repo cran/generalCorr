@@ -19,7 +19,7 @@
 #' @references Vinod, H. D. `Generalized Correlation and Kernel Causality with 
 #'  Applications in Development Economics' in Communications in 
 #'  Statistics -Simulation and Computation, 2015, 
-#'  \url{https://doi.org/gffn86} 
+#'  \doi{10.1080/03610918.2015.1122048} 
 #' @concept  kernel regression
 #' @concept R* asymmetric correlations
 #' @examples

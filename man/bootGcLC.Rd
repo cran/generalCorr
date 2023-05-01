@@ -67,7 +67,7 @@ b2=bootGcLC(x1=chicken,x2=egg,pwanted=3,px1=3,px2=3,n999=99)
 Vinod, H. D. `Generalized Correlation and Kernel Causality with 
  Applications in Development Economics' in Communications in 
  Statistics -Simulation and Computation, 2015, 
- \url{https://doi.org/gffn86}
+ \doi{10.1080/03610918.2015.1122048}
 
 Zheng, S., Shi, N.-Z., and Zhang, Z. (2012). Generalized measures 
  of correlation for asymmetry, nonlinearity, and beyond. 
