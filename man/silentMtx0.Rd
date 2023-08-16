@@ -104,7 +104,7 @@ silentMtx0(mtx=cbind(x2,y2), ctrl=cbind(z,w2))
 H. D. Vinod 'Generalized Correlation and Kernel Causality with
    Applications in Development Economics' in Communications in
    Statistics -Simulation and Computation, 2015,
-   \doi{gffn86}
+ \doi{10.1080/03610918.2015.1122048}
 
 Vinod, H. D. Causal Paths and Exogeneity Tests 
 in {Generalcorr} Package for Air Pollution and Monetary Policy 

@@ -10,7 +10,7 @@ exactSdMtx(mtx, howManySd = 0.1)
 \item{mtx}{{(n X p) matrix of data. For example, returns on p stocks n months}}
 
 \item{howManySd}{{used to define (x.ref)= lowest return number.
-If the grand minimum of all returns in `mtx' is dented GrMin, then
+If the grand minimum of all returns in `mtx' is denoted GrMin, then
 howManySd equals the number of max(sd) (maximum standard deviation for data
 columns) below the GrMin used to define (x.ref). Thus,
 (x.ref)=GrMin-howManySd*max(sd). default howManySd=0.1 }}

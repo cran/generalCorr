@@ -3,10 +3,10 @@
 #' This function computes the return earned knowing the rank of a stock in
 #' the input mtx of stock returns. For example, mtx has p=28 Dow Jones stocks
 #' over n=169 monthly returns. Portfolio weights are assumed to be linearly
-#' declining. If maxChosen=4, the weights are 1/10, 2/10, 3/10 and 4/10, which add
+#' declining. If maxChosen=4, the weights are 4/10, 3/10, 2/10 and 1/10, which add
 #' up to unity. These portfolio weights are assigned in reverse order
 #' in the sense that first chosen stock (choice rank =1) gets portfolio weight=4/10.
-#' The function computes return from the stocks by the `myrank' argument.
+#' The function computes return from the stocks using the `myrank' argument.
 #' 
 #' @param mtx {a matrix with n rows (number of returns) p columns (number of stocks)}
 #' @param myrank {vector of p integers listing the rank of each stock, 1=best}

@@ -60,6 +60,7 @@ computation of stochastic dominance from ECDF areas. The newer stochastic
 dominance tools are used in \code{causeSummary2(mtx)},\code{causeSum2Blk(mtx)}
 \code{dif4mtx()}
 computes growth, change in growth etc. up-to order 4 differencing of time series.
+\code{outOFsamp()} has pandemic-proof out-of-sample evaluation of portfolio returns.
 }
 \note{
 Six vignettes provided with this package at CRAN

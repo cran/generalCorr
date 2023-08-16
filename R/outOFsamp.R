@@ -3,19 +3,20 @@
 #' This function randomly leaves out 5 percent (`pctOut'=5 by default) 
 #' data and finds portfolio choice by seven different
 #' portfolio selection algorithms using the data on the remaining 95 percent (say). 
-#' For example, let the input to \code{outOFsamp} called `mtx' is a matrix with 
+#' The randomization removes any bias in time series definitions of `out-of-sample' data.
+#' For example, the input to \code{outOFsamp(.)} named `mtx' is a matrix with 
 #' p columns for p stocks and n returns. Also, let  the maximum number of
 #' stocks admitted to belong in the portfolio be four, or `maxChosen=4'.
 #' Now \code{outOFsamp} function computes the returns earned by the
 #' seven portfolio selection algorithms, called
-#' "SD1","SD2","SD3","SD4","SDAll4","decile," and "moment," where SDAll4 refers
+#' "SD1", "SD2", "SD3", "SD4", "SDAll4", "decile," and "moment," where SDAll4 refers
 #' to a weighted sum of SD1 to SD4 algorithms. Each algorithm provides
 #' a choice ranking of p stocks with choice values 1,2,3,..,p where stock ranked
 #' 1 should get the highest portfolio weight.
 #' The \code{outOFsamp} function then calls the
-#' function `rank2return' which uses these rank choice numbers to the selected
+#' function `rank2return,' which uses these rank choice numbers to the selected
 #' `maxChosen' stocks.  The allocation is linearly declining. For example, it is
-#' 1/10, 2/10, 3/10 and 4/10, with the top choice receiving 4/10 of the capital.
+#' 4/10, 3/10, 2/10, and 1/10, with the top choice stock receiving 4/10 of the capital.
 #' Each choice of `pctOut' rows of the `mtx' data yields an outOFsamp return for each
 #' of the seven portfolio selection algorithms.  These outOFsamp return
 #' computations are repeated \code{reps} times. 
@@ -24,7 +25,9 @@
 #' reps=20 by default. The low default is set
 #' to save processing time in early phases, but we recommend reps=100+. 
 #'  The final choice of stock-picking algorithm out of seven
-#' is suggested by the average out-of-sample return over the `reps' repetitions.`
+#' is suggested by the one yielding largest average out-of-sample 
+#' return over the `reps' repetitions.`Its standard deviation
+#' measures the variability of performance over the reps repititions.
 #' 
 #' @param mtx {matrix size n by p of data on n returns from p stocks}
 #' @param pctOut {percent of n randomly chosen rows left out as out-of-sample, default=5

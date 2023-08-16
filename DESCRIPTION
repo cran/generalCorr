@@ -1,8 +1,8 @@
 Package: generalCorr
 Type: Package
 Title: Generalized Correlations, Causal Paths and Portfolio Selection
-Version: 1.2.3
-Date: 2023-04-30
+Version: 1.2.4
+Date: 2023-08-15
 Author: Prof. H. D. Vinod, Fordham University, NY.
 Maintainer: H. D. Vinod <vinod@fordham.edu>
 Encoding: UTF-8
@@ -30,12 +30,12 @@ Description: Since causal paths from data are important for all sciences, the
     statistical inference including a new bootGcRsq() test for "Granger-causality" 
     allowing nonlinear relations. A new tool for evaluation of out-of-sample
     portfolio performance is outOFsamp(). Panel data implementation is now included.
-    See six vignettes of the package for theory
+    See seven vignettes of the package for theory
     and usage tips. See Vinod (2019) \doi{10.1080/03610918.2015.1122048}.
 License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-05-01 02:25:19 UTC; vinod
+Packaged: 2023-08-16 15:52:43 UTC; vinod
 Repository: CRAN
-Date/Publication: 2023-05-01 04:30:02 UTC
+Date/Publication: 2023-08-16 16:24:36 UTC

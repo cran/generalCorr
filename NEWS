@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.2.4 [2023-08-15]
+o Added outOFsell() for out of sample evaluation of selling stocks
+
 Version 1.2.3 [2023-04-30]
 o Added causeSum2Panel() for causality study using Panel data 
 
