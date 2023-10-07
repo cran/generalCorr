@@ -30,8 +30,8 @@
 #' @param mtx {n by p matrix of data, For example, n stock returns
 #' for p stocks. The mtx columns
 #' should have some names (ticker symbols)}
-#' @param weight {vector of reliability weights. default: mean=1, sd=1,
-#'  skew=0.5,kurt=0.5,sharpe=1}
+#' @param weight {vector of reliability weights. default: mean=1, sd=-1,
+#'  skew=0.5,kurt=-0.5,sharpe=1}
 #' @return a matrix with same number of columns as in the input matrix x and
 #' eleven rows. Top five rows have moment quantities, next five are their ranks
 #' the eleventh row has weighted sum of ranks with the input weights (see default)

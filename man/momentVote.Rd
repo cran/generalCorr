@@ -11,8 +11,8 @@ momentVote(mtx, weight = c(1, -1, 0.5, -0.5, 1))
 for p stocks. The mtx columns
 should have some names (ticker symbols)}}
 
-\item{weight}{{vector of reliability weights. default: mean=1, sd=1,
-skew=0.5,kurt=0.5,sharpe=1}}
+\item{weight}{{vector of reliability weights. default: mean=1, sd=-1,
+skew=0.5,kurt=-0.5,sharpe=1}}
 }
 \value{
 a matrix with same number of columns as in the input matrix x and

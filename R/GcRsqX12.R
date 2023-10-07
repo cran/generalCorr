@@ -14,7 +14,7 @@
 #'  both x1 and x2 using all information till time (t-1).
 #'  It also calls GcRsqYX again after flipping x1 and x2.
 #'  It returns RsqX1onX2, RsqX2onX1 and the difference dif=(RsqX1onX2-RsqX2onX1)
-#'  If (dif>0) the regression x1=f(x1,x2) is better than the flipped
+#'  If (dif>0) the regression y=f(x1,x2) is better than the flipped
 #'  version implying that x1 is more predictable or x2 Granger-causes x1,
 #'  x2 --> x1, rather than vice versa. The kernel regressions use
 #'  regtype="ll" for local linear, bwmethod="cv.aic" for AIC-based

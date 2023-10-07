@@ -6,14 +6,14 @@
 \usage{
 causeSum2Panel(
   da,
-  fn,
+  fn = causeSummary2NoP,
   rowfnout,
   colfnout,
   fnoutNames,
   namXs,
   namXt,
   namXy,
-  namXc = NULL,
+  namXc = 0,
   namXjmtx,
   chosenTimes = NULL,
   chosenSpaces = NULL,
@@ -24,7 +24,7 @@ causeSum2Panel(
 \arguments{
 \item{da}{{panel dat having a named column for space and time}}
 
-\item{fn}{{an R function causeSummary2(mtx)}}
+\item{fn}{{an R function causeSummary2NoP(mtx)}}
 
 \item{rowfnout}{{the number of rows output by fn}}
 
@@ -39,7 +39,8 @@ fnoutNames=c("cause","effect","strength","r","p-val")}}
 
 \item{namXy}{{title of the column in da having the dependent y variable}}
 
-\item{namXc}{{title(s) of the column(s) in da having control variable(s)}}
+\item{namXc}{{title(s) of the column(s) in da 
+having control variable(s), default=0 means none specified}}
 
 \item{namXjmtx}{{title(s) of the column(s) in da having regressor(s)}}
 
@@ -49,25 +50,43 @@ default=NULL means all time identifiers in the data are included.}}
 
 \item{chosenSpaces}{{subset of values of space variable chosen for quick
 results, There are NchosenSpaces values chosen in the subset.
-default=NULL means all space identifiers are included.}}
+default=NULL means all space identifiers are included. The degrees
+of freedom for Studentized statistic for Granger causality tests 
+are df=(NchosenSpaces -1).}}
 
 \item{ylag}{{time lag in Granger causality study of time dimension
-the default ylag=0 means ylag=min(4, round(NchosenTimes/5,0))
+the default ylag=0 is not really zero. It means ylag=
+min(4, round(NchosenTimes/5,0)),
 where NchosenTimes is the length of chosenTimes vector}}
 
 \item{verbo}{{print detail results along the way, default=FALSE}}
 }
 \value{
-The causeSum2Panel() produces three output matrices. The first
-"outt" gives panel causal path output focused on 
+The causeSum2Panel(.) produces many output matrices and vectors. 
+The first
+"outt" gives 3-dimensional array of panel causal path output focused on 
 time series for each space value using fixed space value.
 It reports causal path directions, and strengths for (y, xj) pairs.
 The second output matrix called
-"outs" gives panel causal path output focused on 
+"outs" gives similar 3D panel causal path output focused on 
 space cross sections using fixed time value.
 The third output matrix called
-"outdiff" gives causal paths using Granger causality for each
-pair (y, xj).
+"outdif" gives causal paths using Granger causality for each
+pair (y, xj). They are not causal strengths but differences 
+between Rsquare values of two flipped kernel regressions.
+The summary of Granger causality answer is output matrix called
+grangerAns (first row average of differeces in Rsquares and
+second row has its test statistic degrees of freedom n-1),
+and grangerStat for related t-statistic for formal inference.
+based on column means and variances of "outdif". This function
+also produces a matrix summarizing "outt" and "outs" into two
+dimensional matrices reporting averages of signed strengths as  "strentime"
+and "strenspace", Also "pearsontime" reports the pearson
+correlation coefficients for various time values and their average in the
+last column. It determines the overall direction of relation between y and xj
+For example, negative average correlation means y fand xj are negatively
+correlated (xj goes up, y goes down). Similarly "pearsonspace"
+summarizes "outs" correlations.
 }
 \description{
 The algorithm of this function uses an internal function
@@ -87,7 +106,7 @@ We identify degeneracy using "fminmax=function(x){min(x)==max(x)}"
 }
 \details{
 We assume that panel data have space (space=individual region)
-and time (e.g., year) dimension, and We use upper case
+and time (e.g., year) dimension. We use upper case
 X to denote a common prefix in the panel data.
 Xs =name of the space variable, e.g., state or individual.
 The range of values for s is 1 to nspace.
@@ -101,7 +120,7 @@ Various input parameters starting with "nam" specify the names
 of variables in the panel study.
 
 The algorithm calls some function fn(mtx) where mtx is the data matrix,
-and fn is causeSummary2(mtx). The causal paths between (y, xj)
+and fn is causeSummary2NoP(mtx). The causal paths between (y, xj)
 pairs of variables in mtx are computed following 3 sophisticated
 criteria involving exact stochastic dominance. type "?causeSummary2"
 on the R console to get details (omitted here for brevity).
@@ -110,7 +129,7 @@ series of cross-sections and are also called longitudinal data.
 We provide estimates of causal path directions and strengths
 for both the time-series and cross-sectional
 views of panel data. Since our regressions are kernel type
-with not functional forms fixed effect for time and space
+with no functional forms, fixed effect for time and space
 are being suppressed when computing the causality.
 }
 \note{
@@ -118,15 +137,33 @@ The function prints to the screen some summaries of the three
 output matrices. It reports how often a variable is a cause in
 various pairs as time series or as cross sections. It also reports the
 average strengths of causal paths for "outt" and "outs" matrices.
-If the averages in "outdiff" matrix are negative, the Granger causal
+We compute the difference between two R-square values to find which
+causal direction is more plausible.  This involves kernel regressions
+of y on its own lags and lags of a regressor. Unlike the usual Granger
+causality we estimate better-fitting nonlinear kernel regressions.
+If the averages in "outdif" matrix are negative, the Granger causal
 paths go from y to xj. This may be unexpected when the model assumes
-that y depends on x1 to xp,and One expects the causal paths from xj to y.
+that y depends on x1 to xp, that is, the causal paths go from xj to y.
 In studying the causal pairs, the function creates mixtures of
-names y and xj. Character vectors containing the mixed names used
-are also a part of the output.  The vectors are named mixnam2t for
-time series and mixnam2s for cross-section portion of panel data.
-The two sets of mixed names are needed because degeneracies on the
-time dimension may be the same as degeneracies on the space dimension.
+names y and xj. Character vectors containing the mixed names are
+are column names or row names depending on the context. For example,
+the output matrix grangerAns column names help identify the relevant
+regressor name. The first row of grangerAns matrix has column averages
+of outdiff matrix to help get an overall estimate of Granger causal paths.
+The second row of grangerAns has Studentized test
+statistic for formal testing of significance of Granger causal paths.
+Collecting the results for the time dimension strengths with
+suitable sign (negative strength means cause reversal xj->y) is output
+named strentime.  The corresponding Pearson
+correlations as an output is named pearsontime.
+Collecting the results for the space dimension strengths with
+suitable sign (negative strength means cause reversal xj->y) is output
+named strenspace.  The corresponding Pearson
+correlations are named pearsonspace. A grand summary of average
+strengths and correlations is output matrix named grandsum.
+It is intended to provide an overall picture of causal paths in Panel
+data. These paths should not be confused with Granger causal paths which
+always involve time lags and causes are presumed to precede effects in time.
 }
 \examples{
 
@@ -158,10 +195,10 @@ namXy="inv"
 namXc=0
 namXjmtx=c("value","capital")
 p=length(namXjmtx)
-fn=causeSummary2
+fn=causeSummary2NoP
 fnout=matrix(NA,nrow=p,ncol=5)
 fnoutNames=c("cause","effect","strength","r","p-val")
-causeSum2Panel(da, fn=causeSummary2,
+causeSum2Panel(da, fn=causeSummary2NoP,
                rowfnout=p, colfnout=5, 
                fnoutNames=c("cause","effect","strength","r","p-val"),
                namXs=namXs,
@@ -171,7 +208,7 @@ causeSum2Panel(da, fn=causeSummary2,
                namXjmtx=namXjmtx,
                chosenTimes=chosenTimes,
                chosenSpaces=chosenSpaces,
-               verbo=TRUE)
+               verbo=FALSE)
 }
 
 

@@ -47,16 +47,19 @@
 #' functions for Granger causality between lagged time series including
 #' \code{GcRsqX12()}, \code{bootGcRsq()} and \code{GcRsqYXc()}.
 #' 
-#' Recent 2021 additions include several functions for portfolio choice.
+#' Recent additions include several functions for portfolio choice.
+#' \code{causeSum2Panel()} for panel data, 
 #' \code{sudoCoefParcor()} for pseudo regression coefficients for kernel regressions.
 #' \code{decileVote()}, \code{momentVote()}, \code{exactSdMtx()} for exact
 #' computation of stochastic dominance from ECDF areas. The newer stochastic
 #' dominance tools are used in \code{causeSummary2(mtx)},\code{causeSum2Blk(mtx)}
 #' \code{dif4mtx()}
 #' computes growth, change in growth etc. up-to order 4 differencing of time series.
-#' \code{outOFsamp()} has pandemic-proof out-of-sample evaluation of portfolio returns.
+#' \code{outOFsamp()} and \code{outOFsell()} pandemic-proof 
+#' out-of-sample evaluation of portfolio returns using randomization.
+#' \code{causeSum2Panel()} exploits panel data features for causal paths.
 #'   
-#' @note Six vignettes provided with this package at CRAN
+#' @note Eight vignettes provided with this package at CRAN
 #' describe the theory and usage of the package with examples. Read them using
 #' the command: 
 #' \code{vignette("generalCorr-vignette")} to read the first vignette. 
@@ -94,4 +97,5 @@
 #'  
 #' @docType package  
 #' @name generalCorrInfo
+#' @aliases generalCorr-package
 NULL
