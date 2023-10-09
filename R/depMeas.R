@@ -4,12 +4,12 @@
 #' Dependence relations need not be symmetric, yet correlation coefficients
 #' are symmetric. One way to measure the extent of dependence is to find
 #' the max of the absolute values of the two asymmetric correlations
-#' using Vinod (2015) definition of generalized (asymmetric) correlation
+#' using Vinod's (2015) definition of generalized (asymmetric) correlation
 #' coefficients.  It requires a kernel regression of x on y obtained by using 
 #' the `np' package and its flipped version
 #' (regress y on x).  We use a block version of
 #' `gmcmtx0'  called `gmcmtxBlk` to admit several bandwidths for every ten
-#' observations (say) blksiz=10 seems to be a good choice.
+#' observations if the user sets blksiz=10, a recommended choice here.
 #' @param x {Vector of data on the first variable}
 #' @param y {Vector of data on the second variable}
 #' @param blksiz {block size, default blksiz =n, where n=rows in the matrix

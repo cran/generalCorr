@@ -27,27 +27,27 @@ the cause or x(1+j) is the cause in a chosen pair.
 The control
 variables are not flipped. The printed output of this function
 reports the results for p-1 pairs indicating which variable
-(by name) causes which another variable (also by name).
+(by name) causes which other variable (also by name).
 It also prints a signed summary strength index in the range [-100,100]. 
 A positive sign of the strength index means x1 kernel causes x(1+j),
-whereas negative strength index means x(1+j) kernel causes x1. The function 
-also prints Pearson correlation and its p-value. In short, function returns
+whereas a negative strength index means x(1+j) kernel causes x1. The function 
+also prints the Pearson correlation and its p-value. In short, function returns
 a matrix of p-1 rows and 5 columns entitled: 
 ``cause", ``response", ``strength", ``corr." and ``p-value", respectively
 with self-explanatory titles. The first two columns have names of variables
 x1 or x(1+j), depending on which is the cause. The `strength' column
-reports the absolute value of summary index, in the range [0,100]  
-providing summary of causal results
-based on preponderance of evidence from Cr1 to Cr3 
-from four orders of stochastic dominance, moments, deciles
+reports the absolute value of the summary index, in the range [0,100],  
+providing a summary of causal results
+based on the preponderance of evidence from Cr1 to Cr3 
+from four orders of stochastic dominance, moments, deciles,
 etc.  The order of input columns in mtx matters.
-The fourth column `corr.' of `out' reports the Pearson correlation coefficient while
-the fifth column has the p-value for testing the null of zero Pearson coeff.
-This function calls  \code{silentPair2} allowing for control variables.
+The fourth column, `corr.' of `out', reports the Pearson correlation coefficient.
+The fifth column has the p-value for testing the null of zero Pearson coeff.
+This function calls  \code{silentPair2}, allowing for control variables.
 The output of this function can be sent to `xtable' for a nice Latex table.
 }
 \description{
-The function develops a unanimity index regarding the which
+The function develops a unanimity index for deciding which
 flip (y on xi) or (xi on y) is best. Relevant signs determine the
 causal direction and unanimity index among three criteria.
 While allowing the researcher to keep some variables as controls,
@@ -58,7 +58,7 @@ causal path directions, path strengths re-scaled to be in the
 range [--100, 100], (table reports absolute values of the strength)
 plus Pearson correlation and its p-value.
 The `2' in the name of the function suggests a second implementation
-where exact stochastic dominance, decileVote and momentVote are used
+where exact stochastic dominance, decileVote, and momentVote are used
 and where we avoid Anderson's trapezoidal approximation.
 }
 \details{
@@ -70,16 +70,16 @@ three aspects of flipped kernel regressions:
 We compare (i) formal exogeneity test criterion, (ii) absolute residuals, and
 (iii) R-squares of the flipped regressions implying three criteria Cr1, to Cr3.
 The criteria are quantified by newer exact methods using four orders
-of stochastic dominance, SD1 to SD4. See Vinod (2021) SSRN papers. In portfolio
-applications of stochastic dominance one wants higher values.  Here we are
+of stochastic dominance, SD1 to SD4. See Vinod's (2021) SSRN papers. In portfolio
+applications of stochastic dominance, one wants higher values.  Here, we are
 comparing two probability distributions of absolute residuals for two
-flipped models. We choose that flip which has smaller absolute residuals
-which will have a better fit.
+flipped models. We choose that flip, which has smaller absolute residuals
+that will have a better fit.
 }
 \note{
-The European Crime data has all three criteria correctly suggesting that
+The European Crime data has all three criteria correctly suggesting that a
 high crime rate kernel causes the deployment of a large number of police officers.
-Since Cr1 to Cr3 near unanimously suggest `crim' as the cause of `off', 
+Since Cr1 to Cr3 nearly unanimously suggest `crim' as the cause of `off', 
 strength index 100 suggests unanimity among the criteria. 
 \code{attach(EuroCrime); causeSummary(cbind(crim,off))}
 }

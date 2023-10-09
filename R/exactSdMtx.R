@@ -1,20 +1,39 @@
 #' Exact stochastic dominance computation from areas above ECDF pillars.
 #' 
-#' ECDF=empirical cumulative distribution function. The exact computation needs a 
-#' common reference minimum (refmin) return for computation of 
-#' dominance orders SD1 to SD4.
-#' This function inputs `mtx' (n X p) matrix data (e.g., monthly returns on p stocks).
+#' ECDF=empirical cumulative distribution functions. These are sufficient
+#' statistics representing probability density functions
+#' defined by observable finite data (e.g., stock returns). The exact computation
+#' of stochastic dominance orders SD1 to SD4 needs areas between two ECDFs,
+#' since such areas represent integrals. Higher-order SDs with continuous 
+#' variables involve repeated integrals. Our quantification needs
+#' areas of ECDFs defined from areas of lower-order ECDFs. We argue that these
+#' computations are convenient if there is an ECDF of an imaginary
+#' reference minimum (x.ref) return, whose ECDF is a rectangle 
+#' common for all stock comparisons. A common (x.ref) avoids having to compute
+#' all possible pairs of p stocks. Choosing a common reference as SP500 index
+#' stock cannot avoid a slower trapezoidal approximation for integrals,
+#' since its returns vary over time. We want exact areas of rectangles and fast.
+#' 
+#' The \code{exactSdMtx} function inputs `mtx' (n X p) matrix data 
+#' (e.g., n monthly returns on p stocks).
 #' Its output has four matrices SD1 to SD4, each with dimension (n X p). They measure
 #' exact dominance areas between empirical CDF for each column to the ECDF of
-#' (x.ref) an artificial stock with minimal return in all time periods. A fifth
-#' output matrix `out' has 4 rows and p columns containing column sums of SD1 to SD4. The
-#' `out' matrix produced by this function is input to \code{summaryRank} function to 
-#' indicate the choice of the best column in `mtx' for investment based on ranks.
+#' (x.ref), an artificial stock with minimal return in all time periods. A fifth
+#' output matrix called `out' produced by \code{exactSdMtx}
+#' has 4 rows and p columns containing column sums of SD1 to SD4. 
+#' We intend that this
+#' `out' matrix produced by \code{exactSdMtx} is then input to another
+#' function \code{summaryRank()} in the package designed for practitioners.
+#' For example, it indicates the best and the worst columns 
+#' representing (the best stock to buy and best stock to sell)
+#' from the input data `mtx' for investment based on a sophisticated computation
+#' of their ranks. 
 #' 
 #' 
 #' 
 #' 
-#' @param mtx {(n X p) matrix of data. For example, returns on p stocks n months}
+#' @param mtx {(n X p) matrix of data. For example, returns on p stocks
+#' over n months}
 #' @param howManySd {used to define (x.ref)= lowest return number.
 #'  If the grand minimum of all returns in `mtx' is denoted GrMin, then
 #'  howManySd equals the number of max(sd) (maximum standard deviation for data
@@ -23,8 +42,8 @@
 ## @importFrom stats seq
 #' @return five matrices. SD1 to SD4 contain four orders of stochastic 
 #' dominance areas using the ECDF pillars and 
-#' a common (x.ref). The fifth "out" matrix is another output having 4 rows for
-#' SD1 to SD4 and p columns (p=No. of columns in data matrix mtx) having a 
+#' a common (x.ref). The fifth "out" matrix is another output with 4 rows for
+#' SD1 to SD4, and p columns (p=No. of columns in data matrix mtx) having a 
 #' summary of ranks using all four, SD1 to SD4.
 ### @note %% ~~further notes~~
 #' @author Prof. H. D. Vinod, Economics Dept., Fordham University, NY

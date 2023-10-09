@@ -28,13 +28,19 @@ before computing matrix inverses of S11 and S22, respectively, with
 \item{alp}{LHS coefficient vector}
 }
 \description{
+What exactly is generalized? Canonical correlations start with Rij, a
+symmetric matrix of Pearson correlation coefficients based on linear
+relations. This function starts with a more general non-symmetric R*ij
+produced by \code{gmcmtx0()} as an input. This is a superior measure
+of dependence, allowing for nonlinear dependencies. It generalizes Hotelling's
+derivation for the nonlinear case.
 This function uses data on two sets of column vectors. LHS set [x1, x2 .. xr]
 has r=nLHS number of columns 
-with coefficients alpha and 
+with coefficients alpha, and 
 the larger RHS set [xr+1, xr+2, .. xp] has nRHS=(p-r) columns and RHS
 coefficients beta.  Must arrange the sets so that the larger set
 in on RHS with coefficients beta estimated first from an eigenvector
-of the problem A* beta = rho^2 beta where A* is a partitioning of
+of the problem [A* beta = rho^2 beta], where A* is a partitioning of our
 generalized matrix of (non-symmetric) correlation coefficients.
 }
 \note{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get0outliers.R
 \name{get0outliers}
 \alias{get0outliers}
-\title{Function to compute outliers and their count using Tukey method
+\title{Function to compute outliers and their count using Tukey's method
 using 1.5 times interquartile range (IQR) to define boundaries.}
 \usage{
 get0outliers(x, verbo = TRUE, mult = 1.5)
@@ -24,7 +24,7 @@ in defining outlier boundaries.}}
 \item{nLO}{count of number of data points below lower boundary}
 }
 \description{
-Function to compute outliers and their count using Tukey method
+Function to compute outliers and their count using Tukey's method
 using 1.5 times interquartile range (IQR) to define boundaries.
 }
 \note{

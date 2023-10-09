@@ -64,28 +64,29 @@ where NchosenTimes is the length of chosenTimes vector}}
 \value{
 The causeSum2Panel(.) produces many output matrices and vectors. 
 The first
-"outt" gives 3-dimensional array of panel causal path output focused on 
+"outt" gives a 3-dimensional array of panel causal path output focused on 
 time series for each space value using fixed space value.
 It reports causal path directions, and strengths for (y, xj) pairs.
-The second output matrix called
-"outs" gives similar 3D panel causal path output focused on 
+The second output array, called
+"outs", gives similar 3D panel causal path output focused on 
 space cross sections using fixed time value.
 The third output matrix called
 "outdif" gives causal paths using Granger causality for each
 pair (y, xj). They are not causal strengths but differences 
 between Rsquare values of two flipped kernel regressions.
-The summary of Granger causality answer is output matrix called
-grangerAns (first row average of differeces in Rsquares and
-second row has its test statistic degrees of freedom n-1),
+The summary of Granger causality answer is an output matrix called
+grangerAns (first row average of differences in R-squares and
+second row has its test statistic with degrees of freedom n-1),
 and grangerStat for related t-statistic for formal inference.
 based on column means and variances of "outdif". This function
-also produces a matrix summarizing "outt" and "outs" into two
-dimensional matrices reporting averages of signed strengths as  "strentime"
-and "strenspace", Also "pearsontime" reports the pearson
+also produces a matrix summarizing "outt" and "outs" into two-dimensional
+matrices reporting averages of signed strengths as  "strentime"
+and "strenspace", Also, "pearsontime" reports the Pearson
 correlation coefficients for various time values and their average in the
-last column. It determines the overall direction of relation between y and xj
-For example, negative average correlation means y fand xj are negatively
-correlated (xj goes up, y goes down). Similarly "pearsonspace"
+last column. It determines the overall direction of
+the causal relation between y and xj.
+For example, a negative average correlation means y and xj are negatively
+correlated (xj goes up, y goes down). Similarly, "pearsonspace"
 summarizes "outs" correlations.
 }
 \description{
@@ -97,16 +98,16 @@ The apply function of R is applied to the columns of mtx2 as follows.
 "ap1=apply(mtx2,2,fminmax)." Now, "sumap1=sum(ap1)" counts how many
 columns of the data matrix are degenerate.  We have a degeneracy
 problem only if sumap1 is >1 or =1. For example, the panel consists
-of data on 50 united states and 20 years. Now consumer price index
+of data on 50 United States and 20 years. Now, consumer price index
 (cpi) data may be common for all states. That is, the min(cpi)
-equals max(cpi) for all states. Then the variance of cpi is zero,
+equals max(cpi) for all states. Then, the variance of cpi is zero,
 and we have degeneracy. When this happens, the regressor cpi should
 not be involved in determining causal paths.
 We identify degeneracy using "fminmax=function(x){min(x)==max(x)}"
 }
 \details{
 We assume that panel data have space (space=individual region)
-and time (e.g., year) dimension. We use upper case
+and time (e.g., year) dimensions. We use upper case
 X to denote a common prefix in the panel data.
 Xs =name of the space variable, e.g., state or individual.
 The range of values for s is 1 to nspace.
@@ -122,14 +123,14 @@ of variables in the panel study.
 The algorithm calls some function fn(mtx) where mtx is the data matrix,
 and fn is causeSummary2NoP(mtx). The causal paths between (y, xj)
 pairs of variables in mtx are computed following 3 sophisticated
-criteria involving exact stochastic dominance. type "?causeSummary2"
+criteria involving exact stochastic dominance. Type "?causeSummary2"
 on the R console to get details (omitted here for brevity).
 Panel data consist of a time
 series of cross-sections and are also called longitudinal data.
 We provide estimates of causal path directions and strengths
 for both the time-series and cross-sectional
 views of panel data. Since our regressions are kernel type
-with no functional forms, fixed effect for time and space
+with no functional forms, fixed effects for time and space
 are being suppressed when computing the causality.
 }
 \note{
@@ -148,10 +149,10 @@ In studying the causal pairs, the function creates mixtures of
 names y and xj. Character vectors containing the mixed names are
 are column names or row names depending on the context. For example,
 the output matrix grangerAns column names help identify the relevant
-regressor name. The first row of grangerAns matrix has column averages
-of outdiff matrix to help get an overall estimate of Granger causal paths.
-The second row of grangerAns has Studentized test
-statistic for formal testing of significance of Granger causal paths.
+regressor name. The first row of the grangerAns matrix has column averages
+of outdiff matrix to help get an overall estimate of the Granger-causal paths.
+The second row of the grangerAns has the Studentized test
+statistic for formal testing of the significance of Granger causal paths.
 Collecting the results for the time dimension strengths with
 suitable sign (negative strength means cause reversal xj->y) is output
 named strentime.  The corresponding Pearson

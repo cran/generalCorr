@@ -31,7 +31,7 @@ and bwmethod="cv.aic" for AIC-based bandwidth selection are fixed.
 Denote Rsq=Rsquare=R^2 in nonlinear kernel regression.
 GcRsqYX(.) computes the following two R^2 values.
 out[1]=Rsqyyx = R^2 when we regress y on own lags of y and x.
-out[2]=Rsqyy = R^2 when we regress y on own lags of y alone.
+out[2]=Rsqyy = R^2 when we regress y on lags of y alone.
 }
 \note{
 If data are annual or if no quarterly-type structure is present,

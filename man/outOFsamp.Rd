@@ -26,7 +26,7 @@ default reps=20}}
 a matrix called `avgRet' with seven columns for seven stock-picking
 algorithms "SD1","SD2","SD3","SD4","SDAll4","decile",and "moment," containing
 out-of-sample average returns for linearly declining allocation in a portfolio.
-User needs to change rank2return() for alternate portfolio allocations.
+The user needs to change rank2return() for alternate portfolio allocations.
 }
 \description{
 This function randomly leaves out 5 percent (`pctOut'=5 by default) 
@@ -54,9 +54,9 @@ for each repetition. We set
 reps=20 by default. The low default is set
 to save processing time in early phases, but we recommend reps=100+. 
  The final choice of stock-picking algorithm out of seven
-is suggested by the one yielding largest average out-of-sample 
+is suggested by the one yielding the largest average out-of-sample 
 return over the `reps' repetitions.`Its standard deviation
-measures the variability of performance over the reps repititions.
+measures the variability of performance over the `reps' repetitions.
 }
 \note{
 The traditional time-series out-of-sample leaves out the last few

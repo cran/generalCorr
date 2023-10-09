@@ -23,11 +23,13 @@ of two probability distributions being compared}}
 \description{
 Stochastic dominance originated as a sophisticated comparison of two distributions of
 stock market returns.  The dominating distribution is superior in terms of local
-mean, variance, skewness and kurtosis respectively, representing dominance
-orders 1 to 4, without simply computing the four moment summary measures for the entire
-data.  Vinod (2008, sec. 4.3)
-explains the details.  This function uses the output of `wtdpapb' and Anderson's
-algorithm subject to trapwzoidal approximation.
+mean, variance, skewness, and kurtosis, respectively. However, stochastic 
+dominance orders 1 to 4 are really not related to the four moments. 
+Some details are in Vinod (2022, sec. 4.3) and vignettes. Nevertheless, 
+this function uses the output of `wtdpapb.' and Anderson's
+algorithm. Of course, Anderson's method
+remains subject to the trapezoidal approximation avoided by exact stochastic
+dominance methods.
 }
 \note{
 The input to this function is the output of the function \code{wtdpapb}.
@@ -43,7 +45,7 @@ The input to this function is the output of the function \code{wtdpapb}.
 \references{
 Vinod, H. D.', 'Hands-On Intermediate Econometrics 
  Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
- \url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
+ \url{https://www.worldscientific.com/worldscibooks/10.1142/12831}
 
 Vinod, H. D. 'Ranking Mutual Funds Using 
 Unconventional Utility Theory and Stochastic Dominance,'

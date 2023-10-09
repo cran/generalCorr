@@ -49,7 +49,7 @@ gp = compPortfo(xa, xb)#all Av(sdi) positive means xb dominates
 \references{
 Vinod, H. D.", "Hands-On Intermediate Econometrics 
 Using R"  (2008) World Scientific Publishers: Hackensack, NJ. (Chapter 4)
-\url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
+\url{https://www.worldscientific.com/worldscibooks/10.1142/12831}
 
 Vinod, Hrishikesh D., R Package GeneralCorr 
 Functions for Portfolio Choice 

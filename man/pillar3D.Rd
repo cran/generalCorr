@@ -36,15 +36,17 @@ pillar3D(
 A 3D plot
 }
 \description{
-Give data on x, y, z coordinate values of a 3D surface, this function
-plots them after making pillars near each z value by adding and
-subtracting small amounts dz. Instead of pins of the height z this
-creates pillars which better resemble a surface. It uses the
-wireframe() function of `lattice' package to do the plotting.
+Given data on (x, y, z) coordinate values of a 3D surface, one can directly
+plot a 3D plot with pins of the height z. By contrast, this function
+fattens each pin by creating pillars near each z value by adding and
+subtracting small amounts of dz. By eliminating the pins of the height z, this
+depicts pillars that better resemble a surface. It uses the
+wireframe() function of the `lattice' package to do the plotting.
 }
 \details{
-For additional plotting features type `pillar3D()' on the R console to
-get my code and adjust wireframe() function defaults.
+For additional plotting features the user should 
+type `pillar3D()' on the R console to
+get my code and adjust my wireframe() function defaults.
 }
 \examples{
 

@@ -31,7 +31,7 @@
 #' @seealso See Also \code{\link{stochdom2}}
 #' @references Vinod, H. D.', 'Hands-On Intermediate Econometrics 
 #' Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-#' \url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
+#' \url{https://www.worldscientific.com/worldscibooks/10.1142/12831}
 #'
 #' @references Vinod, H. D. 'Ranking Mutual Funds Using 
 #' Unconventional Utility Theory and Stochastic Dominance,'

@@ -2,21 +2,23 @@
 #' 
 #' This function checks for missing data for each pair individually. It then uses the
 #' \code{kern} function to kernel regress x on y, and conversely y on x. It
-#'  needs the R package `np' which reports R-squares of each regression. This function
+#'  needs the R package `np', which reports the R-squares of each regression. 
+#' \code{gmcmtx0()} function
 #' reports their square roots after assigning them the observed sign of the Pearson 
-#' correlation coefficient. Its advantages are: (i)
-#' It is asymmetric yielding causal direction information
+#' correlation coefficient. Its threefold advantages are: (i)
+#' It is asymmetric, yielding causal direction information
 #' by relaxing the assumption of linearity implicit in usual correlation coefficients.
 #' (ii) The r* correlation coefficients are generally larger upon admitting 
 #' arbitrary nonlinearities.  (iii) max(|R*ij|, |R*ji|) measures (nonlinear) 
 #' dependence.
 #' For example, let x=1:20 and y=sin(x). This y has a perfect (100 percent)
-#' nonlinear dependence on x and yet Pearson correlation coefficient r(xy)
-#' -0.0948372 is near zero and usual confidence interval (-0.516, 0.363)
-#' includes zero, implying that it is not different from zero.  
+#' nonlinear dependence on x, and yet Pearson correlation coefficient r(xy)
+#' -0.0948372 is near zero, and the 95\% confidence interval (-0.516, 0.363)
+#' includes zero, implying that r(xy) is not significantly different from zero.  
 #' This shows a miserable failure of traditional r(x,y) to measure dependence
-#'  when nonlinearities are present.  \code{gmcmtx0(x,y)} will correctly reveal
-#'  perfect (nonlinear) dependence with generalized correlation coefficient =1.
+#' when nonlinearities are present. 
+#' \code{gmcmtx0(cbind(x,y))} will correctly reveal
+#'  perfect (nonlinear) dependence with generalized correlation coefficient =-1.
 #' 
 #' @param mym {A matrix of data on variables in columns}
 #' @param nam {Column names of the variables in the data matrix}

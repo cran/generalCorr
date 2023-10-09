@@ -1,5 +1,8 @@
 Package: generalCorr
 ==============
+Version 1.2.6 [2023-10-09]
+o improved descriptions of various functions. 
+
 Version 1.2.5 [2023-10-07]
 o improved causeSum2Panel() for t-test of Granger causality and compact output 
 

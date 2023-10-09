@@ -1,4 +1,4 @@
-#' Function to compute outliers and their count using Tukey method
+#' Function to compute outliers and their count using Tukey's method
 #' using 1.5 times interquartile range (IQR) to define boundaries.
 #' 
 #' 

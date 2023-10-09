@@ -68,8 +68,8 @@ ten (blksiz=10) observations chosen by the `np' package injecting flexibility.
 While allowing the researcher to keep some variables as controls,
 or outside the scope of causal path determination 
 (e.g., age or latitude), this function produces detailed causal path information. 
-The output table is a 5 column matrix identifying the names of variables,
-causal path directions, path strengths re-scaled to be in the 
+The output table is a 5-column matrix identifying the names of variables,
+causal path directions, and path strengths re-scaled to be in the 
 range [--100, 100], (table reports absolute values of the strength)
 plus Pearson correlation coefficient and its p-value.
 }
@@ -78,11 +78,13 @@ The algorithm determines causal path directions from the sign
 of the strength index. The strength index magnitudes are computed by comparing 
 three aspects of flipped kernel regressions: 
 [x1 on (x2, x3, .. xp)] and its flipped version [x2 on (x1, x3, .. xp)].
-The cause should be on the right-hand side of regression equation. The properties
+The cause should be on the right-hand side of
+the regression equation. The properties
 of regression fit determine which flip is superior.
 We compare (Cr1) formal exogeneity test criterion, (residuals times RHS
 regressor, where smaller in absolute value is better) 
-(Cr2) absolute residuals, where smaller in absolute value is better, and
+(Cr2) absolute values of residuals, where 
+smaller in absolute value is better, and
 (Cr3) R-squares of the flipped regressions implying three criteria Cr1, to Cr3.
 The criteria are quantified by sophisticated methods using four orders
 of stochastic dominance, SD1 to SD4. We assume slightly declining weights on 

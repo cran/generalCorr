@@ -28,7 +28,7 @@ as explained in Vinod (2008).
 \references{
 Vinod, H. D. `Hands-On Intermediate Econometrics
 Using R'  (2008) World Scientific Publishers: Hackensack, NJ.
-\url{https://www.worldscientific.com/worldscibooks/10.1142/6895}
+\url{https://www.worldscientific.com/worldscibooks/10.1142/12831}
 }
 \author{
 Prof. H. D. Vinod, Economics Dept., Fordham University, NY
